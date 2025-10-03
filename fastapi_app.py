@@ -90,6 +90,17 @@ app.add_middleware(
 
 session_store = SessionStore()
 
+@app.on_event("startup")
+async def startup_event():
+    """Load FAISS index on application startup"""
+    print("Loading FAISS index...")
+    success = reload_index()
+    if success:
+        print("FAISS index loaded successfully")
+    else:
+        print("✗ Failed to load FAISS index")
+        raise RuntimeError("Failed to load FAISS index on startup")
+
 # Updated verify_token function using HTTPBearer
 async def verify_token(credentials: HTTPAuthorizationCredentials = Depends(security)):
     if credentials.credentials != BEARER_TOKEN:
