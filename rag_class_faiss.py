@@ -4,8 +4,20 @@ from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings
 from typing import List, Dict, Optional
 from dotenv import load_dotenv
+import logging
 
 load_dotenv()
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('rag_class.log'),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 FAISS_INDEX_PATH = "faiss_index"
@@ -23,10 +35,10 @@ try:
         embeddings,
         allow_dangerous_deserialization=True
     )
-    print(f"✓ FAISS index loaded from {FAISS_INDEX_PATH}")
+    logger.info(f"✓ FAISS index loaded from {FAISS_INDEX_PATH}")
 except Exception as e:
-    print(f"⚠ Warning: Could not load FAISS index: {e}")
-    print(f"  Run rebuild_faiss.py first to build the index")
+    logger.warning(f"⚠ Warning: Could not load FAISS index: {e}")
+    logger.warning(f"  Run rebuild_faiss.py first to build the index")
     vectorstore = None
 
 
@@ -35,8 +47,10 @@ def rephrase_query(query: str, history: Optional[List[Dict]] = None) -> str:
     Rephrase the user query into a standalone, clear search query.
     Handles follow-up questions and vague references.
     """
+    logger.info(f"[REPHRASE] Original query: '{query}'")
+
     if not history or len(history) == 0:
-        # No history, return original query
+        logger.info("[REPHRASE] No history found, using original query")
         return query
     
     # Get last 3 exchanges for context
@@ -68,6 +82,7 @@ Current query: {query}
 Rephrase this query into a clear, standalone search query:"""
 
     try:
+        logger.info("[REPHRASE] Calling OpenAI to rephrase query...")
         completion = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
@@ -77,36 +92,50 @@ Rephrase this query into a clear, standalone search query:"""
             temperature=0.3,
             max_completion_tokens=100
         )
-        
+
         rephrased = completion.choices[0].message.content.strip()
-        print(f"🔄 Query rephrased: '{query}' → '{rephrased}'")
+        logger.info(f"[REPHRASE] ✓ Rephrased query: '{rephrased}'")
+        logger.info(f"[REPHRASE] Tokens used: {completion.usage.total_tokens} (prompt: {completion.usage.prompt_tokens}, completion: {completion.usage.completion_tokens})")
         return rephrased
-        
+
     except Exception as e:
-        print(f"⚠ Query rephrasing failed: {e}. Using original query.")
+        logger.warning(f"[REPHRASE] ⚠ Failed: {e}. Using original query.")
         return query
 
 
 def search_docs(query: str, top_k: int = 3, project_filter: Optional[str] = None) -> List[Dict]:
     if vectorstore is None:
+        logger.error("[FAISS] ✗ FAISS index not loaded")
         raise Exception("FAISS index not loaded. Run rebuild_faiss.py first.")
-    
+
+    logger.info(f"[FAISS] Searching for query: '{query}' (top_k={top_k})")
+    if project_filter:
+        logger.info(f"[FAISS] Applying project filter: {project_filter}")
+
     if project_filter:
         results = vectorstore.similarity_search(query, k=top_k * 3)
         filtered = [doc for doc in results if doc.metadata.get('project') == project_filter]
         results = filtered[:top_k]
     else:
         results = vectorstore.similarity_search(query, k=top_k)
-    
+
+    logger.info(f"[FAISS] ✓ Retrieved {len(results)} documents from index")
+
     docs = []
-    for doc in results:
-        docs.append({
+    for idx, doc in enumerate(results, 1):
+        doc_info = {
             "content": doc.page_content,
             "project": doc.metadata.get("project", "Unknown"),
             "subsection": doc.metadata.get("subsection", "General"),
             "source": doc.metadata.get("source", "Unknown")
-        })
-    
+        }
+        docs.append(doc_info)
+        logger.info(f"[FAISS] Document {idx}:")
+        logger.info(f"  - Project: {doc_info['project']}")
+        logger.info(f"  - Subsection: {doc_info['subsection']}")
+        logger.info(f"  - Source: {doc_info['source']}")
+        logger.info(f"  - Content preview: {doc_info['content'][:150]}...")
+
     return docs
 
 
@@ -131,23 +160,27 @@ def query_rag(
     temperature: float = 0.1,
     enable_rephrasing: bool = True
 ) -> Dict:
-    
+
+    logger.info("=" * 80)
+    logger.info("[QUERY_RAG] Starting RAG query pipeline")
+    logger.info(f"[QUERY_RAG] Original query: '{query}'")
+    logger.info(f"[QUERY_RAG] Model: {model}")
+    logger.info(f"[QUERY_RAG] Temperature: {temperature}")
+
     # Rephrase query if history exists and rephrasing is enabled
     original_query = query
     if enable_rephrasing and history:
         query = rephrase_query(query, history)
-    
+
     docs = search_docs(query, project_filter=project_filter)
 
-    print(f"📄 Retrieved {len(docs)} documents")
-
-    print(docs)
-    
     context = "\n\n".join([
         f"[Source: {doc['project']} - {doc['subsection']}]\n{doc['content']}"
         for doc in docs
     ])
-    
+
+    logger.info(f"[QUERY_RAG] Context length: {len(context)} characters")
+
     history_text = format_history(history) if history else ""
     
     system_prompt = """
@@ -175,7 +208,11 @@ Context from documentation:
 Current question: {original_query}
 
 Please answer the question based on the context provided above. If the conversation history is relevant, use it to understand follow-up questions."""
-    
+
+    logger.info("[OPENAI] Sending request to OpenAI API...")
+    logger.info(f"[OPENAI] System prompt length: {len(system_prompt)} characters")
+    logger.info(f"[OPENAI] User prompt length: {len(user_prompt)} characters")
+
     completion = client.chat.completions.create(
         model=model,
         messages=[
@@ -184,11 +221,24 @@ Please answer the question based on the context provided above. If the conversat
         ],
         max_completion_tokens=1000
     )
-    
+
     answer = completion.choices[0].message.content
 
-    print(answer,'here')
-    
+    logger.info("=" * 80)
+    logger.info("[OPENAI] ✓ COMPLETION RECEIVED FROM OPENAI")
+    logger.info("=" * 80)
+    logger.info(f"[OPENAI] Model used: {completion.model}")
+    logger.info(f"[OPENAI] Finish reason: {completion.choices[0].finish_reason}")
+    logger.info(f"[OPENAI] Token usage:")
+    logger.info(f"  - Prompt tokens: {completion.usage.prompt_tokens}")
+    logger.info(f"  - Completion tokens: {completion.usage.completion_tokens}")
+    logger.info(f"  - Total tokens: {completion.usage.total_tokens}")
+    logger.info("=" * 80)
+    logger.info("[OPENAI] FULL COMPLETION CONTENT:")
+    logger.info("=" * 80)
+    logger.info(answer)
+    logger.info("=" * 80)
+
     response = {
         "answer": answer,
         "sources": docs,
@@ -199,11 +249,14 @@ Please answer the question based on the context provided above. If the conversat
         },
         "model": completion.model
     }
-    
+
     # Include rephrased query info if it was used
     if enable_rephrasing and query != original_query:
         response["rephrased_query"] = query
-    
+
+    logger.info("[QUERY_RAG] ✓ RAG query pipeline completed successfully")
+    logger.info("=" * 80)
+
     return response
 
 
@@ -214,12 +267,18 @@ def query_rag_streaming(
     model: str = "gpt-5-nano",
     enable_rephrasing: bool = True
 ):
-    
+
+    logger.info("=" * 80)
+    logger.info("[QUERY_RAG_STREAMING] Starting streaming RAG query pipeline")
+    logger.info(f"[QUERY_RAG_STREAMING] Query: '{query}'")
+    logger.info(f"[QUERY_RAG_STREAMING] Model: {model}")
+
     # Rephrase query if history exists
     if enable_rephrasing and history:
         query = rephrase_query(query, history)
-    
+
     docs = search_docs(query, project_filter=project_filter)
+    logger.info("[OPENAI] Starting streaming response...")
     
     context = "\n\n".join([
         f"[Source: {doc['project']} - {doc['subsection']}]\n{doc['content']}"
@@ -256,16 +315,17 @@ Answer based on the context provided."""
 def reload_index():
     """Reload FAISS index (useful after rebuilding)"""
     global vectorstore
+    logger.info("[RELOAD] Attempting to reload FAISS index...")
     try:
         vectorstore = FAISS.load_local(
             FAISS_INDEX_PATH,
             embeddings,
             allow_dangerous_deserialization=True
         )
-        print(f"✓ FAISS index reloaded")
+        logger.info(f"[RELOAD] ✓ FAISS index reloaded successfully from {FAISS_INDEX_PATH}")
         return True
     except Exception as e:
-        print(f"Error reloading index: {e}")
+        logger.error(f"[RELOAD] ✗ Error reloading index: {e}")
         return False
 
 
