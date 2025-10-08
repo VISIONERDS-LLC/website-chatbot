@@ -219,7 +219,7 @@ Please answer the question based on the context provided above. If the conversat
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt}
         ],
-        max_completion_tokens=1000
+        max_completion_tokens=4000
     )
 
     answer = completion.choices[0].message.content
