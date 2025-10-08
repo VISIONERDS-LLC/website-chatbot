@@ -9,7 +9,19 @@ import os
 from datetime import datetime, timedelta
 import threading
 import time
+import logging
 from rag_class_faiss import query_rag, reload_index
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('chatbot_api.log'),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
 
 BEARER_TOKEN = os.getenv("API_BEARER_TOKEN")
 MAX_HISTORY_LENGTH = 10
@@ -38,11 +50,14 @@ class SessionStore:
                 "timestamp": datetime.now().isoformat()
             })
             self.last_accessed[session_id] = datetime.now()
+            logger.info(f"Added interaction to session {session_id[:8]}... | Messages in session: {len(self.sessions[session_id])}")
     
     def clear_session(self, session_id: str):
         with self._lock:
             if session_id in self.sessions:
+                msg_count = len(self.sessions[session_id])
                 del self.sessions[session_id]
+                logger.info(f"Cleared session {session_id[:8]}... | Removed {msg_count} messages")
             if session_id in self.last_accessed:
                 del self.last_accessed[session_id]
     
@@ -55,6 +70,8 @@ class SessionStore:
                     sid for sid, last_time in self.last_accessed.items()
                     if now - last_time > timedelta(hours=SESSION_TIMEOUT_HOURS)
                 ]
+                if expired:
+                    logger.info(f"Cleaning up {len(expired)} expired sessions")
                 for sid in expired:
                     del self.sessions[sid]
                     del self.last_accessed[sid]
@@ -93,12 +110,15 @@ session_store = SessionStore()
 @app.on_event("startup")
 async def startup_event():
     """Load FAISS index on application startup"""
-    print("Loading FAISS index...")
+    logger.info("=" * 60)
+    logger.info("Starting RAG Chatbot API v2.0.0")
+    logger.info("Loading FAISS index...")
     success = reload_index()
     if success:
-        print("FAISS index loaded successfully")
+        logger.info("✓ FAISS index loaded successfully")
+        logger.info("=" * 60)
     else:
-        print("✗ Failed to load FAISS index")
+        logger.error("✗ Failed to load FAISS index")
         raise RuntimeError("Failed to load FAISS index on startup")
 
 # Updated verify_token function using HTTPBearer
@@ -139,32 +159,54 @@ async def health():
 async def chat(request: ChatRequest, token: str = Depends(verify_token)):
     session_id = request.session_id or str(uuid.uuid4())
     history = session_store.get_history(session_id)
-    
+
+    logger.info("=" * 60)
+    logger.info(f"NEW CHAT REQUEST | Session: {session_id[:8]}...")
+    logger.info(f"User Query: {request.message}")
+    logger.info(f"History Length: {len(history)} messages")
+
     try:
+        logger.info("Querying RAG system...")
         result = query_rag(
             query=request.message,
             history=history,
             model="gpt-5-nano"
         )
-        
+
+        # Log retrieved sources from FAISS index
+        logger.info(f"FAISS Index Results: Retrieved {len(result['sources'])} sources")
+        for idx, source in enumerate(result['sources'], 1):
+            logger.info(f"  Source {idx}: {source.get('file', 'Unknown')} | Score: {source.get('score', 'N/A')}")
+            logger.info(f"    Content preview: {source.get('content', '')[:100]}...")
+
+        # Log OpenAI response
+        logger.info(f"OpenAI Response Length: {len(result['answer'])} characters")
+        logger.info(f"OpenAI Answer: {result['answer']}")
+
         session_store.add_interaction(
-            session_id, 
-            request.message, 
+            session_id,
+            request.message,
             result["answer"]
         )
-        
+
+        logger.info(f"✓ Request completed successfully")
+        logger.info("=" * 60)
+
         return ChatResponse(
             session_id=session_id,
             answer=result["answer"],
             sources=result["sources"],
             history_length=len(history) + 1
         )
-        
+
     except Exception as e:
+        logger.error(f"✗ Query failed: {str(e)}", exc_info=True)
+        logger.info("=" * 60)
         raise HTTPException(status_code=500, detail=f"Query failed: {str(e)}")
 
 @app.post("/session/clear")
 async def clear_session(session_id: str, token: str = Depends(verify_token)):
+    logger.info(f"Clear session request for: {session_id[:8]}...")
     history = session_store.get_history(session_id)
     session_store.clear_session(session_id)
     return {
@@ -174,8 +216,10 @@ async def clear_session(session_id: str, token: str = Depends(verify_token)):
 
 @app.get("/session/{session_id}")
 async def get_session(session_id: str, token: str = Depends(verify_token)):
+    logger.info(f"Get session request for: {session_id[:8]}...")
     history = session_store.get_history(session_id)
-    return {    
+    logger.info(f"Session {session_id[:8]}... has {len(history)} messages")
+    return {
         "session_id": session_id,
         "history": history,
         "message_count": len(history)
@@ -183,14 +227,20 @@ async def get_session(session_id: str, token: str = Depends(verify_token)):
 
 @app.get("/session/stats")
 async def session_stats(token: str = Depends(verify_token)):
-    return session_store.get_stats()
+    logger.info("Session stats requested")
+    stats = session_store.get_stats()
+    logger.info(f"Total sessions: {stats['total_sessions']}")
+    return stats
 
 @app.post("/admin/reload-index")
 async def reload_faiss_index(token: str = Depends(verify_token)):
+    logger.info("Manual FAISS index reload requested")
     success = reload_index()
     if success:
+        logger.info("✓ FAISS index reloaded successfully")
         return {"message": "FAISS index reloaded successfully"}
     else:
+        logger.error("✗ Failed to reload FAISS index")
         raise HTTPException(status_code=500, detail="Failed to reload index")
 
 if __name__ == "__main__":
