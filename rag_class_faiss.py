@@ -5,6 +5,7 @@ from langchain_openai import OpenAIEmbeddings
 from typing import List, Dict, Optional
 from dotenv import load_dotenv
 import logging
+import numpy as np
 
 load_dotenv()
 
@@ -23,6 +24,15 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 FAISS_INDEX_PATH = "faiss_index"
 
 client = OpenAI(api_key=OPENAI_API_KEY)
+
+def safe_convert_numeric(value):
+    """Safely convert numpy types to Python types for JSON serialization"""
+    if isinstance(value, (np.integer, np.floating, np.complexfloating)):
+        return value.item()
+    elif isinstance(value, np.ndarray):
+        return value.tolist()
+    else:
+        return value
 
 embeddings = OpenAIEmbeddings(
     openai_api_key=OPENAI_API_KEY,
@@ -103,37 +113,78 @@ Rephrase this query into a clear, standalone search query:"""
         return query
 
 
-def search_docs(query: str, top_k: int = 3, project_filter: Optional[str] = None) -> List[Dict]:
+def search_docs(query: str, top_k: int = 5, project_filter: Optional[str] = None) -> List[Dict]:
     if vectorstore is None:
         logger.error("[FAISS] ✗ FAISS index not loaded")
         raise Exception("FAISS index not loaded. Run rebuild_faiss.py first.")
 
     logger.info(f"[FAISS] Searching for query: '{query}' (top_k={top_k})")
-    if project_filter:
-        logger.info(f"[FAISS] Applying project filter: {project_filter}")
 
-    if project_filter:
-        results = vectorstore.similarity_search(query, k=top_k * 3)
-        filtered = [doc for doc in results if doc.metadata.get('project') == project_filter]
-        results = filtered[:top_k]
+    # Smart query processing based on intent
+    query_lower = query.lower()
+    
+    if any(phrase in query_lower for phrase in ['list project', 'what project', 'your project', 'projects you', 'all project']):
+        # Prioritize project list results
+        results_with_scores = vectorstore.similarity_search_with_score(query, k=top_k + 3)
+        # Boost project_list content
+        adjusted_results = []
+        for doc, score in results_with_scores:
+            if doc.metadata.get('content_type') == 'project_list':
+                adjusted_results.append((doc, score * 0.5))  # Lower score = higher relevance
+            else:
+                adjusted_results.append((doc, score))
+        # Re-sort by adjusted scores
+        adjusted_results.sort(key=lambda x: x[1])
+        results_with_scores = adjusted_results[:top_k]
+        
+    elif any(phrase in query_lower for phrase in ['company', 'about', 'visionerds', 'what do you do', 'who are you']):
+        # Prioritize company information
+        results_with_scores = vectorstore.similarity_search_with_score(query, k=top_k + 3)
+        adjusted_results = []
+        for doc, score in results_with_scores:
+            content_type = doc.metadata.get('content_type', '')
+            if content_type in ['company_overview', 'services', 'technology']:
+                adjusted_results.append((doc, score * 0.6))
+            else:
+                adjusted_results.append((doc, score))
+        adjusted_results.sort(key=lambda x: x[1])
+        results_with_scores = adjusted_results[:top_k]
+        
+    elif any(phrase in query_lower for phrase in ['technical detail', 'technical', 'implementation', 'architecture', 'how']):
+        # Prioritize technical content
+        results_with_scores = vectorstore.similarity_search_with_score(query, k=top_k + 3)
+        adjusted_results = []
+        for doc, score in results_with_scores:
+            content_type = doc.metadata.get('content_type', '')
+            if content_type in ['project_technical', 'technology']:
+                adjusted_results.append((doc, score * 0.6))
+            else:
+                adjusted_results.append((doc, score))
+        adjusted_results.sort(key=lambda x: x[1])
+        results_with_scores = adjusted_results[:top_k]
+        
     else:
-        results = vectorstore.similarity_search(query, k=top_k)
+        # Default search
+        results_with_scores = vectorstore.similarity_search_with_score(query, k=top_k)
 
-    logger.info(f"[FAISS] ✓ Retrieved {len(results)} documents from index")
+    logger.info(f"[FAISS] ✓ Retrieved {len(results_with_scores)} documents from index")
 
     docs = []
-    for idx, doc in enumerate(results, 1):
+    for idx, (doc, score) in enumerate(results_with_scores, 1):
         doc_info = {
             "content": doc.page_content,
-            "project": doc.metadata.get("project", "Unknown"),
-            "subsection": doc.metadata.get("subsection", "General"),
-            "source": doc.metadata.get("source", "Unknown")
+            "content_type": doc.metadata.get("content_type", "general"),
+            "section": doc.metadata.get("section", "Unknown"),
+            "project_name": doc.metadata.get("project_name", "N/A"),
+            "source": doc.metadata.get("source", "Unknown"),
+            "score": safe_convert_numeric(score)
         }
         docs.append(doc_info)
         logger.info(f"[FAISS] Document {idx}:")
-        logger.info(f"  - Project: {doc_info['project']}")
-        logger.info(f"  - Subsection: {doc_info['subsection']}")
-        logger.info(f"  - Source: {doc_info['source']}")
+        logger.info(f"  - Content Type: {doc_info['content_type']}")
+        logger.info(f"  - Section: {doc_info['section']}")
+        logger.info(f"  - Project: {doc_info['project_name']}")
+        logger.info(f"  - Score: {doc_info['score']}")
         logger.info(f"  - Content preview: {doc_info['content'][:150]}...")
 
     return docs
@@ -172,28 +223,52 @@ def query_rag(
     if enable_rephrasing and history:
         query = rephrase_query(query, history)
 
-    docs = search_docs(query, project_filter=project_filter)
-
-    context = "\n\n".join([
-        f"[Source: {doc['project']} - {doc['subsection']}]\n{doc['content']}"
-        for doc in docs
-    ])
+    # Search for relevant documents
+    docs = search_docs(query, top_k=5)
+    
+    # Create context from retrieved documents
+    context = ""
+    for i, doc in enumerate(docs, 1):
+        content_type = doc.get('content_type', 'general')
+        project_name = doc.get('project_name', 'N/A')
+        section = doc.get('section', 'Unknown')
+        
+        if content_type == 'project_list':
+            context += f"\n--- Project Portfolio Overview ---\n"
+        elif content_type == 'company_overview':
+            context += f"\n--- Company Information ---\n"
+        elif content_type == 'services':
+            context += f"\n--- Our Services ---\n"
+        elif content_type == 'technology':
+            context += f"\n--- Technology Stack ---\n"
+        elif content_type == 'project_overview':
+            context += f"\n--- Project: {project_name} (Overview) ---\n"
+        elif content_type == 'project_technical':
+            context += f"\n--- Project: {project_name} (Technical Details) ---\n"
+        elif content_type == 'project_full':
+            context += f"\n--- Project: {project_name} (Complete Details) ---\n"
+        else:
+            context += f"\n--- {section} ---\n"
+        
+        context += f"{doc['content']}\n"
 
     logger.info(f"[QUERY_RAG] Context length: {len(context)} characters")
+    logger.info(f"[QUERY_RAG] Using {len(docs)} documents")
 
     history_text = format_history(history) if history else ""
     
     system_prompt = """
-You are a knowledgeable and friendly assistant representing our service-based IT company. 
+You are a knowledgeable and friendly assistant representing Visionerds, a technology consulting and software development company. 
 Your primary role is to provide information about our company, projects, services, and technical capabilities using the provided documentation.
 
 WHAT YOU CAN DO:
-- Answer questions about our company's projects and services
+- Answer questions about our company (Visionerds) and what we do
+- List and describe our projects with specific details
 - Explain our technology stack and technical capabilities
 - Describe our development processes and methodologies
 - Share information about industries we serve
 - Discuss our past project experiences and achievements
-- Provide details about our team's expertise
+- Provide details about our team's expertise and services
 
 WHAT YOU CANNOT DO:
 - Book calls, schedule meetings, or perform any booking/scheduling actions
@@ -206,6 +281,8 @@ WHAT YOU CANNOT DO:
 RESPONSE GUIDELINES:
 - Speak from the company's perspective using "we" and "our"
 - Be natural, conversational, and professional
+- When listing projects, provide clear, organized information
+- For project details, include what the project was about, the technical approach, and technologies used
 - If asked about something outside your scope, politely explain what you can help with instead
 - For booking/scheduling requests, suggest they contact the company through official channels
 - Never make up information - only use what's in the provided context
@@ -217,12 +294,12 @@ Your tone should be helpful and professional while staying focused on sharing co
     
     user_prompt = f"""{history_text}
 
-Context from documentation:
+Context from our company documentation:
 {context}
 
 Current question: {original_query}
 
-Please answer the question based on the context provided above. If the conversation history is relevant, use it to understand follow-up questions."""
+Please answer the question using the information provided in the context above. Focus on giving specific details about our company, projects, technologies, and capabilities."""
 
     logger.info("[OPENAI] Sending request to OpenAI API...")
     logger.info(f"[OPENAI] System prompt length: {len(system_prompt)} characters")
