@@ -242,7 +242,7 @@ async def chat(request: ChatRequest, token: str = Depends(verify_token)):
             result["answer"]
         )
 
-        logger.info(f"✓ Request completed successfully")
+        logger.info(f"Request completed successfully")
         logger.info("=" * 60)
 
         return ChatResponse(
