@@ -293,7 +293,7 @@ async def reload_faiss_index(token: str = Depends(verify_token)):
         logger.info("✓ FAISS index reloaded successfully")
         return {"message": "FAISS index reloaded successfully"}
     else:
-        logger.error("✗ Failed to reload FAISS index")
+        logger.error("Failed to reload FAISS index")
         raise HTTPException(status_code=500, detail="Failed to reload index")
 
 if __name__ == "__main__":
