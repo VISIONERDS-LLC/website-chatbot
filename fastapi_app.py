@@ -290,7 +290,7 @@ async def reload_faiss_index(token: str = Depends(verify_token)):
     logger.info("Manual FAISS index reload requested")
     success = reload_index()
     if success:
-        logger.info("✓ FAISS index reloaded successfully")
+        logger.info("✓ FAISS index reloaded successfully bro")
         return {"message": "FAISS index reloaded successfully"}
     else:
         logger.error("Failed to reload FAISS index")
