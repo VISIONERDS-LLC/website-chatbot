@@ -13,176 +13,237 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 FAISS_INDEX_PATH = "faiss_index"
 
 
-def process_project_document(content: str, source: str) -> List[Document]:
-    documents = []
+def create_company_overview_chunks(content: str, source: str) -> List[Document]:
+    """Create chunks specifically for company overview information"""
     
-    # Find all project starts to correctly extract blocks
-    # Using re.finditer to get start indices of all "PROJECT:" occurrences
-    project_start_indices = [m.start() for m in re.finditer(r'(?i)PROJECT:', content)]
-    
-    project_blocks = []
-    # If no 'PROJECT:' found but content exists, treat as one general project
-    if not project_start_indices and content.strip():
-        project_blocks.append(content)
-    else:
-        for i, start_idx in enumerate(project_start_indices):
-            end_idx = project_start_indices[i+1] if i+1 < len(project_start_indices) else len(content)
-            project_block_text = content[start_idx:end_idx].strip()
-            if project_block_text:
-                project_blocks.append(project_block_text)
-
-    for project_block in project_blocks:
-        lines = project_block.strip().split('\n')
-        if not lines:
-            continue
+    # Company overview chunk
+    company_section = re.search(r'1\.\s*Company Overview.*?(?=2\.|$)', content, re.DOTALL | re.IGNORECASE)
+    if company_section:
+        overview_text = company_section.group(0)
+        # Add searchable keywords
+        enhanced_overview = f"Company Overview - Visionerds:\n{overview_text}\n\nKeywords: company information, about us, what we do, services, visionerds"
         
-        # Extract project name. Assume first line or part of it is the project name.
-        project_name_full = lines[0].strip()
-        project_name_match = re.match(r'(?i)PROJECT:\s*([^\n]+)', project_name_full)
-        if project_name_match:
-            current_project = f"PROJECT: {project_name_match.group(1).strip()}"
-            project_text = '\n'.join(lines[1:])
+        yield Document(
+            page_content=enhanced_overview,
+            metadata={
+                "source": source,
+                "content_type": "company_overview",
+                "section": "Company Overview",
+                "keywords": "company, about, visionerds, overview, services"
+            }
+        )
+    
+    # Services section
+    services_section = re.search(r'2\.\s*Core Services.*?(?=3\.|$)', content, re.DOTALL | re.IGNORECASE)
+    if services_section:
+        services_text = services_section.group(0)
+        enhanced_services = f"Company Services - Visionerds:\n{services_text}\n\nKeywords: services, what we offer, capabilities, ai ml, development, custom software"
+        
+        yield Document(
+            page_content=enhanced_services,
+            metadata={
+                "source": source,
+                "content_type": "services",
+                "section": "Core Services",
+                "keywords": "services, ai, ml, development, custom software, mobile, web"
+            }
+        )
+    
+    # Technology stack
+    tech_section = re.search(r'5\.\s*Typical Tech Stack.*?(?=6\.|$)', content, re.DOTALL | re.IGNORECASE)
+    if tech_section:
+        tech_text = tech_section.group(0)
+        enhanced_tech = f"Company Technology Stack:\n{tech_text}\n\nKeywords: technology, tech stack, technologies we use, frameworks, programming languages"
+        
+        yield Document(
+            page_content=enhanced_tech,
+            metadata={
+                "source": source,
+                "content_type": "technology",
+                "section": "Tech Stack",
+                "keywords": "technology, tech stack, react, python, node, aws, azure"
+            }
+        )
+    
+    # Project highlights
+    highlights_section = re.search(r'6\.\s*Project Highlights.*?(?=7\.|$)', content, re.DOTALL | re.IGNORECASE)
+    if highlights_section:
+        highlights_text = highlights_section.group(0)
+        enhanced_highlights = f"Company Project Highlights:\n{highlights_text}\n\nKeywords: projects, project examples, what we built, case studies, achievements"
+        
+        yield Document(
+            page_content=enhanced_highlights,
+            metadata={
+                "source": source,
+                "content_type": "project_highlights",
+                "section": "Project Highlights",
+                "keywords": "projects, examples, case studies, achievements, clients"
+            }
+        )
+
+
+def create_project_chunks(content: str, source: str) -> List[Document]:
+    """Create chunks for individual projects"""
+    
+    # Find all projects
+    project_matches = list(re.finditer(r'PROJECT:\s*([^\n]+)', content, re.IGNORECASE))
+    
+    for i, match in enumerate(project_matches):
+        project_name = match.group(1).strip()
+        start_pos = match.start()
+        
+        # Find end position (next project or end of document)
+        if i + 1 < len(project_matches):
+            end_pos = project_matches[i + 1].start()
         else:
-            # If "PROJECT:" isn't explicitly found in the first line of the block
-            # (e.g., if the initial document text was treated as a single project block),
-            # use the whole first line as the project name and the rest as text.
-            current_project = f"PROJECT: {project_name_full}"
-            project_text = '\n'.join(lines[1:])
-
-        if not project_text.strip():
-            continue
+            end_pos = len(content)
         
-        # Expanded subsection patterns to cover all headings in the provided documents
-        subsection_patterns = [
-            r'Project Overview', r'Technical Architecture', r'Backend Architecture', r'Backend Architecture and Operations',
-            r'Key Technical Implementations', r'Key Implementations',
-            r'Technology Stack', r'Deployment', r'Integration', r'Data Integration System',
-            r'Database Optimization and Matching Algorithm', r'Al-Powered Content Generation',
-            r'Client Collaboration and Project Management', r'Patient and Doctor Management System',
-            r'Appointment Scheduling System', r'Al-Powered Medication Recommendation Engine',
-            r'Deployment and Integration Infrastructure', r'Scalable Al System Architecture',
-            r'Containerized Al Model Management', r'Azure Cloud Infrastructure Implementation',
-            r'Data Management and Storage Solutions', r'Performance Optimization with CDN',
-            r'CI/CD and DevOps Implementation', r'Advanced Al Architecture with LangChain and LangGraph',
-            r'Personalized Chatbot Capabilities', r'Modular Conversation Workflow Design',
-            r'Persistent Memory and User Context Management', r'Intelligent Tools and Retrieval Systems',
-            r'Proactive Communication and Intelligent Triggers', r'Multi-Platform Deployment Architecture',
-            r'Security and Compliance Implementation', r'Real-Time Performance Optimization',
-            r'Advanced Al Architecture with OpenAl and FastAPI', r'Intelligent Lesson Planning Capabilities',
-            r'Modular Educational Workflow Design', r'Persistent Memory and Educational Context Management',
-            r'Intelligent Tools and Retrieval Systems', r'Proactive Educational Communication and Intelligent Triggers',
-            r'Multi-Platform Educational Architecture', r'Document Structure and RAG Integration Notes',
-            r'Technology Stack Recommendation Module', r'Code Analysis and Explanation Module',
-            r'Project Estimation and Resource Planning Module'
-        ]
+        project_content = content[start_pos:end_pos].strip()
         
-        # Corrected subsection_regex to avoid None values from re.split
-        # This creates a single capturing group for the entire OR'd pattern
-        combined_subsection_regex = '|'.join(subsection_patterns)
-        parts = re.split(f'({combined_subsection_regex})', project_text, flags=re.IGNORECASE)
-        
-        current_subsection = "General"
-        current_text = ""
-        
-        for part in parts:
-            if part is None: # Explicitly skip None parts, though the regex fix should largely prevent this.
-                continue
-            part = part.strip()
-            if not part: # Skip empty strings resulting from the split
-                continue
+        # Create project overview chunk
+        overview_match = re.search(r'Project Overview(.*?)(?=\n[A-Z][a-z]|\n[A-Z][A-Z]|$)', project_content, re.DOTALL)
+        if overview_match:
+            overview_text = overview_match.group(1).strip()
+            enhanced_overview = f"Project: {project_name}\n\nProject Overview:\n{overview_text}\n\nKeywords: {project_name.lower()}, project, what we built, project description"
             
-            # Check if this part is a subsection header (case-insensitive full match)
-            is_subsection_header = False
-            for pattern in subsection_patterns:
-                if re.fullmatch(pattern, part, re.IGNORECASE):
-                    is_subsection_header = True
-                    break
-            
-            if is_subsection_header:
-                if current_text.strip(): # If there's content for the previous subsection, add it
-                    chunks = split_text(current_text, max_length=800, overlap=200)
-                    for chunk in chunks:
-                        doc = Document(
-                            page_content=chunk,
-                            metadata={
-                                "project": current_project,
-                                "subsection": current_subsection,
-                                "source": source
-                            }
-                        )
-                        documents.append(doc)
-                
-                current_subsection = part # Update to the new subsection header
-                current_text = "" # Reset text for the new subsection
-            else:
-                current_text += "\n" + part # Accumulate text for the current subsection
+            yield Document(
+                page_content=enhanced_overview,
+                metadata={
+                    "source": source,
+                    "content_type": "project_overview",
+                    "project_name": project_name,
+                    "section": "Project Overview",
+                    "keywords": f"{project_name.lower()}, project, overview, description"
+                }
+            )
         
-        # Add any remaining text from the last subsection
-        if current_text.strip():
-            chunks = split_text(current_text, max_length=800, overlap=200)
-            for chunk in chunks:
-                doc = Document(
+        # Create technical details chunk
+        tech_sections = re.findall(
+            r'(Technical Architecture|Technology Stack|Key Technical Implementations|Backend Architecture.*?|AI Architecture.*?)(.*?)(?=\n[A-Z][a-z]|\n[A-Z][A-Z]|$)', 
+            project_content, 
+            re.DOTALL | re.IGNORECASE
+        )
+        
+        if tech_sections:
+            tech_content = ""
+            for section_name, section_content in tech_sections:
+                tech_content += f"\n{section_name}:\n{section_content.strip()}\n"
+            
+            enhanced_tech = f"Project: {project_name}\n\nTechnical Details:{tech_content}\n\nKeywords: {project_name.lower()}, technical details, architecture, implementation, technology"
+            
+            yield Document(
+                page_content=enhanced_tech,
+                metadata={
+                    "source": source,
+                    "content_type": "project_technical",
+                    "project_name": project_name,
+                    "section": "Technical Details",
+                    "keywords": f"{project_name.lower()}, technical, architecture, implementation"
+                }
+            )
+        
+        # Create full project chunk for comprehensive queries
+        enhanced_full = f"Complete Project Details: {project_name}\n\n{project_content}\n\nKeywords: {project_name.lower()}, full project details, complete information"
+        
+        # Split if too long
+        if len(enhanced_full) > 2000:
+            chunks = split_long_content(enhanced_full, 1800, 400)
+            for j, chunk in enumerate(chunks):
+                yield Document(
                     page_content=chunk,
                     metadata={
-                        "project": current_project,
-                        "subsection": current_subsection,
-                        "source": source
+                        "source": source,
+                        "content_type": "project_full",
+                        "project_name": project_name,
+                        "section": f"Full Details Part {j+1}",
+                        "chunk_index": j,
+                        "keywords": f"{project_name.lower()}, complete, full details"
                     }
                 )
-                documents.append(doc)
+        else:
+            yield Document(
+                page_content=enhanced_full,
+                metadata={
+                    "source": source,
+                    "content_type": "project_full",
+                    "project_name": project_name,
+                    "section": "Full Details",
+                    "keywords": f"{project_name.lower()}, complete, full details"
+                }
+            )
+
+
+def create_project_list_chunk(content: str, source: str) -> Document:
+    """Create a special chunk for project listing queries"""
     
-    return documents
+    project_names = re.findall(r'PROJECT:\s*([^\n]+)', content, re.IGNORECASE)
+    
+    if project_names:
+        project_list = "Our Projects - Complete List:\n\n"
+        for i, name in enumerate(project_names, 1):
+            project_list += f"{i}. {name.strip()}\n"
+        
+        project_list += f"\n\nWe have completed {len(project_names)} major projects including: "
+        project_list += ", ".join([name.strip() for name in project_names])
+        project_list += "\n\nKeywords: projects, project list, what projects, list of projects, our work, portfolio"
+        
+        return Document(
+            page_content=project_list,
+            metadata={
+                "source": source,
+                "content_type": "project_list",
+                "section": "Project List",
+                "total_projects": len(project_names),
+                "keywords": "projects, list, portfolio, our work, what projects"
+            }
+        )
 
 
-def split_text(text: str, max_length: int = 800, overlap: int = 200) -> List[str]:
-    if len(text) <= max_length:
-        return [text]
+def split_long_content(content: str, max_length: int, overlap: int) -> List[str]:
+    """Split long content while preserving structure"""
+    if len(content) <= max_length:
+        return [content]
     
     chunks = []
     start = 0
     
-    while start < len(text):
+    while start < len(content):
         end = start + max_length
         
-        if end < len(text):
-            # Try to break at sentence or paragraph boundary
-            break_point = -1
-            
-            # Prefer sentence end
-            last_period = text[start:end].rfind('. ')
-            if last_period != -1 and last_period > start + max_length // 2: # Ensure break point is not too early
-                break_point = last_period + 1
-            
-            # Fallback to newline if no good sentence end
-            if break_point == -1:
-                last_newline = text[start:end].rfind('\n')
-                if last_newline != -1 and last_newline > start + max_length // 2: # Ensure break point is not too early
-                    break_point = last_newline + 1
-            
-            # If no good break point, just cut at max_length
-            if break_point == -1:
-                end = start + max_length
-            else:
+        if end < len(content):
+            # Find good break point
+            break_point = find_break_point(content, start, end)
+            if break_point > start:
                 end = break_point
         
-        chunks.append(text[start:end].strip())
-        # Ensure the next start position doesn't go backwards or stay the same
-        start = end - overlap 
-        if start < (end - max_length): # Prevent excessive overlap, ensure progress
-            start = end - (max_length // 4) # Adjust overlap if it's too large for small chunks
-        if start < 0: start = 0 # Avoid negative start index
+        chunk = content[start:end].strip()
+        if chunk:
+            chunks.append(chunk)
+        
+        start = max(end - overlap, start + max_length // 2)
+        if start >= len(content):
+            break
     
     return chunks
 
 
+def find_break_point(content: str, start: int, max_end: int) -> int:
+    """Find optimal break point"""
+    # Look for section breaks
+    for break_char in ['\n\n', '\n•', '\n-', '. ', '?\n', '!\n']:
+        pos = content[start:max_end].rfind(break_char)
+        if pos != -1 and pos > (max_end - start) // 2:
+            return start + pos + len(break_char)
+    return max_end
+
+
 def build_faiss_index(pdf_paths: List[str]):
-    """Build FAISS index from PDFs and save to disk"""
+    """Build optimized FAISS index for company and project information"""
     
     print("=" * 60)
-    print("Building FAISS Index")
+    print("Building Optimized FAISS Index for Company & Projects")
     print("=" * 60)
     
-    # Initialize embeddings
     embeddings = OpenAIEmbeddings(
         openai_api_key=OPENAI_API_KEY,
         model="text-embedding-3-small"
@@ -190,7 +251,6 @@ def build_faiss_index(pdf_paths: List[str]):
     
     all_documents = []
     
-    # Process each PDF
     for pdf_path in pdf_paths:
         print(f"\nProcessing: {pdf_path}")
         
@@ -200,28 +260,48 @@ def build_faiss_index(pdf_paths: List[str]):
         
         loader = PyPDFLoader(pdf_path)
         pages = loader.load()
-        
         full_text = "\n\n".join([page.page_content for page in pages])
         
-        if re.search(r'(?i)PROJECT:', full_text): # Check for "PROJECT:" case-insensitively
-            docs = process_project_document(full_text, pdf_path)
+        filename = os.path.basename(pdf_path)
+        
+        if "company" in filename.lower() or "info" in filename.lower():
+            # Process company information
+            print("  Processing as company information document")
+            company_docs = list(create_company_overview_chunks(full_text, pdf_path))
+            all_documents.extend(company_docs)
+            print(f"  Created {len(company_docs)} company information chunks")
+            
+        elif "project" in filename.lower() or "detailed" in filename.lower():
+            # Process project information
+            print("  Processing as project documentation")
+            
+            # Create project list chunk
+            project_list_doc = create_project_list_chunk(full_text, pdf_path)
+            if project_list_doc:
+                all_documents.append(project_list_doc)
+                print("  Created project list chunk")
+            
+            # Create individual project chunks
+            project_docs = list(create_project_chunks(full_text, pdf_path))
+            all_documents.extend(project_docs)
+            print(f"  Created {len(project_docs)} project-specific chunks")
+        
         else:
-            # For documents without "PROJECT:", treat as a single document under its filename
-            chunks = split_text(full_text, max_length=800, overlap=200)
-            docs = [
-                Document(
+            # Generic processing
+            print("  Processing as generic document")
+            chunks = split_long_content(full_text, 1000, 200)
+            for i, chunk in enumerate(chunks):
+                doc = Document(
                     page_content=chunk,
                     metadata={
-                        "project": os.path.basename(pdf_path).replace(".pdf", ""), # Use filename without .pdf
-                        "subsection": "General",
-                        "source": pdf_path
+                        "source": pdf_path,
+                        "filename": filename,
+                        "chunk_index": i,
+                        "content_type": "general"
                     }
                 )
-                for chunk in chunks
-            ]
-        
-        all_documents.extend(docs)
-        print(f"  Created {len(docs)} chunks")
+                all_documents.append(doc)
+            print(f"  Created {len(chunks)} generic chunks")
     
     print(f"\nTotal documents: {len(all_documents)}")
     
@@ -235,18 +315,24 @@ def build_faiss_index(pdf_paths: List[str]):
     print(f"Saving index to: {FAISS_INDEX_PATH}/")
     vectorstore.save_local(FAISS_INDEX_PATH)
     
-    print("\n✓ FAISS index built and saved successfully!")
+    print("\n✓ Optimized FAISS index built successfully!")
     
-    print(f"\nIndex Statistics:")
-    print(f"  Total vectors: {len(all_documents)}")
-    print(f"  Saved to: {FAISS_INDEX_PATH}/")
+    # Show content type distribution
+    content_types = {}
+    for doc in all_documents:
+        ct = doc.metadata.get('content_type', 'unknown')
+        content_types[ct] = content_types.get(ct, 0) + 1
+    
+    print(f"\nContent type distribution:")
+    for content_type, count in content_types.items():
+        print(f"  {content_type}: {count} chunks")
     
     return vectorstore
 
 
 def verify_index():
-    """Verify the saved index works"""
-    print("\n=== Verifying Index ===")
+    """Test the index with typical queries"""
+    print("\n=== Verifying Index with Test Queries ===")
     
     embeddings = OpenAIEmbeddings(
         openai_api_key=OPENAI_API_KEY,
@@ -259,34 +345,47 @@ def verify_index():
         allow_dangerous_deserialization=True
     )
     
-    test_query = "what projects do you have"
-    results = vectorstore.similarity_search(test_query, k=3)
+    test_queries = [
+        "list your projects",
+        "what projects do you have",
+        "tell me about the company",
+        "what does visionerds do",
+        "technical details of ramped project",
+        "what technologies do you use",
+        "ai projects you built"
+    ]
     
-    print(f"Test query: '{test_query}'")
-    print(f"Found {len(results)} results:\n")
-    
-    for i, doc in enumerate(results, 1):
-        print(f"{i}. Project: {doc.metadata.get('project', 'N/A')}")
-        print(f"   Subsection: {doc.metadata.get('subsection', 'N/A')}")
-        print(f"   Content: {doc.page_content[:100]}...")
-        print()
+    for query in test_queries:
+        print(f"\n📝 Query: '{query}'")
+        results = vectorstore.similarity_search(query, k=3)
+        
+        for i, doc in enumerate(results, 1):
+            content_type = doc.metadata.get('content_type', 'unknown')
+            section = doc.metadata.get('section', 'N/A')
+            project = doc.metadata.get('project_name', 'N/A')
+            
+            print(f"  {i}. Type: {content_type} | Section: {section} | Project: {project}")
+            print(f"     Content: {doc.page_content[:100]}...")
 
 
 def main():
     PDF_PATHS = [
-        "./Detailed Project Documentation (1).pdf",
         "./Company Info.pdf",
+        "./Detailed Project Documentation.pdf",
     ]
     
     if not OPENAI_API_KEY:
         print("ERROR: OPENAI_API_KEY not set in environment")
         return
     
-
+    # Check if files exist
     for path in PDF_PATHS:
         if not os.path.exists(path):
             print(f"ERROR: File not found: {path}")
-            print("Please update PDF_PATHS in the script")
+            print("Available files:")
+            for file in os.listdir("."):
+                if file.endswith(".pdf"):
+                    print(f"  - {file}")
             return
     
     vectorstore = build_faiss_index(PDF_PATHS)
@@ -295,9 +394,13 @@ def main():
         verify_index()
         
         print("\n" + "=" * 60)
-        print("✓ Build complete!")
+        print("✓ Optimized index complete!")
         print("=" * 60)
-        print(f"\nIndex saved to: {FAISS_INDEX_PATH}/")
+        print("\nRecommended queries to test:")
+        print("- 'list your projects' or 'what projects do you have'")
+        print("- 'tell me about the company' or 'what does visionerds do'")
+        print("- 'technical details of [project name]'")
+        print("- 'what technologies do you use'")
 
 
 if __name__ == "__main__":
