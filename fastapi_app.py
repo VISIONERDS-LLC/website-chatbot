@@ -6,6 +6,7 @@ from typing import Optional, List, Dict
 from collections import deque, defaultdict
 import uuid
 import os
+import random
 from datetime import datetime, timedelta
 import threading
 import time
@@ -29,6 +30,33 @@ SESSION_TIMEOUT_HOURS = 24
 
 # Initialize HTTPBearer security scheme for Swagger
 security = HTTPBearer()
+
+# Welcome Messages and FAQs Data
+WELCOME_MESSAGES = [
+    "Hello! I'm here to help you learn about our IT services company and the innovative projects we've delivered. What would you like to know?",
+    "Welcome! I can share insights about our technology stack, project experience, and service capabilities. How can I assist you today?",
+    "Hi there! I'm your guide to understanding our company's expertise in software development, AI solutions, and digital transformation. What interests you?",
+    "Greetings! I'm here to showcase our portfolio of successful projects and technical capabilities. What would you like to explore?",
+    "Welcome to our company assistant! I can tell you about our cutting-edge projects, from AI-powered applications to scalable cloud solutions. What can I help with?",
+    "Hello! Ready to discover how our team delivers custom software solutions and innovative technology implementations? Ask me anything!",
+    "Hi! I'm here to help you understand our expertise in full-stack development, AI integration, and enterprise solutions. What would you like to know?",
+    "Welcome! I can share details about our project methodologies, technology choices, and successful client collaborations. How can I help?",
+    "Hello there! I'm your gateway to learning about our company's technical achievements and service offerings. What questions do you have?",
+    "Greetings! I can provide insights into our development processes, technology expertise, and project success stories. What interests you most?"
+]
+
+FAQS = [
+    "What types of projects does your company specialize in?",
+    "What technologies do you primarily work with?",
+    "Do you build AI-powered solutions?",
+    "Can you handle both frontend and backend development?",
+    "What industries do you serve?",
+    "Do you provide cloud deployment and DevOps services?",
+    "How do you ensure project quality and delivery?",
+    "Can you integrate with existing systems and third-party APIs?",
+    "Do you offer ongoing maintenance and support?",
+    "How do you approach custom software development projects?"
+]
 
 class SessionStore:
     def __init__(self):
@@ -142,6 +170,10 @@ class ChatResponse(BaseModel):
     sources: List[Dict]
     history_length: int
 
+class WelcomeResponse(BaseModel):
+    welcome_message: str
+    faqs: List[str]
+
 # Endpoints
 @app.get("/")
 async def root():
@@ -154,6 +186,27 @@ async def root():
 @app.get("/health")
 async def health():
     return {"status": "healthy", "timestamp": datetime.now().isoformat()}
+
+@app.get("/welcome", response_model=WelcomeResponse)
+async def get_welcome_and_faqs():
+    """
+    Get a random welcome message and 4 random FAQ questions for chatbot initialization
+    """
+    logger.info("Welcome endpoint called - generating random welcome message and FAQ questions")
+    
+    # Get 1 random welcome message
+    welcome_message = random.choice(WELCOME_MESSAGES)
+    
+    # Get 4 random FAQ questions
+    random_faqs = random.sample(FAQS, 4)
+    
+    logger.info(f"Returned welcome message: {welcome_message[:50]}...")
+    logger.info(f"Returned {len(random_faqs)} random FAQ questions")
+    
+    return WelcomeResponse(
+        welcome_message=welcome_message,
+        faqs=random_faqs
+    )
 
 @app.post("/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest, token: str = Depends(verify_token)):
