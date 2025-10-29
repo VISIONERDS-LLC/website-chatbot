@@ -287,6 +287,7 @@ RESPONSE GUIDELINES:
 - For booking/scheduling requests, suggest they contact the company through official channels
 - Never make up information - only use what's in the provided context
 - Avoid meta phrases like "based on the context" or "according to the documentation"
+- Do not be too verbose. Just answer the question to the point.
 
 Your tone should be helpful and professional while staying focused on sharing company information.
 """
@@ -311,7 +312,7 @@ Please answer the question using the information provided in the context above. 
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt}
         ],
-        max_completion_tokens=4000
+        max_completion_tokens=500
     )
 
     answer = completion.choices[0].message.content
