@@ -207,7 +207,8 @@ def query_rag(
     query: str,
     history: Optional[List[Dict]] = None,
     project_filter: Optional[str] = None,
-    model: str = "gpt-4.1-nano",
+    #model: str = "gpt-4.1-nano",
+    model: str = "gpt-4o-mini",
     temperature: float = 0.1,
     enable_rephrasing: bool = True
 ) -> Dict:
@@ -279,6 +280,8 @@ WHAT YOU CANNOT DO:
 - Perform agentic tasks or external integrations
 
 RESPONSE GUIDELINES:
+- **For Simple greetings (e.g., "hi", "hello"), provide very concise, single-sentence welcome and ask what they would like to know about the company. DO NOT include any project examples.**
+- **For questions about technologies, projects, or capabilities, provide a descriptive, detailed answer using context.***
 - Speak from the company's perspective using "we" and "our"
 - Be natural, conversational, and professional
 - When listing projects, provide clear, organized information
@@ -300,7 +303,7 @@ Context from our company documentation:
 
 Current question: {original_query}
 
-Please answer the question using the information provided in the context above. Focus on giving specific details about our company, projects, technologies, and capabilities."""
+Please answer the question using the information provided in the context above. Focus on giving specific details about our company, projects, technologies, and capabilities. **Keep the response concise and to the point unless the user explicitly requests a longer or more detailed reply.**"""
 
     logger.info("[OPENAI] Sending request to OpenAI API...")
     logger.info(f"[OPENAI] System prompt length: {len(system_prompt)} characters")
@@ -357,7 +360,8 @@ def query_rag_streaming(
     query: str,
     history: Optional[List[Dict]] = None,
     project_filter: Optional[str] = None,
-    model: str = "gpt-5-nano",
+    #model: str = "gpt-5-mini",
+    model: str = "gpt-4o-mini",
     enable_rephrasing: bool = True
 ):
 

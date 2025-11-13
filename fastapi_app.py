@@ -223,7 +223,8 @@ async def chat(request: ChatRequest, token: str = Depends(verify_token)):
         result = query_rag(
             query=request.message,
             history=history,
-            model="gpt-5-nano"
+            model="gpt-4o-mini"
+            #model="gpt-5-mini"
         )
 
         # Log retrieved sources from FAISS index

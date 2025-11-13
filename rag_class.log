@@ -1,0 +1,4981 @@
+2025-11-12 18:06:19,869 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-12 18:06:20,298 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-12 18:06:20,411 - fastapi_app - INFO - ============================================================
+2025-11-12 18:06:20,411 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-12 18:06:20,412 - fastapi_app - INFO - Loading FAISS index...
+2025-11-12 18:06:20,412 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-12 18:06:20,466 - fastapi_app - INFO - ============================================================
+2025-11-12 18:10:17,634 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-12 18:10:17,653 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-12 18:10:17,706 - fastapi_app - INFO - ============================================================
+2025-11-12 18:10:17,707 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-12 18:10:17,707 - fastapi_app - INFO - Loading FAISS index...
+2025-11-12 18:10:17,707 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-12 18:10:17,738 - fastapi_app - INFO - ============================================================
+2025-11-12 18:13:16,917 - fastapi_app - INFO - ============================================================
+2025-11-12 18:13:16,917 - fastapi_app - INFO - NEW CHAT REQUEST | Session: 123...
+2025-11-12 18:13:16,918 - fastapi_app - INFO - User Query: Hi
+2025-11-12 18:13:16,918 - fastapi_app - INFO - History Length: 0 messages
+2025-11-12 18:13:16,918 - fastapi_app - INFO - Querying RAG system...
+2025-11-12 18:13:16,919 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 18:13:16,919 - rag_class_faiss - INFO - [QUERY_RAG] Starting RAG query pipeline
+2025-11-12 18:13:16,920 - rag_class_faiss - INFO - [QUERY_RAG] Original query: 'Hi'
+2025-11-12 18:13:16,920 - rag_class_faiss - INFO - [QUERY_RAG] Model: gpt-5-nano
+2025-11-12 18:13:16,920 - rag_class_faiss - INFO - [QUERY_RAG] Temperature: 0.1
+2025-11-12 18:13:16,921 - rag_class_faiss - INFO - [FAISS] Searching for query: 'Hi' (top_k=5)
+2025-11-12 18:13:23,164 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-11-12 18:13:23,190 - rag_class_faiss - INFO - [FAISS] Document 1:
+2025-11-12 18:13:23,190 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-12 18:13:23,190 - rag_class_faiss - INFO -   - Section: Full Details Part 6
+2025-11-12 18:13:23,190 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-12 18:13:23,191 - rag_class_faiss - INFO -   - Score: 1.4559962749481201
+2025-11-12 18:13:23,214 - rag_class_faiss - INFO - [FAISS] Document 2:
+2025-11-12 18:13:23,214 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-12 18:13:23,214 - rag_class_faiss - INFO -   - Section: Full Details Part 3
+2025-11-12 18:13:23,215 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-12 18:13:23,215 - rag_class_faiss - INFO -   - Score: 1.487444519996643
+2025-11-12 18:13:23,215 - rag_class_faiss - INFO -   - Content preview: stions
+ 
+and
+ 
+retention
+ 
+offers),
+ 
+and
+ 
+service
+ 
+upgrades
+ 
+(analyzing
+ 
+current
+ 
+bookings
+ 
+and
+ 
+suggesting
+ 
+enhanced
+ 
+services).
+ 
+The
+ 
+mo...
+2025-11-12 18:13:23,217 - rag_class_faiss - INFO - [FAISS] Document 3:
+2025-11-12 18:13:23,217 - rag_class_faiss - INFO -   - Content Type: technology
+2025-11-12 18:13:23,218 - rag_class_faiss - INFO -   - Section: Tech Stack
+2025-11-12 18:13:23,218 - rag_class_faiss - INFO -   - Project: N/A
+2025-11-12 18:13:23,219 - rag_class_faiss - INFO -   - Score: 1.505075454711914
+2025-11-12 18:13:23,235 - rag_class_faiss - INFO - [FAISS] Document 4:
+2025-11-12 18:13:23,235 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-12 18:13:23,237 - rag_class_faiss - INFO -   - Section: Full Details Part 5
+2025-11-12 18:13:23,237 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-12 18:13:23,237 - rag_class_faiss - INFO -   - Score: 1.5078129768371582
+2025-11-12 18:13:23,238 - rag_class_faiss - INFO -   - Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Compliance
+ 
+Implementation
+ 
+The
+ 
+system
+ 
+implement...
+2025-11-12 18:13:23,239 - rag_class_faiss - INFO - [FAISS] Document 5:
+2025-11-12 18:13:23,240 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-12 18:13:23,240 - rag_class_faiss - INFO -   - Section: Full Details Part 1
+2025-11-12 18:13:23,241 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-12 18:13:23,242 - rag_class_faiss - INFO -   - Score: 1.5101808309555054
+2025-11-12 18:13:23,242 - rag_class_faiss - INFO -   - Content preview: Complete Project Details: Beauty
+
+PROJECT:
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+Project
+ 
+Overview
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+represents
+ 
+a
+ 
+cut...
+2025-11-12 18:13:23,244 - rag_class_faiss - INFO - [QUERY_RAG] Context length: 6173 characters
+2025-11-12 18:13:23,244 - rag_class_faiss - INFO - [QUERY_RAG] Using 5 documents
+2025-11-12 18:13:23,244 - rag_class_faiss - INFO - [OPENAI] Sending request to OpenAI API...
+2025-11-12 18:13:23,245 - rag_class_faiss - INFO - [OPENAI] System prompt length: 1857 characters
+2025-11-12 18:13:23,245 - rag_class_faiss - INFO - [OPENAI] User prompt length: 6412 characters
+2025-11-12 18:13:29,304 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-12 18:13:29,315 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 18:13:29,330 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 18:13:29,331 - rag_class_faiss - INFO - [OPENAI] Model used: gpt-5-nano-2025-08-07
+2025-11-12 18:13:29,331 - rag_class_faiss - INFO - [OPENAI] Finish reason: length
+2025-11-12 18:13:29,331 - rag_class_faiss - INFO - [OPENAI] Token usage:
+2025-11-12 18:13:29,332 - rag_class_faiss - INFO -   - Prompt tokens: 1918
+2025-11-12 18:13:29,332 - rag_class_faiss - INFO -   - Completion tokens: 500
+2025-11-12 18:13:29,333 - rag_class_faiss - INFO -   - Total tokens: 2418
+2025-11-12 18:13:29,334 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 18:13:29,363 - rag_class_faiss - INFO - [OPENAI] FULL COMPLETION CONTENT:
+2025-11-12 18:13:29,364 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 18:13:29,365 - rag_class_faiss - INFO - 
+2025-11-12 18:13:29,369 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 18:13:29,398 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 18:13:29,398 - fastapi_app - INFO - FAISS Index Results: Retrieved 5 sources
+2025-11-12 18:13:29,409 - fastapi_app - INFO -   Source 1: Unknown | Score: 1.4559962749481201
+2025-11-12 18:13:29,410 - fastapi_app - INFO -     Content preview: Frameworks
+:
+ 
+LangChain
+ 
+for
+ 
+language
+ 
+model
+ 
+integration,
+ 
+LangGraph
+ 
+for
+ 
+workflow
+ 
+mana...
+2025-11-12 18:13:29,412 - fastapi_app - INFO -   Source 2: Unknown | Score: 1.487444519996643
+2025-11-12 18:13:29,413 - fastapi_app - INFO -     Content preview: stions
+ 
+and
+ 
+retention
+ 
+offers),
+ 
+and
+ 
+service
+ 
+upgrades
+ 
+(analyzing
+ 
+current
+ 
+bookings
+ 
+a...
+2025-11-12 18:13:29,414 - fastapi_app - INFO -   Source 3: Unknown | Score: 1.505075454711914
+2025-11-12 18:13:29,433 - fastapi_app - INFO -   Source 4: Unknown | Score: 1.5078129768371582
+2025-11-12 18:13:29,433 - fastapi_app - INFO -     Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Comp...
+2025-11-12 18:13:29,435 - fastapi_app - INFO -   Source 5: Unknown | Score: 1.5101808309555054
+2025-11-12 18:13:29,435 - fastapi_app - INFO -     Content preview: Complete Project Details: Beauty
+
+PROJECT:
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+Project
+ 
+Overview
+ 
+Be...
+2025-11-12 18:13:29,437 - fastapi_app - INFO - OpenAI Response Length: 0 characters
+2025-11-12 18:13:29,437 - fastapi_app - INFO - OpenAI Answer: 
+2025-11-12 18:13:29,438 - fastapi_app - INFO - Added interaction to session 123... | Messages in session: 1
+2025-11-12 18:13:29,438 - fastapi_app - INFO - Request completed successfully
+2025-11-12 18:13:29,439 - fastapi_app - INFO - ============================================================
+2025-11-12 18:25:03,851 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-12 18:25:03,879 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-12 18:25:03,930 - fastapi_app - INFO - ============================================================
+2025-11-12 18:25:03,931 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-12 18:25:03,931 - fastapi_app - INFO - Loading FAISS index...
+2025-11-12 18:25:03,931 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-12 18:25:03,961 - fastapi_app - INFO - ============================================================
+2025-11-12 18:25:50,352 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-12 18:25:50,375 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-12 18:25:50,417 - fastapi_app - INFO - ============================================================
+2025-11-12 18:25:50,417 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-12 18:25:50,417 - fastapi_app - INFO - Loading FAISS index...
+2025-11-12 18:25:50,418 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-12 18:25:50,444 - fastapi_app - INFO - ============================================================
+2025-11-12 18:25:56,497 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-12 18:25:56,530 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-12 18:25:56,593 - fastapi_app - INFO - ============================================================
+2025-11-12 18:25:56,593 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-12 18:25:56,594 - fastapi_app - INFO - Loading FAISS index...
+2025-11-12 18:25:56,594 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-12 18:25:56,650 - fastapi_app - INFO - ============================================================
+2025-11-12 18:26:06,367 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-12 18:26:06,398 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-12 18:26:06,450 - fastapi_app - INFO - ============================================================
+2025-11-12 18:26:06,450 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-12 18:26:06,451 - fastapi_app - INFO - Loading FAISS index...
+2025-11-12 18:26:06,451 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-12 18:26:06,482 - fastapi_app - INFO - ============================================================
+2025-11-12 18:30:46,425 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-12 18:30:46,455 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-12 18:30:46,504 - fastapi_app - INFO - ============================================================
+2025-11-12 18:30:46,505 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-12 18:30:46,505 - fastapi_app - INFO - Loading FAISS index...
+2025-11-12 18:30:46,505 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-12 18:30:46,570 - fastapi_app - INFO - ============================================================
+2025-11-12 18:31:33,626 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-12 18:31:33,650 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-12 18:31:33,693 - fastapi_app - INFO - ============================================================
+2025-11-12 18:31:33,693 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-12 18:31:33,694 - fastapi_app - INFO - Loading FAISS index...
+2025-11-12 18:31:33,694 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-12 18:31:33,720 - fastapi_app - INFO - ============================================================
+2025-11-12 18:32:24,494 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-12 18:32:24,524 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-12 18:32:24,577 - fastapi_app - INFO - ============================================================
+2025-11-12 18:32:24,577 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-12 18:32:24,578 - fastapi_app - INFO - Loading FAISS index...
+2025-11-12 18:32:24,578 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-12 18:32:24,610 - fastapi_app - INFO - ============================================================
+2025-11-12 18:32:32,079 - fastapi_app - INFO - ============================================================
+2025-11-12 18:32:32,080 - fastapi_app - INFO - NEW CHAT REQUEST | Session: 333...
+2025-11-12 18:32:32,080 - fastapi_app - INFO - User Query: hi
+2025-11-12 18:32:32,080 - fastapi_app - INFO - History Length: 0 messages
+2025-11-12 18:32:32,080 - fastapi_app - INFO - Querying RAG system...
+2025-11-12 18:32:32,081 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 18:32:32,081 - rag_class_faiss - INFO - [QUERY_RAG] Starting RAG query pipeline
+2025-11-12 18:32:32,081 - rag_class_faiss - INFO - [QUERY_RAG] Original query: 'hi'
+2025-11-12 18:32:32,082 - rag_class_faiss - INFO - [QUERY_RAG] Model: gpt-5-nano
+2025-11-12 18:32:32,082 - rag_class_faiss - INFO - [QUERY_RAG] Temperature: 0.1
+2025-11-12 18:32:32,083 - rag_class_faiss - INFO - [FAISS] Searching for query: 'hi' (top_k=5)
+2025-11-12 18:32:34,065 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-11-12 18:32:34,085 - rag_class_faiss - INFO - [FAISS] Document 1:
+2025-11-12 18:32:34,085 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-12 18:32:34,085 - rag_class_faiss - INFO -   - Section: Full Details Part 1
+2025-11-12 18:32:34,086 - rag_class_faiss - INFO -   - Project: HubSpot
+2025-11-12 18:32:34,086 - rag_class_faiss - INFO -   - Score: 1.4352389574050903
+2025-11-12 18:32:34,086 - rag_class_faiss - INFO -   - Content preview: Complete Project Details: HubSpot
+
+PROJECT:
+ 
+HubSpot
+ 
+CRM
+ 
+Enhancement
+ 
+Project
+ 
+Overview
+ 
+This
+ 
+project
+ 
+involved
+ 
+developing
+ 
+an
+ 
+intelli...
+2025-11-12 18:32:34,087 - rag_class_faiss - INFO - [FAISS] Document 2:
+2025-11-12 18:32:34,088 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-12 18:32:34,088 - rag_class_faiss - INFO -   - Section: Full Details Part 3
+2025-11-12 18:32:34,088 - rag_class_faiss - INFO -   - Project: HubSpot
+2025-11-12 18:32:34,089 - rag_class_faiss - INFO -   - Score: 1.437392234802246
+2025-11-12 18:32:34,089 - rag_class_faiss - INFO -   - Content preview: the
+ 
+system
+ 
+can
+ 
+understand
+ 
+business
+ 
+context
+ 
+and
+ 
+apply
+ 
+appropriate
+ 
+CRM
+ 
+processes
+ 
+based
+ 
+on
+ 
+specific
+ 
+scenarios,
+ 
+industry
+ 
+r...
+2025-11-12 18:32:34,090 - rag_class_faiss - INFO - [FAISS] Document 3:
+2025-11-12 18:32:34,090 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-12 18:32:34,091 - rag_class_faiss - INFO -   - Section: Full Details Part 4
+2025-11-12 18:32:34,091 - rag_class_faiss - INFO -   - Project: Zebra
+2025-11-12 18:32:34,091 - rag_class_faiss - INFO -   - Score: 1.4454725980758667
+2025-11-12 18:32:34,092 - rag_class_faiss - INFO -   - Content preview: testing
+ 
+and
+ 
+deployment
+
+Keywords: zebra, full project details, complete information...
+2025-11-12 18:32:34,093 - rag_class_faiss - INFO - [FAISS] Document 4:
+2025-11-12 18:32:34,094 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-12 18:32:34,094 - rag_class_faiss - INFO -   - Section: Full Details Part 6
+2025-11-12 18:32:34,095 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-12 18:32:34,095 - rag_class_faiss - INFO -   - Score: 1.4501101970672607
+2025-11-12 18:32:34,110 - rag_class_faiss - INFO - [FAISS] Document 5:
+2025-11-12 18:32:34,111 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-12 18:32:34,111 - rag_class_faiss - INFO -   - Section: Full Details Part 3
+2025-11-12 18:32:34,112 - rag_class_faiss - INFO -   - Project: Structural
+2025-11-12 18:32:34,112 - rag_class_faiss - INFO -   - Score: 1.4640729427337646
+2025-11-12 18:32:34,112 - rag_class_faiss - INFO -   - Content preview: ticated
+ 
+database
+ 
+backend,
+ 
+working
+ 
+seamlessly
+ 
+with
+ 
+the
+ 
+lesson
+ 
+planning
+ 
+capabilities.
+ 
+This
+ 
+integration
+ 
+maintains
+ 
+comprehensive...
+2025-11-12 18:32:34,114 - rag_class_faiss - INFO - [QUERY_RAG] Context length: 5379 characters
+2025-11-12 18:32:34,114 - rag_class_faiss - INFO - [QUERY_RAG] Using 5 documents
+2025-11-12 18:32:34,114 - rag_class_faiss - INFO - [OPENAI] Sending request to OpenAI API...
+2025-11-12 18:32:34,115 - rag_class_faiss - INFO - [OPENAI] System prompt length: 1857 characters
+2025-11-12 18:32:34,115 - rag_class_faiss - INFO - [OPENAI] User prompt length: 5618 characters
+2025-11-12 18:32:40,545 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-12 18:32:40,556 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 18:32:40,573 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 18:32:40,573 - rag_class_faiss - INFO - [OPENAI] Model used: gpt-5-nano-2025-08-07
+2025-11-12 18:32:40,575 - rag_class_faiss - INFO - [OPENAI] Finish reason: length
+2025-11-12 18:32:40,575 - rag_class_faiss - INFO - [OPENAI] Token usage:
+2025-11-12 18:32:40,576 - rag_class_faiss - INFO -   - Prompt tokens: 1690
+2025-11-12 18:32:40,576 - rag_class_faiss - INFO -   - Completion tokens: 500
+2025-11-12 18:32:40,578 - rag_class_faiss - INFO -   - Total tokens: 2190
+2025-11-12 18:32:40,579 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 18:32:40,579 - rag_class_faiss - INFO - [OPENAI] FULL COMPLETION CONTENT:
+2025-11-12 18:32:40,579 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 18:32:40,580 - rag_class_faiss - INFO - 
+2025-11-12 18:32:40,580 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 18:32:40,599 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 18:32:40,600 - fastapi_app - INFO - FAISS Index Results: Retrieved 5 sources
+2025-11-12 18:32:40,600 - fastapi_app - INFO -   Source 1: Unknown | Score: 1.4352389574050903
+2025-11-12 18:32:40,600 - fastapi_app - INFO -     Content preview: Complete Project Details: HubSpot
+
+PROJECT:
+ 
+HubSpot
+ 
+CRM
+ 
+Enhancement
+ 
+Project
+ 
+Overview
+ 
+Thi...
+2025-11-12 18:32:40,601 - fastapi_app - INFO -   Source 2: Unknown | Score: 1.437392234802246
+2025-11-12 18:32:40,602 - fastapi_app - INFO -     Content preview: the
+ 
+system
+ 
+can
+ 
+understand
+ 
+business
+ 
+context
+ 
+and
+ 
+apply
+ 
+appropriate
+ 
+CRM
+ 
+processes
+ ...
+2025-11-12 18:32:40,603 - fastapi_app - INFO -   Source 3: Unknown | Score: 1.4454725980758667
+2025-11-12 18:32:40,604 - fastapi_app - INFO -     Content preview: testing
+ 
+and
+ 
+deployment
+
+Keywords: zebra, full project details, complete information...
+2025-11-12 18:32:40,605 - fastapi_app - INFO -   Source 4: Unknown | Score: 1.4501101970672607
+2025-11-12 18:32:40,605 - fastapi_app - INFO -     Content preview: Frameworks
+:
+ 
+LangChain
+ 
+for
+ 
+language
+ 
+model
+ 
+integration,
+ 
+LangGraph
+ 
+for
+ 
+workflow
+ 
+mana...
+2025-11-12 18:32:40,608 - fastapi_app - INFO -   Source 5: Unknown | Score: 1.4640729427337646
+2025-11-12 18:32:40,609 - fastapi_app - INFO -     Content preview: ticated
+ 
+database
+ 
+backend,
+ 
+working
+ 
+seamlessly
+ 
+with
+ 
+the
+ 
+lesson
+ 
+planning
+ 
+capabilities...
+2025-11-12 18:32:40,611 - fastapi_app - INFO - OpenAI Response Length: 0 characters
+2025-11-12 18:32:40,612 - fastapi_app - INFO - OpenAI Answer: 
+2025-11-12 18:32:40,612 - fastapi_app - INFO - Added interaction to session 333... | Messages in session: 1
+2025-11-12 18:32:40,613 - fastapi_app - INFO - Request completed successfully
+2025-11-12 18:32:40,613 - fastapi_app - INFO - ============================================================
+2025-11-12 18:35:46,634 - fastapi_app - INFO - ============================================================
+2025-11-12 18:35:46,635 - fastapi_app - INFO - NEW CHAT REQUEST | Session: 333...
+2025-11-12 18:35:46,635 - fastapi_app - INFO - User Query: Tell me about your projects?
+2025-11-12 18:35:46,635 - fastapi_app - INFO - History Length: 1 messages
+2025-11-12 18:35:46,635 - fastapi_app - INFO - Querying RAG system...
+2025-11-12 18:35:46,636 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 18:35:46,636 - rag_class_faiss - INFO - [QUERY_RAG] Starting RAG query pipeline
+2025-11-12 18:35:46,636 - rag_class_faiss - INFO - [QUERY_RAG] Original query: 'Tell me about your projects?'
+2025-11-12 18:35:46,637 - rag_class_faiss - INFO - [QUERY_RAG] Model: gpt-5-nano
+2025-11-12 18:35:46,637 - rag_class_faiss - INFO - [QUERY_RAG] Temperature: 0.1
+2025-11-12 18:35:46,637 - rag_class_faiss - INFO - [REPHRASE] Original query: 'Tell me about your projects?'
+2025-11-12 18:35:46,638 - rag_class_faiss - INFO - [REPHRASE] Calling OpenAI to rephrase query...
+2025-11-12 18:35:48,323 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-12 18:35:48,342 - rag_class_faiss - INFO - [REPHRASE] Tokens used: 221 (prompt: 215, completion: 6)
+2025-11-12 18:35:48,342 - rag_class_faiss - INFO - [FAISS] Searching for query: 'Tell me about your projects.' (top_k=5)
+2025-11-12 18:35:49,834 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-11-12 18:35:49,849 - rag_class_faiss - INFO - [FAISS] Document 1:
+2025-11-12 18:35:49,850 - rag_class_faiss - INFO -   - Content Type: project_list
+2025-11-12 18:35:49,850 - rag_class_faiss - INFO -   - Section: Project List
+2025-11-12 18:35:49,850 - rag_class_faiss - INFO -   - Project: N/A
+2025-11-12 18:35:49,850 - rag_class_faiss - INFO -   - Score: 0.4790187180042267
+2025-11-12 18:35:49,851 - rag_class_faiss - INFO -   - Content preview: Our Projects - Complete List:
+
+1. Ramped
+2. Zebra
+3. HubSpot
+4. ProdKit
+5. Massive-Alliance
+6. Beauty
+7. Structural
+
+
+We have completed 7 major projec...
+2025-11-12 18:35:49,851 - rag_class_faiss - INFO - [FAISS] Document 2:
+2025-11-12 18:35:49,852 - rag_class_faiss - INFO -   - Content Type: project_highlights
+2025-11-12 18:35:49,852 - rag_class_faiss - INFO -   - Section: Project Highlights
+2025-11-12 18:35:49,852 - rag_class_faiss - INFO -   - Project: N/A
+2025-11-12 18:35:49,852 - rag_class_faiss - INFO -   - Score: 1.1427123546600342
+2025-11-12 18:35:49,865 - rag_class_faiss - INFO - [FAISS] Document 3:
+2025-11-12 18:35:49,865 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-12 18:35:49,866 - rag_class_faiss - INFO -   - Section: Full Details Part 4
+2025-11-12 18:35:49,866 - rag_class_faiss - INFO -   - Project: Zebra
+2025-11-12 18:35:49,866 - rag_class_faiss - INFO -   - Score: 1.2072372436523438
+2025-11-12 18:35:49,866 - rag_class_faiss - INFO -   - Content preview: testing
+ 
+and
+ 
+deployment
+
+Keywords: zebra, full project details, complete information...
+2025-11-12 18:35:49,867 - rag_class_faiss - INFO - [FAISS] Document 4:
+2025-11-12 18:35:49,867 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-12 18:35:49,868 - rag_class_faiss - INFO -   - Section: Full Details Part 5
+2025-11-12 18:35:49,868 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-12 18:35:49,868 - rag_class_faiss - INFO -   - Score: 1.2576637268066406
+2025-11-12 18:35:49,868 - rag_class_faiss - INFO -   - Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Compliance
+ 
+Implementation
+ 
+The
+ 
+system
+ 
+implement...
+2025-11-12 18:35:49,870 - rag_class_faiss - INFO - [FAISS] Document 5:
+2025-11-12 18:35:49,870 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-12 18:35:49,870 - rag_class_faiss - INFO -   - Section: Full Details Part 6
+2025-11-12 18:35:49,871 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-12 18:35:49,871 - rag_class_faiss - INFO -   - Score: 1.2617604732513428
+2025-11-12 18:35:49,885 - rag_class_faiss - INFO - [QUERY_RAG] Context length: 3201 characters
+2025-11-12 18:35:49,885 - rag_class_faiss - INFO - [QUERY_RAG] Using 5 documents
+2025-11-12 18:35:49,886 - rag_class_faiss - INFO - [OPENAI] Sending request to OpenAI API...
+2025-11-12 18:35:49,886 - rag_class_faiss - INFO - [OPENAI] System prompt length: 1857 characters
+2025-11-12 18:35:49,886 - rag_class_faiss - INFO - [OPENAI] User prompt length: 3512 characters
+2025-11-12 18:35:55,225 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-12 18:35:55,227 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 18:35:55,239 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 18:35:55,239 - rag_class_faiss - INFO - [OPENAI] Model used: gpt-5-nano-2025-08-07
+2025-11-12 18:35:55,240 - rag_class_faiss - INFO - [OPENAI] Finish reason: length
+2025-11-12 18:35:55,240 - rag_class_faiss - INFO - [OPENAI] Token usage:
+2025-11-12 18:35:55,240 - rag_class_faiss - INFO -   - Prompt tokens: 1173
+2025-11-12 18:35:55,241 - rag_class_faiss - INFO -   - Completion tokens: 500
+2025-11-12 18:35:55,241 - rag_class_faiss - INFO -   - Total tokens: 1673
+2025-11-12 18:35:55,241 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 18:35:55,241 - rag_class_faiss - INFO - [OPENAI] FULL COMPLETION CONTENT:
+2025-11-12 18:35:55,242 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 18:35:55,242 - rag_class_faiss - INFO - 
+2025-11-12 18:35:55,242 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 18:35:55,255 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 18:35:55,256 - fastapi_app - INFO - FAISS Index Results: Retrieved 5 sources
+2025-11-12 18:35:55,256 - fastapi_app - INFO -   Source 1: Unknown | Score: 0.4790187180042267
+2025-11-12 18:35:55,256 - fastapi_app - INFO -     Content preview: Our Projects - Complete List:
+
+1. Ramped
+2. Zebra
+3. HubSpot
+4. ProdKit
+5. Massive-Alliance
+6. Beaut...
+2025-11-12 18:35:55,257 - fastapi_app - INFO -   Source 2: Unknown | Score: 1.1427123546600342
+2025-11-12 18:35:55,269 - fastapi_app - INFO -   Source 3: Unknown | Score: 1.2072372436523438
+2025-11-12 18:35:55,270 - fastapi_app - INFO -     Content preview: testing
+ 
+and
+ 
+deployment
+
+Keywords: zebra, full project details, complete information...
+2025-11-12 18:35:55,270 - fastapi_app - INFO -   Source 4: Unknown | Score: 1.2576637268066406
+2025-11-12 18:35:55,271 - fastapi_app - INFO -     Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Comp...
+2025-11-12 18:35:55,272 - fastapi_app - INFO -   Source 5: Unknown | Score: 1.2617604732513428
+2025-11-12 18:35:55,272 - fastapi_app - INFO -     Content preview: Frameworks
+:
+ 
+LangChain
+ 
+for
+ 
+language
+ 
+model
+ 
+integration,
+ 
+LangGraph
+ 
+for
+ 
+workflow
+ 
+mana...
+2025-11-12 18:35:55,274 - fastapi_app - INFO - OpenAI Response Length: 0 characters
+2025-11-12 18:35:55,274 - fastapi_app - INFO - OpenAI Answer: 
+2025-11-12 18:35:55,274 - fastapi_app - INFO - Added interaction to session 333... | Messages in session: 2
+2025-11-12 18:35:55,274 - fastapi_app - INFO - Request completed successfully
+2025-11-12 18:35:55,275 - fastapi_app - INFO - ============================================================
+2025-11-12 18:59:45,988 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-12 18:59:46,349 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-12 18:59:46,683 - fastapi_app - INFO - ============================================================
+2025-11-12 18:59:46,683 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-12 18:59:46,683 - fastapi_app - INFO - Loading FAISS index...
+2025-11-12 18:59:46,684 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-12 18:59:46,881 - fastapi_app - INFO - ============================================================
+2025-11-12 19:00:10,542 - fastapi_app - INFO - ============================================================
+2025-11-12 19:00:10,542 - fastapi_app - INFO - NEW CHAT REQUEST | Session: 333...
+2025-11-12 19:00:10,543 - fastapi_app - INFO - User Query: hi
+2025-11-12 19:00:10,543 - fastapi_app - INFO - History Length: 0 messages
+2025-11-12 19:00:10,543 - fastapi_app - INFO - Querying RAG system...
+2025-11-12 19:00:10,544 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 19:00:10,544 - rag_class_faiss - INFO - [QUERY_RAG] Starting RAG query pipeline
+2025-11-12 19:00:10,545 - rag_class_faiss - INFO - [QUERY_RAG] Original query: 'hi'
+2025-11-12 19:00:10,545 - rag_class_faiss - INFO - [QUERY_RAG] Model: gpt-5-mini
+2025-11-12 19:00:10,545 - rag_class_faiss - INFO - [QUERY_RAG] Temperature: 0.1
+2025-11-12 19:00:10,546 - rag_class_faiss - INFO - [FAISS] Searching for query: 'hi' (top_k=5)
+2025-11-12 19:00:12,263 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-11-12 19:00:12,386 - rag_class_faiss - INFO - [FAISS] Document 1:
+2025-11-12 19:00:12,387 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-12 19:00:12,387 - rag_class_faiss - INFO -   - Section: Full Details Part 1
+2025-11-12 19:00:12,388 - rag_class_faiss - INFO -   - Project: HubSpot
+2025-11-12 19:00:12,388 - rag_class_faiss - INFO -   - Score: 1.4352389574050903
+2025-11-12 19:00:12,389 - rag_class_faiss - INFO -   - Content preview: Complete Project Details: HubSpot
+
+PROJECT:
+ 
+HubSpot
+ 
+CRM
+ 
+Enhancement
+ 
+Project
+ 
+Overview
+ 
+This
+ 
+project
+ 
+involved
+ 
+developing
+ 
+an
+ 
+intelli...
+2025-11-12 19:00:12,391 - rag_class_faiss - INFO - [FAISS] Document 2:
+2025-11-12 19:00:12,392 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-12 19:00:12,392 - rag_class_faiss - INFO -   - Section: Full Details Part 3
+2025-11-12 19:00:12,393 - rag_class_faiss - INFO -   - Project: HubSpot
+2025-11-12 19:00:12,393 - rag_class_faiss - INFO -   - Score: 1.437392234802246
+2025-11-12 19:00:12,394 - rag_class_faiss - INFO -   - Content preview: the
+ 
+system
+ 
+can
+ 
+understand
+ 
+business
+ 
+context
+ 
+and
+ 
+apply
+ 
+appropriate
+ 
+CRM
+ 
+processes
+ 
+based
+ 
+on
+ 
+specific
+ 
+scenarios,
+ 
+industry
+ 
+r...
+2025-11-12 19:00:12,397 - rag_class_faiss - INFO - [FAISS] Document 3:
+2025-11-12 19:00:12,398 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-12 19:00:12,398 - rag_class_faiss - INFO -   - Section: Full Details Part 4
+2025-11-12 19:00:12,399 - rag_class_faiss - INFO -   - Project: Zebra
+2025-11-12 19:00:12,400 - rag_class_faiss - INFO -   - Score: 1.4454725980758667
+2025-11-12 19:00:12,400 - rag_class_faiss - INFO -   - Content preview: testing
+ 
+and
+ 
+deployment
+
+Keywords: zebra, full project details, complete information...
+2025-11-12 19:00:12,401 - rag_class_faiss - INFO - [FAISS] Document 4:
+2025-11-12 19:00:12,402 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-12 19:00:12,403 - rag_class_faiss - INFO -   - Section: Full Details Part 6
+2025-11-12 19:00:12,403 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-12 19:00:12,404 - rag_class_faiss - INFO -   - Score: 1.4501101970672607
+2025-11-12 19:00:12,429 - rag_class_faiss - INFO - [FAISS] Document 5:
+2025-11-12 19:00:12,429 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-12 19:00:12,430 - rag_class_faiss - INFO -   - Section: Full Details Part 3
+2025-11-12 19:00:12,430 - rag_class_faiss - INFO -   - Project: Structural
+2025-11-12 19:00:12,430 - rag_class_faiss - INFO -   - Score: 1.4640729427337646
+2025-11-12 19:00:12,431 - rag_class_faiss - INFO -   - Content preview: ticated
+ 
+database
+ 
+backend,
+ 
+working
+ 
+seamlessly
+ 
+with
+ 
+the
+ 
+lesson
+ 
+planning
+ 
+capabilities.
+ 
+This
+ 
+integration
+ 
+maintains
+ 
+comprehensive...
+2025-11-12 19:00:12,433 - rag_class_faiss - INFO - [QUERY_RAG] Context length: 5379 characters
+2025-11-12 19:00:12,434 - rag_class_faiss - INFO - [QUERY_RAG] Using 5 documents
+2025-11-12 19:00:12,435 - rag_class_faiss - INFO - [OPENAI] Sending request to OpenAI API...
+2025-11-12 19:00:12,436 - rag_class_faiss - INFO - [OPENAI] System prompt length: 1857 characters
+2025-11-12 19:00:12,437 - rag_class_faiss - INFO - [OPENAI] User prompt length: 5618 characters
+2025-11-12 19:00:22,906 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-12 19:00:22,935 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 19:00:22,957 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 19:00:22,957 - rag_class_faiss - INFO - [OPENAI] Model used: gpt-5-mini-2025-08-07
+2025-11-12 19:00:22,957 - rag_class_faiss - INFO - [OPENAI] Finish reason: length
+2025-11-12 19:00:22,958 - rag_class_faiss - INFO - [OPENAI] Token usage:
+2025-11-12 19:00:22,958 - rag_class_faiss - INFO -   - Prompt tokens: 1690
+2025-11-12 19:00:22,959 - rag_class_faiss - INFO -   - Completion tokens: 500
+2025-11-12 19:00:22,959 - rag_class_faiss - INFO -   - Total tokens: 2190
+2025-11-12 19:00:22,960 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 19:00:22,960 - rag_class_faiss - INFO - [OPENAI] FULL COMPLETION CONTENT:
+2025-11-12 19:00:22,961 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 19:00:22,961 - rag_class_faiss - INFO - 
+2025-11-12 19:00:22,962 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 19:00:22,983 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 19:00:22,984 - fastapi_app - INFO - FAISS Index Results: Retrieved 5 sources
+2025-11-12 19:00:22,984 - fastapi_app - INFO -   Source 1: Unknown | Score: 1.4352389574050903
+2025-11-12 19:00:22,985 - fastapi_app - INFO -     Content preview: Complete Project Details: HubSpot
+
+PROJECT:
+ 
+HubSpot
+ 
+CRM
+ 
+Enhancement
+ 
+Project
+ 
+Overview
+ 
+Thi...
+2025-11-12 19:00:22,986 - fastapi_app - INFO -   Source 2: Unknown | Score: 1.437392234802246
+2025-11-12 19:00:22,987 - fastapi_app - INFO -     Content preview: the
+ 
+system
+ 
+can
+ 
+understand
+ 
+business
+ 
+context
+ 
+and
+ 
+apply
+ 
+appropriate
+ 
+CRM
+ 
+processes
+ ...
+2025-11-12 19:00:22,989 - fastapi_app - INFO -   Source 3: Unknown | Score: 1.4454725980758667
+2025-11-12 19:00:22,990 - fastapi_app - INFO -     Content preview: testing
+ 
+and
+ 
+deployment
+
+Keywords: zebra, full project details, complete information...
+2025-11-12 19:00:22,991 - fastapi_app - INFO -   Source 4: Unknown | Score: 1.4501101970672607
+2025-11-12 19:00:22,992 - fastapi_app - INFO -     Content preview: Frameworks
+:
+ 
+LangChain
+ 
+for
+ 
+language
+ 
+model
+ 
+integration,
+ 
+LangGraph
+ 
+for
+ 
+workflow
+ 
+mana...
+2025-11-12 19:00:22,994 - fastapi_app - INFO -   Source 5: Unknown | Score: 1.4640729427337646
+2025-11-12 19:00:22,994 - fastapi_app - INFO -     Content preview: ticated
+ 
+database
+ 
+backend,
+ 
+working
+ 
+seamlessly
+ 
+with
+ 
+the
+ 
+lesson
+ 
+planning
+ 
+capabilities...
+2025-11-12 19:00:22,996 - fastapi_app - INFO - OpenAI Response Length: 0 characters
+2025-11-12 19:00:22,997 - fastapi_app - INFO - OpenAI Answer: 
+2025-11-12 19:00:22,997 - fastapi_app - INFO - Added interaction to session 333... | Messages in session: 1
+2025-11-12 19:00:22,998 - fastapi_app - INFO - Request completed successfully
+2025-11-12 19:00:22,998 - fastapi_app - INFO - ============================================================
+2025-11-12 19:07:59,760 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-12 19:07:59,783 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-12 19:07:59,833 - fastapi_app - INFO - ============================================================
+2025-11-12 19:07:59,833 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-12 19:07:59,834 - fastapi_app - INFO - Loading FAISS index...
+2025-11-12 19:07:59,835 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-12 19:07:59,862 - fastapi_app - INFO - ============================================================
+2025-11-12 19:08:27,217 - fastapi_app - INFO - ============================================================
+2025-11-12 19:08:27,217 - fastapi_app - INFO - NEW CHAT REQUEST | Session: 333...
+2025-11-12 19:08:27,218 - fastapi_app - INFO - User Query: hi
+2025-11-12 19:08:27,218 - fastapi_app - INFO - History Length: 0 messages
+2025-11-12 19:08:27,218 - fastapi_app - INFO - Querying RAG system...
+2025-11-12 19:08:27,219 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 19:08:27,219 - rag_class_faiss - INFO - [QUERY_RAG] Starting RAG query pipeline
+2025-11-12 19:08:27,220 - rag_class_faiss - INFO - [QUERY_RAG] Original query: 'hi'
+2025-11-12 19:08:27,220 - rag_class_faiss - INFO - [QUERY_RAG] Model: gpt-3.5-turbo
+2025-11-12 19:08:27,221 - rag_class_faiss - INFO - [QUERY_RAG] Temperature: 0.1
+2025-11-12 19:08:27,221 - rag_class_faiss - INFO - [FAISS] Searching for query: 'hi' (top_k=5)
+2025-11-12 19:08:28,264 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-11-12 19:08:28,284 - rag_class_faiss - INFO - [FAISS] Document 1:
+2025-11-12 19:08:28,285 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-12 19:08:28,285 - rag_class_faiss - INFO -   - Section: Full Details Part 1
+2025-11-12 19:08:28,285 - rag_class_faiss - INFO -   - Project: HubSpot
+2025-11-12 19:08:28,285 - rag_class_faiss - INFO -   - Score: 1.4352389574050903
+2025-11-12 19:08:28,286 - rag_class_faiss - INFO -   - Content preview: Complete Project Details: HubSpot
+
+PROJECT:
+ 
+HubSpot
+ 
+CRM
+ 
+Enhancement
+ 
+Project
+ 
+Overview
+ 
+This
+ 
+project
+ 
+involved
+ 
+developing
+ 
+an
+ 
+intelli...
+2025-11-12 19:08:28,288 - rag_class_faiss - INFO - [FAISS] Document 2:
+2025-11-12 19:08:28,288 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-12 19:08:28,288 - rag_class_faiss - INFO -   - Section: Full Details Part 3
+2025-11-12 19:08:28,289 - rag_class_faiss - INFO -   - Project: HubSpot
+2025-11-12 19:08:28,289 - rag_class_faiss - INFO -   - Score: 1.437392234802246
+2025-11-12 19:08:28,289 - rag_class_faiss - INFO -   - Content preview: the
+ 
+system
+ 
+can
+ 
+understand
+ 
+business
+ 
+context
+ 
+and
+ 
+apply
+ 
+appropriate
+ 
+CRM
+ 
+processes
+ 
+based
+ 
+on
+ 
+specific
+ 
+scenarios,
+ 
+industry
+ 
+r...
+2025-11-12 19:08:28,292 - rag_class_faiss - INFO - [FAISS] Document 3:
+2025-11-12 19:08:28,293 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-12 19:08:28,293 - rag_class_faiss - INFO -   - Section: Full Details Part 4
+2025-11-12 19:08:28,294 - rag_class_faiss - INFO -   - Project: Zebra
+2025-11-12 19:08:28,294 - rag_class_faiss - INFO -   - Score: 1.4454725980758667
+2025-11-12 19:08:28,294 - rag_class_faiss - INFO -   - Content preview: testing
+ 
+and
+ 
+deployment
+
+Keywords: zebra, full project details, complete information...
+2025-11-12 19:08:28,295 - rag_class_faiss - INFO - [FAISS] Document 4:
+2025-11-12 19:08:28,296 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-12 19:08:28,296 - rag_class_faiss - INFO -   - Section: Full Details Part 6
+2025-11-12 19:08:28,296 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-12 19:08:28,297 - rag_class_faiss - INFO -   - Score: 1.4501101970672607
+2025-11-12 19:08:28,313 - rag_class_faiss - INFO - [FAISS] Document 5:
+2025-11-12 19:08:28,314 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-12 19:08:28,314 - rag_class_faiss - INFO -   - Section: Full Details Part 3
+2025-11-12 19:08:28,314 - rag_class_faiss - INFO -   - Project: Structural
+2025-11-12 19:08:28,315 - rag_class_faiss - INFO -   - Score: 1.4640729427337646
+2025-11-12 19:08:28,315 - rag_class_faiss - INFO -   - Content preview: ticated
+ 
+database
+ 
+backend,
+ 
+working
+ 
+seamlessly
+ 
+with
+ 
+the
+ 
+lesson
+ 
+planning
+ 
+capabilities.
+ 
+This
+ 
+integration
+ 
+maintains
+ 
+comprehensive...
+2025-11-12 19:08:28,316 - rag_class_faiss - INFO - [QUERY_RAG] Context length: 5379 characters
+2025-11-12 19:08:28,316 - rag_class_faiss - INFO - [QUERY_RAG] Using 5 documents
+2025-11-12 19:08:28,316 - rag_class_faiss - INFO - [OPENAI] Sending request to OpenAI API...
+2025-11-12 19:08:28,317 - rag_class_faiss - INFO - [OPENAI] System prompt length: 1857 characters
+2025-11-12 19:08:28,317 - rag_class_faiss - INFO - [OPENAI] User prompt length: 5618 characters
+2025-11-12 19:08:31,406 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-12 19:08:31,544 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 19:08:31,556 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 19:08:31,557 - rag_class_faiss - INFO - [OPENAI] Model used: gpt-3.5-turbo-0125
+2025-11-12 19:08:31,558 - rag_class_faiss - INFO - [OPENAI] Finish reason: stop
+2025-11-12 19:08:31,559 - rag_class_faiss - INFO - [OPENAI] Token usage:
+2025-11-12 19:08:31,559 - rag_class_faiss - INFO -   - Prompt tokens: 1702
+2025-11-12 19:08:31,560 - rag_class_faiss - INFO -   - Completion tokens: 40
+2025-11-12 19:08:31,560 - rag_class_faiss - INFO -   - Total tokens: 1742
+2025-11-12 19:08:31,561 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 19:08:31,561 - rag_class_faiss - INFO - [OPENAI] FULL COMPLETION CONTENT:
+2025-11-12 19:08:31,561 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 19:08:31,562 - rag_class_faiss - INFO - Hello! How can I assist you today with information about our company, projects, technologies, or capabilities? Feel free to ask any specific questions you have based on the details provided in our project documentation.
+2025-11-12 19:08:31,562 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 19:08:31,574 - rag_class_faiss - INFO - ================================================================================
+2025-11-12 19:08:31,575 - fastapi_app - INFO - FAISS Index Results: Retrieved 5 sources
+2025-11-12 19:08:31,575 - fastapi_app - INFO -   Source 1: Unknown | Score: 1.4352389574050903
+2025-11-12 19:08:31,575 - fastapi_app - INFO -     Content preview: Complete Project Details: HubSpot
+
+PROJECT:
+ 
+HubSpot
+ 
+CRM
+ 
+Enhancement
+ 
+Project
+ 
+Overview
+ 
+Thi...
+2025-11-12 19:08:31,576 - fastapi_app - INFO -   Source 2: Unknown | Score: 1.437392234802246
+2025-11-12 19:08:31,576 - fastapi_app - INFO -     Content preview: the
+ 
+system
+ 
+can
+ 
+understand
+ 
+business
+ 
+context
+ 
+and
+ 
+apply
+ 
+appropriate
+ 
+CRM
+ 
+processes
+ ...
+2025-11-12 19:08:31,578 - fastapi_app - INFO -   Source 3: Unknown | Score: 1.4454725980758667
+2025-11-12 19:08:31,578 - fastapi_app - INFO -     Content preview: testing
+ 
+and
+ 
+deployment
+
+Keywords: zebra, full project details, complete information...
+2025-11-12 19:08:31,580 - fastapi_app - INFO -   Source 4: Unknown | Score: 1.4501101970672607
+2025-11-12 19:08:31,580 - fastapi_app - INFO -     Content preview: Frameworks
+:
+ 
+LangChain
+ 
+for
+ 
+language
+ 
+model
+ 
+integration,
+ 
+LangGraph
+ 
+for
+ 
+workflow
+ 
+mana...
+2025-11-12 19:08:31,582 - fastapi_app - INFO -   Source 5: Unknown | Score: 1.4640729427337646
+2025-11-12 19:08:31,582 - fastapi_app - INFO -     Content preview: ticated
+ 
+database
+ 
+backend,
+ 
+working
+ 
+seamlessly
+ 
+with
+ 
+the
+ 
+lesson
+ 
+planning
+ 
+capabilities...
+2025-11-12 19:08:31,585 - fastapi_app - INFO - OpenAI Response Length: 219 characters
+2025-11-12 19:08:31,585 - fastapi_app - INFO - OpenAI Answer: Hello! How can I assist you today with information about our company, projects, technologies, or capabilities? Feel free to ask any specific questions you have based on the details provided in our project documentation.
+2025-11-12 19:08:31,586 - fastapi_app - INFO - Added interaction to session 333... | Messages in session: 1
+2025-11-12 19:08:31,586 - fastapi_app - INFO - Request completed successfully
+2025-11-12 19:08:31,586 - fastapi_app - INFO - ============================================================
+2025-11-13 13:34:26,141 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-13 13:34:26,203 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-13 13:34:26,353 - fastapi_app - INFO - ============================================================
+2025-11-13 13:34:26,353 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-13 13:34:26,354 - fastapi_app - INFO - Loading FAISS index...
+2025-11-13 13:34:26,355 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-13 13:34:26,431 - fastapi_app - INFO - ============================================================
+2025-11-13 13:34:34,922 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-13 13:34:34,961 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-13 13:34:35,042 - fastapi_app - INFO - ============================================================
+2025-11-13 13:34:35,043 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-13 13:34:35,044 - fastapi_app - INFO - Loading FAISS index...
+2025-11-13 13:34:35,045 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-13 13:34:35,097 - fastapi_app - INFO - ============================================================
+2025-11-13 13:35:01,790 - fastapi_app - INFO - ============================================================
+2025-11-13 13:35:01,791 - fastapi_app - INFO - NEW CHAT REQUEST | Session: 333...
+2025-11-13 13:35:01,792 - fastapi_app - INFO - User Query: Hello
+2025-11-13 13:35:01,793 - fastapi_app - INFO - History Length: 0 messages
+2025-11-13 13:35:01,793 - fastapi_app - INFO - Querying RAG system...
+2025-11-13 13:35:01,794 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:35:01,794 - rag_class_faiss - INFO - [QUERY_RAG] Starting RAG query pipeline
+2025-11-13 13:35:01,795 - rag_class_faiss - INFO - [QUERY_RAG] Original query: 'Hello'
+2025-11-13 13:35:01,796 - rag_class_faiss - INFO - [QUERY_RAG] Model: gpt-4o-mini
+2025-11-13 13:35:01,796 - rag_class_faiss - INFO - [QUERY_RAG] Temperature: 0.1
+2025-11-13 13:35:01,797 - rag_class_faiss - INFO - [FAISS] Searching for query: 'Hello' (top_k=5)
+2025-11-13 13:35:04,050 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-11-13 13:35:04,110 - rag_class_faiss - INFO - [FAISS] Document 1:
+2025-11-13 13:35:04,111 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 13:35:04,112 - rag_class_faiss - INFO -   - Section: Full Details Part 1
+2025-11-13 13:35:04,113 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 13:35:04,114 - rag_class_faiss - INFO -   - Score: 1.468724250793457
+2025-11-13 13:35:04,115 - rag_class_faiss - INFO -   - Content preview: Complete Project Details: Beauty
+
+PROJECT:
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+Project
+ 
+Overview
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+represents
+ 
+a
+ 
+cut...
+2025-11-13 13:35:04,122 - rag_class_faiss - INFO - [FAISS] Document 2:
+2025-11-13 13:35:04,123 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 13:35:04,124 - rag_class_faiss - INFO -   - Section: Full Details Part 6
+2025-11-13 13:35:04,124 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 13:35:04,125 - rag_class_faiss - INFO -   - Score: 1.4755690097808838
+2025-11-13 13:35:04,163 - rag_class_faiss - INFO - [FAISS] Document 3:
+2025-11-13 13:35:04,164 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 13:35:04,166 - rag_class_faiss - INFO -   - Section: Full Details Part 4
+2025-11-13 13:35:04,168 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 13:35:04,169 - rag_class_faiss - INFO -   - Score: 1.491527795791626
+2025-11-13 13:35:04,170 - rag_class_faiss - INFO -   - Content preview: elevant
+ 
+beauty
+ 
+products.
+ 
+The
+ 
+beauty
+ 
+trend
+ 
+suggestion
+ 
+system
+ 
+incorporates
+ 
+current
+ 
+industry
+ 
+trends,
+ 
+seasonal
+ 
+preferences,
+ 
+an...
+2025-11-13 13:35:04,175 - rag_class_faiss - INFO - [FAISS] Document 4:
+2025-11-13 13:35:04,175 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 13:35:04,176 - rag_class_faiss - INFO -   - Section: Full Details Part 5
+2025-11-13 13:35:04,177 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 13:35:04,178 - rag_class_faiss - INFO -   - Score: 1.5061006546020508
+2025-11-13 13:35:04,179 - rag_class_faiss - INFO -   - Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Compliance
+ 
+Implementation
+ 
+The
+ 
+system
+ 
+implement...
+2025-11-13 13:35:04,185 - rag_class_faiss - INFO - [FAISS] Document 5:
+2025-11-13 13:35:04,186 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 13:35:04,187 - rag_class_faiss - INFO -   - Section: Full Details Part 3
+2025-11-13 13:35:04,188 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 13:35:04,189 - rag_class_faiss - INFO -   - Score: 1.5095313787460327
+2025-11-13 13:35:04,190 - rag_class_faiss - INFO -   - Content preview: stions
+ 
+and
+ 
+retention
+ 
+offers),
+ 
+and
+ 
+service
+ 
+upgrades
+ 
+(analyzing
+ 
+current
+ 
+bookings
+ 
+and
+ 
+suggesting
+ 
+enhanced
+ 
+services).
+ 
+The
+ 
+mo...
+2025-11-13 13:35:04,193 - rag_class_faiss - INFO - [QUERY_RAG] Context length: 7530 characters
+2025-11-13 13:35:04,194 - rag_class_faiss - INFO - [QUERY_RAG] Using 5 documents
+2025-11-13 13:35:04,195 - rag_class_faiss - INFO - [OPENAI] Sending request to OpenAI API...
+2025-11-13 13:35:04,196 - rag_class_faiss - INFO - [OPENAI] System prompt length: 1857 characters
+2025-11-13 13:35:04,197 - rag_class_faiss - INFO - [OPENAI] User prompt length: 7772 characters
+2025-11-13 13:35:10,171 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-13 13:35:10,204 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:35:10,250 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:35:10,252 - rag_class_faiss - INFO - [OPENAI] Model used: gpt-4o-mini-2024-07-18
+2025-11-13 13:35:10,254 - rag_class_faiss - INFO - [OPENAI] Finish reason: stop
+2025-11-13 13:35:10,255 - rag_class_faiss - INFO - [OPENAI] Token usage:
+2025-11-13 13:35:10,255 - rag_class_faiss - INFO -   - Prompt tokens: 2221
+2025-11-13 13:35:10,256 - rag_class_faiss - INFO -   - Completion tokens: 296
+2025-11-13 13:35:10,257 - rag_class_faiss - INFO -   - Total tokens: 2517
+2025-11-13 13:35:10,258 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:35:10,259 - rag_class_faiss - INFO - [OPENAI] FULL COMPLETION CONTENT:
+2025-11-13 13:35:10,260 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:35:10,261 - rag_class_faiss - INFO - Hello! We are Visionerds, a technology consulting and software development company dedicated to delivering innovative solutions. One of our standout projects is the "Beauty Right Back" (BRB), which features an AI-powered customer service solution designed specifically for the beauty and wellness industry.
+
+The project includes "Bella," an intelligent conversational AI that transforms how beauty salons and spas interact with their customers. Bella facilitates personalized, context-aware conversations and comprehensive service management, allowing businesses to significantly enhance their client engagement.
+
+We employ advanced AI architectures using frameworks such as LangChain for language model integration and LangGraph for workflow management. This enables Bella to manage complex customer interactions involving multiple intents and long-term memory retention.
+
+Some key features of Bella include:
+- **Personalized Chatbot Capabilities**: Handling appointments, beauty consultations, and preference tracking.
+- **Multi-Platform Deployment**: Ensuring customers can interact via WhatsApp, web chat, or a dedicated mobile app.
+- **Proactive Communication**: Automatically sending reminders and relevant notifications based on customer preferences.
+- **Security and Compliance**: Implementing robust data security measures and GDPR-compliant practices to protect user information.
+
+Our technology stack includes:
+- **Cloud Infrastructure**: AWS for hosting and scalability
+- **Database**: MongoDB for flexible data management
+- **Backend Development**: Python for AI integration and Node.js/Flask for API development
+
+If you'd like to know more about our projects or services, feel free to ask!
+2025-11-13 13:35:10,267 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:35:10,319 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:35:10,320 - fastapi_app - INFO - FAISS Index Results: Retrieved 5 sources
+2025-11-13 13:35:10,321 - fastapi_app - INFO -   Source 1: Unknown | Score: 1.468724250793457
+2025-11-13 13:35:10,322 - fastapi_app - INFO -     Content preview: Complete Project Details: Beauty
+
+PROJECT:
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+Project
+ 
+Overview
+ 
+Be...
+2025-11-13 13:35:10,327 - fastapi_app - INFO -   Source 2: Unknown | Score: 1.4755690097808838
+2025-11-13 13:35:10,328 - fastapi_app - INFO -     Content preview: Frameworks
+:
+ 
+LangChain
+ 
+for
+ 
+language
+ 
+model
+ 
+integration,
+ 
+LangGraph
+ 
+for
+ 
+workflow
+ 
+mana...
+2025-11-13 13:35:10,335 - fastapi_app - INFO -   Source 3: Unknown | Score: 1.491527795791626
+2025-11-13 13:35:10,335 - fastapi_app - INFO -     Content preview: elevant
+ 
+beauty
+ 
+products.
+ 
+The
+ 
+beauty
+ 
+trend
+ 
+suggestion
+ 
+system
+ 
+incorporates
+ 
+current
+ ...
+2025-11-13 13:35:10,342 - fastapi_app - INFO -   Source 4: Unknown | Score: 1.5061006546020508
+2025-11-13 13:35:10,343 - fastapi_app - INFO -     Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Comp...
+2025-11-13 13:35:10,442 - fastapi_app - INFO -   Source 5: Unknown | Score: 1.5095313787460327
+2025-11-13 13:35:10,468 - fastapi_app - INFO -     Content preview: stions
+ 
+and
+ 
+retention
+ 
+offers),
+ 
+and
+ 
+service
+ 
+upgrades
+ 
+(analyzing
+ 
+current
+ 
+bookings
+ 
+a...
+2025-11-13 13:35:10,478 - fastapi_app - INFO - OpenAI Response Length: 1703 characters
+2025-11-13 13:35:10,479 - fastapi_app - INFO - OpenAI Answer: Hello! We are Visionerds, a technology consulting and software development company dedicated to delivering innovative solutions. One of our standout projects is the "Beauty Right Back" (BRB), which features an AI-powered customer service solution designed specifically for the beauty and wellness industry.
+
+The project includes "Bella," an intelligent conversational AI that transforms how beauty salons and spas interact with their customers. Bella facilitates personalized, context-aware conversations and comprehensive service management, allowing businesses to significantly enhance their client engagement.
+
+We employ advanced AI architectures using frameworks such as LangChain for language model integration and LangGraph for workflow management. This enables Bella to manage complex customer interactions involving multiple intents and long-term memory retention.
+
+Some key features of Bella include:
+- **Personalized Chatbot Capabilities**: Handling appointments, beauty consultations, and preference tracking.
+- **Multi-Platform Deployment**: Ensuring customers can interact via WhatsApp, web chat, or a dedicated mobile app.
+- **Proactive Communication**: Automatically sending reminders and relevant notifications based on customer preferences.
+- **Security and Compliance**: Implementing robust data security measures and GDPR-compliant practices to protect user information.
+
+Our technology stack includes:
+- **Cloud Infrastructure**: AWS for hosting and scalability
+- **Database**: MongoDB for flexible data management
+- **Backend Development**: Python for AI integration and Node.js/Flask for API development
+
+If you'd like to know more about our projects or services, feel free to ask!
+2025-11-13 13:35:10,512 - fastapi_app - INFO - Added interaction to session 333... | Messages in session: 1
+2025-11-13 13:35:10,516 - fastapi_app - INFO - Request completed successfully
+2025-11-13 13:35:10,517 - fastapi_app - INFO - ============================================================
+2025-11-13 13:38:40,846 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-13 13:38:41,301 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-13 13:38:41,730 - fastapi_app - INFO - ============================================================
+2025-11-13 13:38:41,730 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-13 13:38:41,731 - fastapi_app - INFO - Loading FAISS index...
+2025-11-13 13:38:41,732 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-13 13:38:42,058 - fastapi_app - INFO - ============================================================
+2025-11-13 13:38:55,152 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-13 13:38:55,195 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-13 13:38:55,288 - fastapi_app - INFO - ============================================================
+2025-11-13 13:38:55,289 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-13 13:38:55,291 - fastapi_app - INFO - Loading FAISS index...
+2025-11-13 13:38:55,291 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-13 13:38:55,336 - fastapi_app - INFO - ============================================================
+2025-11-13 13:39:14,968 - fastapi_app - INFO - ============================================================
+2025-11-13 13:39:14,969 - fastapi_app - INFO - NEW CHAT REQUEST | Session: 333...
+2025-11-13 13:39:14,969 - fastapi_app - INFO - User Query: Hello
+2025-11-13 13:39:14,970 - fastapi_app - INFO - History Length: 0 messages
+2025-11-13 13:39:14,971 - fastapi_app - INFO - Querying RAG system...
+2025-11-13 13:39:14,971 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:39:14,972 - rag_class_faiss - INFO - [QUERY_RAG] Starting RAG query pipeline
+2025-11-13 13:39:14,973 - rag_class_faiss - INFO - [QUERY_RAG] Original query: 'Hello'
+2025-11-13 13:39:14,973 - rag_class_faiss - INFO - [QUERY_RAG] Model: gpt-4o-mini
+2025-11-13 13:39:14,974 - rag_class_faiss - INFO - [QUERY_RAG] Temperature: 0.1
+2025-11-13 13:39:14,974 - rag_class_faiss - INFO - [FAISS] Searching for query: 'Hello' (top_k=5)
+2025-11-13 13:39:17,175 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-11-13 13:39:17,330 - rag_class_faiss - INFO - [FAISS] Document 1:
+2025-11-13 13:39:17,331 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 13:39:17,332 - rag_class_faiss - INFO -   - Section: Full Details Part 1
+2025-11-13 13:39:17,333 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 13:39:17,334 - rag_class_faiss - INFO -   - Score: 1.468724250793457
+2025-11-13 13:39:17,335 - rag_class_faiss - INFO -   - Content preview: Complete Project Details: Beauty
+
+PROJECT:
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+Project
+ 
+Overview
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+represents
+ 
+a
+ 
+cut...
+2025-11-13 13:39:17,339 - rag_class_faiss - INFO - [FAISS] Document 2:
+2025-11-13 13:39:17,340 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 13:39:17,340 - rag_class_faiss - INFO -   - Section: Full Details Part 6
+2025-11-13 13:39:17,342 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 13:39:17,343 - rag_class_faiss - INFO -   - Score: 1.4755690097808838
+2025-11-13 13:39:17,380 - rag_class_faiss - INFO - [FAISS] Document 3:
+2025-11-13 13:39:17,380 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 13:39:17,381 - rag_class_faiss - INFO -   - Section: Full Details Part 4
+2025-11-13 13:39:17,382 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 13:39:17,383 - rag_class_faiss - INFO -   - Score: 1.491527795791626
+2025-11-13 13:39:17,384 - rag_class_faiss - INFO -   - Content preview: elevant
+ 
+beauty
+ 
+products.
+ 
+The
+ 
+beauty
+ 
+trend
+ 
+suggestion
+ 
+system
+ 
+incorporates
+ 
+current
+ 
+industry
+ 
+trends,
+ 
+seasonal
+ 
+preferences,
+ 
+an...
+2025-11-13 13:39:17,388 - rag_class_faiss - INFO - [FAISS] Document 4:
+2025-11-13 13:39:17,389 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 13:39:17,390 - rag_class_faiss - INFO -   - Section: Full Details Part 5
+2025-11-13 13:39:17,391 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 13:39:17,391 - rag_class_faiss - INFO -   - Score: 1.5061006546020508
+2025-11-13 13:39:17,392 - rag_class_faiss - INFO -   - Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Compliance
+ 
+Implementation
+ 
+The
+ 
+system
+ 
+implement...
+2025-11-13 13:39:17,395 - rag_class_faiss - INFO - [FAISS] Document 5:
+2025-11-13 13:39:17,396 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 13:39:17,396 - rag_class_faiss - INFO -   - Section: Full Details Part 3
+2025-11-13 13:39:17,397 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 13:39:17,398 - rag_class_faiss - INFO -   - Score: 1.5095313787460327
+2025-11-13 13:39:17,398 - rag_class_faiss - INFO -   - Content preview: stions
+ 
+and
+ 
+retention
+ 
+offers),
+ 
+and
+ 
+service
+ 
+upgrades
+ 
+(analyzing
+ 
+current
+ 
+bookings
+ 
+and
+ 
+suggesting
+ 
+enhanced
+ 
+services).
+ 
+The
+ 
+mo...
+2025-11-13 13:39:17,404 - rag_class_faiss - INFO - [QUERY_RAG] Context length: 7530 characters
+2025-11-13 13:39:17,404 - rag_class_faiss - INFO - [QUERY_RAG] Using 5 documents
+2025-11-13 13:39:17,405 - rag_class_faiss - INFO - [OPENAI] Sending request to OpenAI API...
+2025-11-13 13:39:17,406 - rag_class_faiss - INFO - [OPENAI] System prompt length: 1857 characters
+2025-11-13 13:39:17,406 - rag_class_faiss - INFO - [OPENAI] User prompt length: 7772 characters
+2025-11-13 13:39:20,203 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-13 13:39:20,225 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:39:20,253 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:39:20,253 - rag_class_faiss - INFO - [OPENAI] Model used: gpt-4o-mini-2024-07-18
+2025-11-13 13:39:20,254 - rag_class_faiss - INFO - [OPENAI] Finish reason: length
+2025-11-13 13:39:20,255 - rag_class_faiss - INFO - [OPENAI] Token usage:
+2025-11-13 13:39:20,255 - rag_class_faiss - INFO -   - Prompt tokens: 2221
+2025-11-13 13:39:20,256 - rag_class_faiss - INFO -   - Completion tokens: 100
+2025-11-13 13:39:20,257 - rag_class_faiss - INFO -   - Total tokens: 2321
+2025-11-13 13:39:20,257 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:39:20,258 - rag_class_faiss - INFO - [OPENAI] FULL COMPLETION CONTENT:
+2025-11-13 13:39:20,259 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:39:20,259 - rag_class_faiss - INFO - Hello! Welcome to Visionerds. We are a technology consulting and software development company focused on delivering innovative solutions tailored to the needs of various industries.
+
+One of our prominent projects is **Beauty Right Back (BRB)**, a cutting-edge AI-powered customer service solution tailored for the beauty and wellness sector. This project features "Bella," an intelligent conversational AI designed to enhance customer interactions at beauty salons and spas. 
+
+Bella utilizes advanced AI frameworks like **LangChain** for language model integration and **Lang
+2025-11-13 13:39:20,261 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:39:20,291 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:39:20,292 - fastapi_app - INFO - FAISS Index Results: Retrieved 5 sources
+2025-11-13 13:39:20,293 - fastapi_app - INFO -   Source 1: Unknown | Score: 1.468724250793457
+2025-11-13 13:39:20,293 - fastapi_app - INFO -     Content preview: Complete Project Details: Beauty
+
+PROJECT:
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+Project
+ 
+Overview
+ 
+Be...
+2025-11-13 13:39:20,296 - fastapi_app - INFO -   Source 2: Unknown | Score: 1.4755690097808838
+2025-11-13 13:39:20,297 - fastapi_app - INFO -     Content preview: Frameworks
+:
+ 
+LangChain
+ 
+for
+ 
+language
+ 
+model
+ 
+integration,
+ 
+LangGraph
+ 
+for
+ 
+workflow
+ 
+mana...
+2025-11-13 13:39:20,300 - fastapi_app - INFO -   Source 3: Unknown | Score: 1.491527795791626
+2025-11-13 13:39:20,301 - fastapi_app - INFO -     Content preview: elevant
+ 
+beauty
+ 
+products.
+ 
+The
+ 
+beauty
+ 
+trend
+ 
+suggestion
+ 
+system
+ 
+incorporates
+ 
+current
+ ...
+2025-11-13 13:39:20,304 - fastapi_app - INFO -   Source 4: Unknown | Score: 1.5061006546020508
+2025-11-13 13:39:20,305 - fastapi_app - INFO -     Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Comp...
+2025-11-13 13:39:20,308 - fastapi_app - INFO -   Source 5: Unknown | Score: 1.5095313787460327
+2025-11-13 13:39:20,309 - fastapi_app - INFO -     Content preview: stions
+ 
+and
+ 
+retention
+ 
+offers),
+ 
+and
+ 
+service
+ 
+upgrades
+ 
+(analyzing
+ 
+current
+ 
+bookings
+ 
+a...
+2025-11-13 13:39:20,311 - fastapi_app - INFO - OpenAI Response Length: 575 characters
+2025-11-13 13:39:20,311 - fastapi_app - INFO - OpenAI Answer: Hello! Welcome to Visionerds. We are a technology consulting and software development company focused on delivering innovative solutions tailored to the needs of various industries.
+
+One of our prominent projects is **Beauty Right Back (BRB)**, a cutting-edge AI-powered customer service solution tailored for the beauty and wellness sector. This project features "Bella," an intelligent conversational AI designed to enhance customer interactions at beauty salons and spas. 
+
+Bella utilizes advanced AI frameworks like **LangChain** for language model integration and **Lang
+2025-11-13 13:39:20,313 - fastapi_app - INFO - Added interaction to session 333... | Messages in session: 1
+2025-11-13 13:39:20,314 - fastapi_app - INFO - Request completed successfully
+2025-11-13 13:39:20,316 - fastapi_app - INFO - ============================================================
+2025-11-13 13:40:09,648 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-13 13:40:09,686 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-13 13:40:09,772 - fastapi_app - INFO - ============================================================
+2025-11-13 13:40:09,773 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-13 13:40:09,774 - fastapi_app - INFO - Loading FAISS index...
+2025-11-13 13:40:09,774 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-13 13:40:09,824 - fastapi_app - INFO - ============================================================
+2025-11-13 13:40:10,371 - fastapi_app - INFO - ============================================================
+2025-11-13 13:40:10,372 - fastapi_app - INFO - NEW CHAT REQUEST | Session: 333...
+2025-11-13 13:40:10,373 - fastapi_app - INFO - User Query: Hello
+2025-11-13 13:40:10,373 - fastapi_app - INFO - History Length: 0 messages
+2025-11-13 13:40:10,374 - fastapi_app - INFO - Querying RAG system...
+2025-11-13 13:40:10,375 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:40:10,375 - rag_class_faiss - INFO - [QUERY_RAG] Starting RAG query pipeline
+2025-11-13 13:40:10,376 - rag_class_faiss - INFO - [QUERY_RAG] Original query: 'Hello'
+2025-11-13 13:40:10,376 - rag_class_faiss - INFO - [QUERY_RAG] Model: gpt-4o-mini
+2025-11-13 13:40:10,377 - rag_class_faiss - INFO - [QUERY_RAG] Temperature: 0.1
+2025-11-13 13:40:10,378 - rag_class_faiss - INFO - [FAISS] Searching for query: 'Hello' (top_k=5)
+2025-11-13 13:40:12,451 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-11-13 13:40:12,489 - rag_class_faiss - INFO - [FAISS] Document 1:
+2025-11-13 13:40:12,489 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 13:40:12,490 - rag_class_faiss - INFO -   - Section: Full Details Part 1
+2025-11-13 13:40:12,491 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 13:40:12,491 - rag_class_faiss - INFO -   - Score: 1.468792200088501
+2025-11-13 13:40:12,492 - rag_class_faiss - INFO -   - Content preview: Complete Project Details: Beauty
+
+PROJECT:
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+Project
+ 
+Overview
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+represents
+ 
+a
+ 
+cut...
+2025-11-13 13:40:12,495 - rag_class_faiss - INFO - [FAISS] Document 2:
+2025-11-13 13:40:12,496 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 13:40:12,496 - rag_class_faiss - INFO -   - Section: Full Details Part 6
+2025-11-13 13:40:12,497 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 13:40:12,498 - rag_class_faiss - INFO -   - Score: 1.475513219833374
+2025-11-13 13:40:12,529 - rag_class_faiss - INFO - [FAISS] Document 3:
+2025-11-13 13:40:12,530 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 13:40:12,531 - rag_class_faiss - INFO -   - Section: Full Details Part 4
+2025-11-13 13:40:12,532 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 13:40:12,532 - rag_class_faiss - INFO -   - Score: 1.4915624856948853
+2025-11-13 13:40:12,533 - rag_class_faiss - INFO -   - Content preview: elevant
+ 
+beauty
+ 
+products.
+ 
+The
+ 
+beauty
+ 
+trend
+ 
+suggestion
+ 
+system
+ 
+incorporates
+ 
+current
+ 
+industry
+ 
+trends,
+ 
+seasonal
+ 
+preferences,
+ 
+an...
+2025-11-13 13:40:12,537 - rag_class_faiss - INFO - [FAISS] Document 4:
+2025-11-13 13:40:12,538 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 13:40:12,538 - rag_class_faiss - INFO -   - Section: Full Details Part 5
+2025-11-13 13:40:12,539 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 13:40:12,539 - rag_class_faiss - INFO -   - Score: 1.5061194896697998
+2025-11-13 13:40:12,540 - rag_class_faiss - INFO -   - Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Compliance
+ 
+Implementation
+ 
+The
+ 
+system
+ 
+implement...
+2025-11-13 13:40:12,542 - rag_class_faiss - INFO - [FAISS] Document 5:
+2025-11-13 13:40:12,543 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 13:40:12,543 - rag_class_faiss - INFO -   - Section: Full Details Part 3
+2025-11-13 13:40:12,544 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 13:40:12,545 - rag_class_faiss - INFO -   - Score: 1.509572982788086
+2025-11-13 13:40:12,545 - rag_class_faiss - INFO -   - Content preview: stions
+ 
+and
+ 
+retention
+ 
+offers),
+ 
+and
+ 
+service
+ 
+upgrades
+ 
+(analyzing
+ 
+current
+ 
+bookings
+ 
+and
+ 
+suggesting
+ 
+enhanced
+ 
+services).
+ 
+The
+ 
+mo...
+2025-11-13 13:40:12,549 - rag_class_faiss - INFO - [QUERY_RAG] Context length: 7530 characters
+2025-11-13 13:40:12,550 - rag_class_faiss - INFO - [QUERY_RAG] Using 5 documents
+2025-11-13 13:40:12,551 - rag_class_faiss - INFO - [OPENAI] Sending request to OpenAI API...
+2025-11-13 13:40:12,552 - rag_class_faiss - INFO - [OPENAI] System prompt length: 1857 characters
+2025-11-13 13:40:12,552 - rag_class_faiss - INFO - [OPENAI] User prompt length: 7772 characters
+2025-11-13 13:40:19,751 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-13 13:40:19,784 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:40:19,808 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:40:19,808 - rag_class_faiss - INFO - [OPENAI] Model used: gpt-4o-mini-2024-07-18
+2025-11-13 13:40:19,809 - rag_class_faiss - INFO - [OPENAI] Finish reason: stop
+2025-11-13 13:40:19,809 - rag_class_faiss - INFO - [OPENAI] Token usage:
+2025-11-13 13:40:19,810 - rag_class_faiss - INFO -   - Prompt tokens: 2221
+2025-11-13 13:40:19,810 - rag_class_faiss - INFO -   - Completion tokens: 282
+2025-11-13 13:40:19,811 - rag_class_faiss - INFO -   - Total tokens: 2503
+2025-11-13 13:40:19,812 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:40:19,813 - rag_class_faiss - INFO - [OPENAI] FULL COMPLETION CONTENT:
+2025-11-13 13:40:19,814 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:40:19,815 - rag_class_faiss - INFO - Hello! We are Visionerds, a technology consulting and software development company specializing in innovative solutions tailored to various industries. One of our projects is Beauty Right Back (BRB), an AI-powered customer service solution designed for the beauty and wellness industry.
+
+The project revolves around "Bella," an intelligent conversational AI that enhances interactions between beauty salons and their customers. Bella is crafted to offer personalized service management through advanced, context-aware conversations. We utilize state-of-the-art AI frameworks, specifically LangChain for language model integration and LangGraph for workflow management, allowing Bella to handle intricate customer interactions effectively.
+
+Our technology stack includes:
+
+- **Backend Programming**: Python for core AI integration.
+- **API Development**: Node.js and Flask for seamless platform integrations.
+- **Database**: MongoDB to manage flexible user data and memory.
+- **Cloud Infrastructure**: AWS for reliable and scalable hosting.
+- **Containerization**: Docker for consistent deployment.
+
+The system includes features like appointment bookings, beauty consultations, and proactive communication triggered by user behavior patterns. Bella operates across multiple platforms, including WhatsApp and web-based interfaces, ensuring a consistent user experience.
+
+We prioritize security with comprehensive measures, including encrypted data transmission and GDPR compliance. Our approach emphasizes real-time performance to maintain rapid response times, delivering a smooth and efficient customer service experience.
+
+If you have any specific questions about our projects or services, feel free to ask!
+2025-11-13 13:40:19,819 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:40:19,844 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:40:19,844 - fastapi_app - INFO - FAISS Index Results: Retrieved 5 sources
+2025-11-13 13:40:19,845 - fastapi_app - INFO -   Source 1: Unknown | Score: 1.468792200088501
+2025-11-13 13:40:19,846 - fastapi_app - INFO -     Content preview: Complete Project Details: Beauty
+
+PROJECT:
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+Project
+ 
+Overview
+ 
+Be...
+2025-11-13 13:40:19,848 - fastapi_app - INFO -   Source 2: Unknown | Score: 1.475513219833374
+2025-11-13 13:40:19,849 - fastapi_app - INFO -     Content preview: Frameworks
+:
+ 
+LangChain
+ 
+for
+ 
+language
+ 
+model
+ 
+integration,
+ 
+LangGraph
+ 
+for
+ 
+workflow
+ 
+mana...
+2025-11-13 13:40:19,850 - fastapi_app - INFO -   Source 3: Unknown | Score: 1.4915624856948853
+2025-11-13 13:40:19,851 - fastapi_app - INFO -     Content preview: elevant
+ 
+beauty
+ 
+products.
+ 
+The
+ 
+beauty
+ 
+trend
+ 
+suggestion
+ 
+system
+ 
+incorporates
+ 
+current
+ ...
+2025-11-13 13:40:19,853 - fastapi_app - INFO -   Source 4: Unknown | Score: 1.5061194896697998
+2025-11-13 13:40:19,854 - fastapi_app - INFO -     Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Comp...
+2025-11-13 13:40:19,856 - fastapi_app - INFO -   Source 5: Unknown | Score: 1.509572982788086
+2025-11-13 13:40:19,857 - fastapi_app - INFO -     Content preview: stions
+ 
+and
+ 
+retention
+ 
+offers),
+ 
+and
+ 
+service
+ 
+upgrades
+ 
+(analyzing
+ 
+current
+ 
+bookings
+ 
+a...
+2025-11-13 13:40:19,859 - fastapi_app - INFO - OpenAI Response Length: 1708 characters
+2025-11-13 13:40:19,859 - fastapi_app - INFO - OpenAI Answer: Hello! We are Visionerds, a technology consulting and software development company specializing in innovative solutions tailored to various industries. One of our projects is Beauty Right Back (BRB), an AI-powered customer service solution designed for the beauty and wellness industry.
+
+The project revolves around "Bella," an intelligent conversational AI that enhances interactions between beauty salons and their customers. Bella is crafted to offer personalized service management through advanced, context-aware conversations. We utilize state-of-the-art AI frameworks, specifically LangChain for language model integration and LangGraph for workflow management, allowing Bella to handle intricate customer interactions effectively.
+
+Our technology stack includes:
+
+- **Backend Programming**: Python for core AI integration.
+- **API Development**: Node.js and Flask for seamless platform integrations.
+- **Database**: MongoDB to manage flexible user data and memory.
+- **Cloud Infrastructure**: AWS for reliable and scalable hosting.
+- **Containerization**: Docker for consistent deployment.
+
+The system includes features like appointment bookings, beauty consultations, and proactive communication triggered by user behavior patterns. Bella operates across multiple platforms, including WhatsApp and web-based interfaces, ensuring a consistent user experience.
+
+We prioritize security with comprehensive measures, including encrypted data transmission and GDPR compliance. Our approach emphasizes real-time performance to maintain rapid response times, delivering a smooth and efficient customer service experience.
+
+If you have any specific questions about our projects or services, feel free to ask!
+2025-11-13 13:40:19,863 - fastapi_app - INFO - Added interaction to session 333... | Messages in session: 1
+2025-11-13 13:40:19,864 - fastapi_app - INFO - Request completed successfully
+2025-11-13 13:40:19,865 - fastapi_app - INFO - ============================================================
+2025-11-13 13:41:42,443 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-13 13:41:42,483 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-13 13:41:42,564 - fastapi_app - INFO - ============================================================
+2025-11-13 13:41:42,564 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-13 13:41:42,565 - fastapi_app - INFO - Loading FAISS index...
+2025-11-13 13:41:42,565 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-13 13:41:42,615 - fastapi_app - INFO - ============================================================
+2025-11-13 13:41:55,709 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-13 13:41:55,768 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-13 13:41:55,869 - fastapi_app - INFO - ============================================================
+2025-11-13 13:41:55,870 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-13 13:41:55,871 - fastapi_app - INFO - Loading FAISS index...
+2025-11-13 13:41:55,871 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-13 13:41:55,941 - fastapi_app - INFO - ============================================================
+2025-11-13 13:42:18,850 - fastapi_app - INFO - ============================================================
+2025-11-13 13:42:18,851 - fastapi_app - INFO - NEW CHAT REQUEST | Session: 333...
+2025-11-13 13:42:18,852 - fastapi_app - INFO - User Query: Hello
+2025-11-13 13:42:18,852 - fastapi_app - INFO - History Length: 0 messages
+2025-11-13 13:42:18,853 - fastapi_app - INFO - Querying RAG system...
+2025-11-13 13:42:18,854 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:42:18,854 - rag_class_faiss - INFO - [QUERY_RAG] Starting RAG query pipeline
+2025-11-13 13:42:18,855 - rag_class_faiss - INFO - [QUERY_RAG] Original query: 'Hello'
+2025-11-13 13:42:18,857 - rag_class_faiss - INFO - [QUERY_RAG] Model: gpt-4o-mini
+2025-11-13 13:42:18,857 - rag_class_faiss - INFO - [QUERY_RAG] Temperature: 0.1
+2025-11-13 13:42:18,858 - rag_class_faiss - INFO - [FAISS] Searching for query: 'Hello' (top_k=5)
+2025-11-13 13:42:21,320 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-11-13 13:42:21,366 - rag_class_faiss - INFO - [FAISS] Document 1:
+2025-11-13 13:42:21,366 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 13:42:21,367 - rag_class_faiss - INFO -   - Section: Full Details Part 1
+2025-11-13 13:42:21,368 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 13:42:21,368 - rag_class_faiss - INFO -   - Score: 1.468724250793457
+2025-11-13 13:42:21,369 - rag_class_faiss - INFO -   - Content preview: Complete Project Details: Beauty
+
+PROJECT:
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+Project
+ 
+Overview
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+represents
+ 
+a
+ 
+cut...
+2025-11-13 13:42:21,374 - rag_class_faiss - INFO - [FAISS] Document 2:
+2025-11-13 13:42:21,377 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 13:42:21,378 - rag_class_faiss - INFO -   - Section: Full Details Part 6
+2025-11-13 13:42:21,379 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 13:42:21,380 - rag_class_faiss - INFO -   - Score: 1.4755690097808838
+2025-11-13 13:42:21,415 - rag_class_faiss - INFO - [FAISS] Document 3:
+2025-11-13 13:42:21,416 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 13:42:21,417 - rag_class_faiss - INFO -   - Section: Full Details Part 4
+2025-11-13 13:42:21,418 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 13:42:21,418 - rag_class_faiss - INFO -   - Score: 1.491527795791626
+2025-11-13 13:42:21,419 - rag_class_faiss - INFO -   - Content preview: elevant
+ 
+beauty
+ 
+products.
+ 
+The
+ 
+beauty
+ 
+trend
+ 
+suggestion
+ 
+system
+ 
+incorporates
+ 
+current
+ 
+industry
+ 
+trends,
+ 
+seasonal
+ 
+preferences,
+ 
+an...
+2025-11-13 13:42:21,423 - rag_class_faiss - INFO - [FAISS] Document 4:
+2025-11-13 13:42:21,424 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 13:42:21,425 - rag_class_faiss - INFO -   - Section: Full Details Part 5
+2025-11-13 13:42:21,425 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 13:42:21,426 - rag_class_faiss - INFO -   - Score: 1.5061006546020508
+2025-11-13 13:42:21,427 - rag_class_faiss - INFO -   - Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Compliance
+ 
+Implementation
+ 
+The
+ 
+system
+ 
+implement...
+2025-11-13 13:42:21,432 - rag_class_faiss - INFO - [FAISS] Document 5:
+2025-11-13 13:42:21,432 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 13:42:21,433 - rag_class_faiss - INFO -   - Section: Full Details Part 3
+2025-11-13 13:42:21,433 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 13:42:21,434 - rag_class_faiss - INFO -   - Score: 1.5095313787460327
+2025-11-13 13:42:21,435 - rag_class_faiss - INFO -   - Content preview: stions
+ 
+and
+ 
+retention
+ 
+offers),
+ 
+and
+ 
+service
+ 
+upgrades
+ 
+(analyzing
+ 
+current
+ 
+bookings
+ 
+and
+ 
+suggesting
+ 
+enhanced
+ 
+services).
+ 
+The
+ 
+mo...
+2025-11-13 13:42:21,439 - rag_class_faiss - INFO - [QUERY_RAG] Context length: 7530 characters
+2025-11-13 13:42:21,440 - rag_class_faiss - INFO - [QUERY_RAG] Using 5 documents
+2025-11-13 13:42:21,441 - rag_class_faiss - INFO - [OPENAI] Sending request to OpenAI API...
+2025-11-13 13:42:21,442 - rag_class_faiss - INFO - [OPENAI] System prompt length: 1857 characters
+2025-11-13 13:42:21,442 - rag_class_faiss - INFO - [OPENAI] User prompt length: 7833 characters
+2025-11-13 13:42:24,869 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-13 13:42:24,898 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:42:24,926 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:42:24,927 - rag_class_faiss - INFO - [OPENAI] Model used: gpt-4o-mini-2024-07-18
+2025-11-13 13:42:24,928 - rag_class_faiss - INFO - [OPENAI] Finish reason: stop
+2025-11-13 13:42:24,928 - rag_class_faiss - INFO - [OPENAI] Token usage:
+2025-11-13 13:42:24,929 - rag_class_faiss - INFO -   - Prompt tokens: 2237
+2025-11-13 13:42:24,930 - rag_class_faiss - INFO -   - Completion tokens: 195
+2025-11-13 13:42:24,930 - rag_class_faiss - INFO -   - Total tokens: 2432
+2025-11-13 13:42:24,931 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:42:24,932 - rag_class_faiss - INFO - [OPENAI] FULL COMPLETION CONTENT:
+2025-11-13 13:42:24,932 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:42:24,933 - rag_class_faiss - INFO - Hello! We are Visionerds, a technology consulting and software development company focused on creating innovative solutions. One of our notable projects is "Beauty Right Back (BRB)," an AI-powered customer service solution specifically designed for the beauty and wellness industry.
+
+The project features "Bella," an intelligent conversational AI that enhances customer interactions for beauty salons and spas. Bella utilizes advanced AI frameworks, including LangChain for language model integration and LangGraph for workflow management, enabling sophisticated, context-aware conversations.
+
+Our technology stack includes:
+- **Cloud Infrastructure:** AWS for scalable hosting.
+- **Containerization:** Docker for consistent deployment.
+- **Backend Programming:** Python for AI integration.
+- **API Development:** Node.js and Flask for integrations.
+- **Database:** MongoDB for flexible user data management and memory.
+
+We prioritize security with GDPR compliance and have implemented real-time performance optimization strategies to ensure quick response times. If you're interested in learning more about our capabilities or projects, feel free to ask!
+2025-11-13 13:42:24,938 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:42:24,971 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 13:42:24,972 - fastapi_app - INFO - FAISS Index Results: Retrieved 5 sources
+2025-11-13 13:42:24,973 - fastapi_app - INFO -   Source 1: Unknown | Score: 1.468724250793457
+2025-11-13 13:42:24,974 - fastapi_app - INFO -     Content preview: Complete Project Details: Beauty
+
+PROJECT:
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+Project
+ 
+Overview
+ 
+Be...
+2025-11-13 13:42:24,976 - fastapi_app - INFO -   Source 2: Unknown | Score: 1.4755690097808838
+2025-11-13 13:42:24,977 - fastapi_app - INFO -     Content preview: Frameworks
+:
+ 
+LangChain
+ 
+for
+ 
+language
+ 
+model
+ 
+integration,
+ 
+LangGraph
+ 
+for
+ 
+workflow
+ 
+mana...
+2025-11-13 13:42:24,980 - fastapi_app - INFO -   Source 3: Unknown | Score: 1.491527795791626
+2025-11-13 13:42:24,981 - fastapi_app - INFO -     Content preview: elevant
+ 
+beauty
+ 
+products.
+ 
+The
+ 
+beauty
+ 
+trend
+ 
+suggestion
+ 
+system
+ 
+incorporates
+ 
+current
+ ...
+2025-11-13 13:42:24,983 - fastapi_app - INFO -   Source 4: Unknown | Score: 1.5061006546020508
+2025-11-13 13:42:24,984 - fastapi_app - INFO -     Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Comp...
+2025-11-13 13:42:24,989 - fastapi_app - INFO -   Source 5: Unknown | Score: 1.5095313787460327
+2025-11-13 13:42:24,990 - fastapi_app - INFO -     Content preview: stions
+ 
+and
+ 
+retention
+ 
+offers),
+ 
+and
+ 
+service
+ 
+upgrades
+ 
+(analyzing
+ 
+current
+ 
+bookings
+ 
+a...
+2025-11-13 13:42:24,993 - fastapi_app - INFO - OpenAI Response Length: 1155 characters
+2025-11-13 13:42:24,994 - fastapi_app - INFO - OpenAI Answer: Hello! We are Visionerds, a technology consulting and software development company focused on creating innovative solutions. One of our notable projects is "Beauty Right Back (BRB)," an AI-powered customer service solution specifically designed for the beauty and wellness industry.
+
+The project features "Bella," an intelligent conversational AI that enhances customer interactions for beauty salons and spas. Bella utilizes advanced AI frameworks, including LangChain for language model integration and LangGraph for workflow management, enabling sophisticated, context-aware conversations.
+
+Our technology stack includes:
+- **Cloud Infrastructure:** AWS for scalable hosting.
+- **Containerization:** Docker for consistent deployment.
+- **Backend Programming:** Python for AI integration.
+- **API Development:** Node.js and Flask for integrations.
+- **Database:** MongoDB for flexible user data management and memory.
+
+We prioritize security with GDPR compliance and have implemented real-time performance optimization strategies to ensure quick response times. If you're interested in learning more about our capabilities or projects, feel free to ask!
+2025-11-13 13:42:24,998 - fastapi_app - INFO - Added interaction to session 333... | Messages in session: 1
+2025-11-13 13:42:24,999 - fastapi_app - INFO - Request completed successfully
+2025-11-13 13:42:24,999 - fastapi_app - INFO - ============================================================
+2025-11-13 14:33:56,382 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-13 14:33:56,418 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-13 14:33:56,501 - fastapi_app - INFO - ============================================================
+2025-11-13 14:33:56,502 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-13 14:33:56,503 - fastapi_app - INFO - Loading FAISS index...
+2025-11-13 14:33:56,503 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-13 14:33:56,553 - fastapi_app - INFO - ============================================================
+2025-11-13 14:34:16,773 - fastapi_app - INFO - ============================================================
+2025-11-13 14:34:16,774 - fastapi_app - INFO - NEW CHAT REQUEST | Session: 333...
+2025-11-13 14:34:16,784 - fastapi_app - INFO - User Query: Hello
+2025-11-13 14:34:16,786 - fastapi_app - INFO - History Length: 0 messages
+2025-11-13 14:34:16,786 - fastapi_app - INFO - Querying RAG system...
+2025-11-13 14:34:16,789 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:34:16,790 - rag_class_faiss - INFO - [QUERY_RAG] Starting RAG query pipeline
+2025-11-13 14:34:16,791 - rag_class_faiss - INFO - [QUERY_RAG] Original query: 'Hello'
+2025-11-13 14:34:16,795 - rag_class_faiss - INFO - [QUERY_RAG] Model: gpt-4o-mini
+2025-11-13 14:34:16,796 - rag_class_faiss - INFO - [QUERY_RAG] Temperature: 0.1
+2025-11-13 14:34:16,797 - rag_class_faiss - INFO - [FAISS] Searching for query: 'Hello' (top_k=5)
+2025-11-13 14:34:18,458 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-11-13 14:34:18,496 - rag_class_faiss - INFO - [FAISS] Document 1:
+2025-11-13 14:34:18,497 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:34:18,497 - rag_class_faiss - INFO -   - Section: Full Details Part 1
+2025-11-13 14:34:18,498 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 14:34:18,498 - rag_class_faiss - INFO -   - Score: 1.468724250793457
+2025-11-13 14:34:18,499 - rag_class_faiss - INFO -   - Content preview: Complete Project Details: Beauty
+
+PROJECT:
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+Project
+ 
+Overview
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+represents
+ 
+a
+ 
+cut...
+2025-11-13 14:34:18,502 - rag_class_faiss - INFO - [FAISS] Document 2:
+2025-11-13 14:34:18,502 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:34:18,503 - rag_class_faiss - INFO -   - Section: Full Details Part 6
+2025-11-13 14:34:18,504 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 14:34:18,505 - rag_class_faiss - INFO -   - Score: 1.4755690097808838
+2025-11-13 14:34:18,537 - rag_class_faiss - INFO - [FAISS] Document 3:
+2025-11-13 14:34:18,538 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:34:18,539 - rag_class_faiss - INFO -   - Section: Full Details Part 4
+2025-11-13 14:34:18,540 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 14:34:18,541 - rag_class_faiss - INFO -   - Score: 1.491527795791626
+2025-11-13 14:34:18,542 - rag_class_faiss - INFO -   - Content preview: elevant
+ 
+beauty
+ 
+products.
+ 
+The
+ 
+beauty
+ 
+trend
+ 
+suggestion
+ 
+system
+ 
+incorporates
+ 
+current
+ 
+industry
+ 
+trends,
+ 
+seasonal
+ 
+preferences,
+ 
+an...
+2025-11-13 14:34:18,545 - rag_class_faiss - INFO - [FAISS] Document 4:
+2025-11-13 14:34:18,546 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:34:18,547 - rag_class_faiss - INFO -   - Section: Full Details Part 5
+2025-11-13 14:34:18,547 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 14:34:18,548 - rag_class_faiss - INFO -   - Score: 1.5061006546020508
+2025-11-13 14:34:18,549 - rag_class_faiss - INFO -   - Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Compliance
+ 
+Implementation
+ 
+The
+ 
+system
+ 
+implement...
+2025-11-13 14:34:18,552 - rag_class_faiss - INFO - [FAISS] Document 5:
+2025-11-13 14:34:18,553 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:34:18,554 - rag_class_faiss - INFO -   - Section: Full Details Part 3
+2025-11-13 14:34:18,555 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 14:34:18,556 - rag_class_faiss - INFO -   - Score: 1.5095313787460327
+2025-11-13 14:34:18,556 - rag_class_faiss - INFO -   - Content preview: stions
+ 
+and
+ 
+retention
+ 
+offers),
+ 
+and
+ 
+service
+ 
+upgrades
+ 
+(analyzing
+ 
+current
+ 
+bookings
+ 
+and
+ 
+suggesting
+ 
+enhanced
+ 
+services).
+ 
+The
+ 
+mo...
+2025-11-13 14:34:18,560 - rag_class_faiss - INFO - [QUERY_RAG] Context length: 7530 characters
+2025-11-13 14:34:18,561 - rag_class_faiss - INFO - [QUERY_RAG] Using 5 documents
+2025-11-13 14:34:18,562 - rag_class_faiss - INFO - [OPENAI] Sending request to OpenAI API...
+2025-11-13 14:34:18,562 - rag_class_faiss - INFO - [OPENAI] System prompt length: 1857 characters
+2025-11-13 14:34:18,563 - rag_class_faiss - INFO - [OPENAI] User prompt length: 7888 characters
+2025-11-13 14:34:21,026 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-13 14:34:21,050 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:34:21,078 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:34:21,079 - rag_class_faiss - INFO - [OPENAI] Model used: gpt-4o-mini-2024-07-18
+2025-11-13 14:34:21,080 - rag_class_faiss - INFO - [OPENAI] Finish reason: stop
+2025-11-13 14:34:21,080 - rag_class_faiss - INFO - [OPENAI] Token usage:
+2025-11-13 14:34:21,081 - rag_class_faiss - INFO -   - Prompt tokens: 2243
+2025-11-13 14:34:21,081 - rag_class_faiss - INFO -   - Completion tokens: 165
+2025-11-13 14:34:21,082 - rag_class_faiss - INFO -   - Total tokens: 2408
+2025-11-13 14:34:21,083 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:34:21,083 - rag_class_faiss - INFO - [OPENAI] FULL COMPLETION CONTENT:
+2025-11-13 14:34:21,084 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:34:21,085 - rag_class_faiss - INFO - Hello! We are Visionerds, a technology consulting and software development company specializing in innovative solutions. One of our notable projects is Beauty Right Back (BRB), an AI-powered customer service solution tailored for the beauty and wellness industry. 
+
+BRB features "Bella," an intelligent conversational AI designed to enhance customer interactions through personalized and context-aware communication. We utilize advanced AI frameworks like LangChain for language model integration and LangGraph for workflow management. Bella can handle a variety of customer service functions, including appointment bookings, beauty consultations, and personalized recommendations.
+
+Our technology stack includes AWS for cloud infrastructure, MongoDB for data management, and Python for backend programming. We focus on providing consistent, real-time performance and maintaining high security and compliance standards.
+
+If you have more specific questions about our projects or services, feel free to ask!
+2025-11-13 14:34:21,088 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:34:21,116 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:34:21,117 - fastapi_app - INFO - FAISS Index Results: Retrieved 5 sources
+2025-11-13 14:34:21,118 - fastapi_app - INFO -   Source 1: Unknown | Score: 1.468724250793457
+2025-11-13 14:34:21,119 - fastapi_app - INFO -     Content preview: Complete Project Details: Beauty
+
+PROJECT:
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+Project
+ 
+Overview
+ 
+Be...
+2025-11-13 14:34:21,121 - fastapi_app - INFO -   Source 2: Unknown | Score: 1.4755690097808838
+2025-11-13 14:34:21,122 - fastapi_app - INFO -     Content preview: Frameworks
+:
+ 
+LangChain
+ 
+for
+ 
+language
+ 
+model
+ 
+integration,
+ 
+LangGraph
+ 
+for
+ 
+workflow
+ 
+mana...
+2025-11-13 14:34:21,125 - fastapi_app - INFO -   Source 3: Unknown | Score: 1.491527795791626
+2025-11-13 14:34:21,126 - fastapi_app - INFO -     Content preview: elevant
+ 
+beauty
+ 
+products.
+ 
+The
+ 
+beauty
+ 
+trend
+ 
+suggestion
+ 
+system
+ 
+incorporates
+ 
+current
+ ...
+2025-11-13 14:34:21,128 - fastapi_app - INFO -   Source 4: Unknown | Score: 1.5061006546020508
+2025-11-13 14:34:21,129 - fastapi_app - INFO -     Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Comp...
+2025-11-13 14:34:21,132 - fastapi_app - INFO -   Source 5: Unknown | Score: 1.5095313787460327
+2025-11-13 14:34:21,133 - fastapi_app - INFO -     Content preview: stions
+ 
+and
+ 
+retention
+ 
+offers),
+ 
+and
+ 
+service
+ 
+upgrades
+ 
+(analyzing
+ 
+current
+ 
+bookings
+ 
+a...
+2025-11-13 14:34:21,135 - fastapi_app - INFO - OpenAI Response Length: 1006 characters
+2025-11-13 14:34:21,136 - fastapi_app - INFO - OpenAI Answer: Hello! We are Visionerds, a technology consulting and software development company specializing in innovative solutions. One of our notable projects is Beauty Right Back (BRB), an AI-powered customer service solution tailored for the beauty and wellness industry. 
+
+BRB features "Bella," an intelligent conversational AI designed to enhance customer interactions through personalized and context-aware communication. We utilize advanced AI frameworks like LangChain for language model integration and LangGraph for workflow management. Bella can handle a variety of customer service functions, including appointment bookings, beauty consultations, and personalized recommendations.
+
+Our technology stack includes AWS for cloud infrastructure, MongoDB for data management, and Python for backend programming. We focus on providing consistent, real-time performance and maintaining high security and compliance standards.
+
+If you have more specific questions about our projects or services, feel free to ask!
+2025-11-13 14:34:21,139 - fastapi_app - INFO - Added interaction to session 333... | Messages in session: 1
+2025-11-13 14:34:21,140 - fastapi_app - INFO - Request completed successfully
+2025-11-13 14:34:21,141 - fastapi_app - INFO - ============================================================
+2025-11-13 14:34:41,108 - fastapi_app - INFO - ============================================================
+2025-11-13 14:34:41,109 - fastapi_app - INFO - NEW CHAT REQUEST | Session: 333...
+2025-11-13 14:34:41,109 - fastapi_app - INFO - User Query: Hi
+2025-11-13 14:34:41,110 - fastapi_app - INFO - History Length: 1 messages
+2025-11-13 14:34:41,111 - fastapi_app - INFO - Querying RAG system...
+2025-11-13 14:34:41,111 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:34:41,112 - rag_class_faiss - INFO - [QUERY_RAG] Starting RAG query pipeline
+2025-11-13 14:34:41,123 - rag_class_faiss - INFO - [QUERY_RAG] Original query: 'Hi'
+2025-11-13 14:34:41,124 - rag_class_faiss - INFO - [QUERY_RAG] Model: gpt-4o-mini
+2025-11-13 14:34:41,125 - rag_class_faiss - INFO - [QUERY_RAG] Temperature: 0.1
+2025-11-13 14:34:41,126 - rag_class_faiss - INFO - [REPHRASE] Original query: 'Hi'
+2025-11-13 14:34:41,127 - rag_class_faiss - INFO - [REPHRASE] Calling OpenAI to rephrase query...
+2025-11-13 14:34:43,229 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-13 14:34:43,261 - rag_class_faiss - INFO - [REPHRASE] Tokens used: 390 (prompt: 375, completion: 15)
+2025-11-13 14:34:43,262 - rag_class_faiss - INFO - [FAISS] Searching for query: 'Hi, can you provide more information about Visionerds and its services?' (top_k=5)
+2025-11-13 14:34:44,774 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-11-13 14:34:44,806 - rag_class_faiss - INFO - [FAISS] Document 1:
+2025-11-13 14:34:44,806 - rag_class_faiss - INFO -   - Content Type: company_overview
+2025-11-13 14:34:44,807 - rag_class_faiss - INFO -   - Section: Company Overview
+2025-11-13 14:34:44,808 - rag_class_faiss - INFO -   - Project: N/A
+2025-11-13 14:34:44,809 - rag_class_faiss - INFO -   - Score: 0.3319893479347229
+2025-11-13 14:34:44,810 - rag_class_faiss - INFO -   - Content preview: Company Overview - Visionerds:
+1. Company Overview  
+Visionerds is a technology consulting and software development firm that combines 
+strategy, desi...
+2025-11-13 14:34:44,812 - rag_class_faiss - INFO - [FAISS] Document 2:
+2025-11-13 14:34:44,812 - rag_class_faiss - INFO -   - Content Type: services
+2025-11-13 14:34:44,813 - rag_class_faiss - INFO -   - Section: Core Services
+2025-11-13 14:34:44,814 - rag_class_faiss - INFO -   - Project: N/A
+2025-11-13 14:34:44,814 - rag_class_faiss - INFO -   - Score: 0.41229644417762756
+2025-11-13 14:34:44,934 - rag_class_faiss - INFO - [FAISS] Document 3:
+2025-11-13 14:34:44,935 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:34:44,936 - rag_class_faiss - INFO -   - Section: Full Details Part 1
+2025-11-13 14:34:44,937 - rag_class_faiss - INFO -   - Project: Zebra
+2025-11-13 14:34:44,938 - rag_class_faiss - INFO -   - Score: 1.3318928480148315
+2025-11-13 14:34:44,939 - rag_class_faiss - INFO -   - Content preview: Complete Project Details: Zebra
+
+PROJECT:
+ 
+Zebra
+ 
+MedNex
+ 
+Project
+ 
+Overview
+ 
+Zebra
+ 
+MedNex
+ 
+represents
+ 
+a
+ 
+comprehensive
+ 
+healthcare
+ 
+manag...
+2025-11-13 14:34:44,951 - rag_class_faiss - INFO - [FAISS] Document 4:
+2025-11-13 14:34:44,952 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:34:44,953 - rag_class_faiss - INFO -   - Section: Full Details Part 4
+2025-11-13 14:34:44,953 - rag_class_faiss - INFO -   - Project: Zebra
+2025-11-13 14:34:44,954 - rag_class_faiss - INFO -   - Score: 1.3437259197235107
+2025-11-13 14:34:44,955 - rag_class_faiss - INFO -   - Content preview: testing
+ 
+and
+ 
+deployment
+
+Keywords: zebra, full project details, complete information...
+2025-11-13 14:34:44,959 - rag_class_faiss - INFO - [FAISS] Document 5:
+2025-11-13 14:34:44,959 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:34:44,961 - rag_class_faiss - INFO -   - Section: Full Details Part 5
+2025-11-13 14:34:44,961 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 14:34:44,963 - rag_class_faiss - INFO -   - Score: 1.3662253618240356
+2025-11-13 14:34:44,965 - rag_class_faiss - INFO -   - Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Compliance
+ 
+Implementation
+ 
+The
+ 
+system
+ 
+implement...
+2025-11-13 14:34:44,977 - rag_class_faiss - INFO - [QUERY_RAG] Context length: 5086 characters
+2025-11-13 14:34:44,978 - rag_class_faiss - INFO - [QUERY_RAG] Using 5 documents
+2025-11-13 14:34:44,980 - rag_class_faiss - INFO - [OPENAI] Sending request to OpenAI API...
+2025-11-13 14:34:44,981 - rag_class_faiss - INFO - [OPENAI] System prompt length: 1857 characters
+2025-11-13 14:34:44,983 - rag_class_faiss - INFO - [OPENAI] User prompt length: 6496 characters
+2025-11-13 14:34:47,281 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-13 14:34:47,284 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:34:47,312 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:34:47,313 - rag_class_faiss - INFO - [OPENAI] Model used: gpt-4o-mini-2024-07-18
+2025-11-13 14:34:47,314 - rag_class_faiss - INFO - [OPENAI] Finish reason: stop
+2025-11-13 14:34:47,315 - rag_class_faiss - INFO - [OPENAI] Token usage:
+2025-11-13 14:34:47,315 - rag_class_faiss - INFO -   - Prompt tokens: 1763
+2025-11-13 14:34:47,316 - rag_class_faiss - INFO -   - Completion tokens: 133
+2025-11-13 14:34:47,317 - rag_class_faiss - INFO -   - Total tokens: 1896
+2025-11-13 14:34:47,317 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:34:47,318 - rag_class_faiss - INFO - [OPENAI] FULL COMPLETION CONTENT:
+2025-11-13 14:34:47,319 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:34:47,319 - rag_class_faiss - INFO - Hello! Welcome to Visionerds. We are a technology consulting and software development firm that specializes in innovative AI solutions, custom software development, and cloud-based enterprise services. Our team is skilled in AI/ML, Python, web and mobile development using technologies like React, Next.js, and React Native.
+
+One of our notable projects is Zebra, a comprehensive healthcare management system that streamlines medical practice operations for both healthcare providers and patients. It includes features such as appointment scheduling, patient management, and AI-assisted clinical decision support, all designed with robust security measures to handle sensitive medical data.
+
+If you have specific questions about our services or projects, feel free to ask!
+2025-11-13 14:34:47,322 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:34:47,350 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:34:47,351 - fastapi_app - INFO - FAISS Index Results: Retrieved 5 sources
+2025-11-13 14:34:47,352 - fastapi_app - INFO -   Source 1: Unknown | Score: 0.3319893479347229
+2025-11-13 14:34:47,352 - fastapi_app - INFO -     Content preview: Company Overview - Visionerds:
+1. Company Overview  
+Visionerds is a technology consulting and softw...
+2025-11-13 14:34:47,353 - fastapi_app - INFO -   Source 2: Unknown | Score: 0.41229644417762756
+2025-11-13 14:34:47,381 - fastapi_app - INFO -   Source 3: Unknown | Score: 1.3318928480148315
+2025-11-13 14:34:47,382 - fastapi_app - INFO -     Content preview: Complete Project Details: Zebra
+
+PROJECT:
+ 
+Zebra
+ 
+MedNex
+ 
+Project
+ 
+Overview
+ 
+Zebra
+ 
+MedNex
+ 
+r...
+2025-11-13 14:34:47,384 - fastapi_app - INFO -   Source 4: Unknown | Score: 1.3437259197235107
+2025-11-13 14:34:47,385 - fastapi_app - INFO -     Content preview: testing
+ 
+and
+ 
+deployment
+
+Keywords: zebra, full project details, complete information...
+2025-11-13 14:34:47,386 - fastapi_app - INFO -   Source 5: Unknown | Score: 1.3662253618240356
+2025-11-13 14:34:47,387 - fastapi_app - INFO -     Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Comp...
+2025-11-13 14:34:47,390 - fastapi_app - INFO - OpenAI Response Length: 772 characters
+2025-11-13 14:34:47,391 - fastapi_app - INFO - OpenAI Answer: Hello! Welcome to Visionerds. We are a technology consulting and software development firm that specializes in innovative AI solutions, custom software development, and cloud-based enterprise services. Our team is skilled in AI/ML, Python, web and mobile development using technologies like React, Next.js, and React Native.
+
+One of our notable projects is Zebra, a comprehensive healthcare management system that streamlines medical practice operations for both healthcare providers and patients. It includes features such as appointment scheduling, patient management, and AI-assisted clinical decision support, all designed with robust security measures to handle sensitive medical data.
+
+If you have specific questions about our services or projects, feel free to ask!
+2025-11-13 14:34:47,393 - fastapi_app - INFO - Added interaction to session 333... | Messages in session: 2
+2025-11-13 14:34:47,394 - fastapi_app - INFO - Request completed successfully
+2025-11-13 14:34:47,395 - fastapi_app - INFO - ============================================================
+2025-11-13 14:41:56,554 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-13 14:41:56,596 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-13 14:41:56,681 - fastapi_app - INFO - ============================================================
+2025-11-13 14:41:56,682 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-13 14:41:56,682 - fastapi_app - INFO - Loading FAISS index...
+2025-11-13 14:41:56,683 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-13 14:41:56,731 - fastapi_app - INFO - ============================================================
+2025-11-13 14:42:11,044 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-13 14:42:11,090 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-13 14:42:11,171 - fastapi_app - INFO - ============================================================
+2025-11-13 14:42:11,172 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-13 14:42:11,172 - fastapi_app - INFO - Loading FAISS index...
+2025-11-13 14:42:11,173 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-13 14:42:11,224 - fastapi_app - INFO - ============================================================
+2025-11-13 14:42:45,105 - fastapi_app - INFO - ============================================================
+2025-11-13 14:42:45,106 - fastapi_app - INFO - NEW CHAT REQUEST | Session: 333...
+2025-11-13 14:42:45,107 - fastapi_app - INFO - User Query: Hello
+2025-11-13 14:42:45,107 - fastapi_app - INFO - History Length: 0 messages
+2025-11-13 14:42:45,108 - fastapi_app - INFO - Querying RAG system...
+2025-11-13 14:42:45,109 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:42:45,109 - rag_class_faiss - INFO - [QUERY_RAG] Starting RAG query pipeline
+2025-11-13 14:42:45,110 - rag_class_faiss - INFO - [QUERY_RAG] Original query: 'Hello'
+2025-11-13 14:42:45,111 - rag_class_faiss - INFO - [QUERY_RAG] Model: gpt-4o-mini
+2025-11-13 14:42:45,111 - rag_class_faiss - INFO - [QUERY_RAG] Temperature: 0.1
+2025-11-13 14:42:45,112 - rag_class_faiss - INFO - [FAISS] Searching for query: 'Hello' (top_k=5)
+2025-11-13 14:42:46,617 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-11-13 14:42:46,657 - rag_class_faiss - INFO - [FAISS] Document 1:
+2025-11-13 14:42:46,658 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:42:46,658 - rag_class_faiss - INFO -   - Section: Full Details Part 1
+2025-11-13 14:42:46,659 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 14:42:46,660 - rag_class_faiss - INFO -   - Score: 1.468724250793457
+2025-11-13 14:42:46,661 - rag_class_faiss - INFO -   - Content preview: Complete Project Details: Beauty
+
+PROJECT:
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+Project
+ 
+Overview
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+represents
+ 
+a
+ 
+cut...
+2025-11-13 14:42:46,665 - rag_class_faiss - INFO - [FAISS] Document 2:
+2025-11-13 14:42:46,666 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:42:46,666 - rag_class_faiss - INFO -   - Section: Full Details Part 6
+2025-11-13 14:42:46,667 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 14:42:46,668 - rag_class_faiss - INFO -   - Score: 1.4755690097808838
+2025-11-13 14:42:46,702 - rag_class_faiss - INFO - [FAISS] Document 3:
+2025-11-13 14:42:46,702 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:42:46,703 - rag_class_faiss - INFO -   - Section: Full Details Part 4
+2025-11-13 14:42:46,704 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 14:42:46,704 - rag_class_faiss - INFO -   - Score: 1.491527795791626
+2025-11-13 14:42:46,705 - rag_class_faiss - INFO -   - Content preview: elevant
+ 
+beauty
+ 
+products.
+ 
+The
+ 
+beauty
+ 
+trend
+ 
+suggestion
+ 
+system
+ 
+incorporates
+ 
+current
+ 
+industry
+ 
+trends,
+ 
+seasonal
+ 
+preferences,
+ 
+an...
+2025-11-13 14:42:46,709 - rag_class_faiss - INFO - [FAISS] Document 4:
+2025-11-13 14:42:46,710 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:42:46,711 - rag_class_faiss - INFO -   - Section: Full Details Part 5
+2025-11-13 14:42:46,712 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 14:42:46,712 - rag_class_faiss - INFO -   - Score: 1.5061006546020508
+2025-11-13 14:42:46,713 - rag_class_faiss - INFO -   - Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Compliance
+ 
+Implementation
+ 
+The
+ 
+system
+ 
+implement...
+2025-11-13 14:42:46,717 - rag_class_faiss - INFO - [FAISS] Document 5:
+2025-11-13 14:42:46,717 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:42:46,718 - rag_class_faiss - INFO -   - Section: Full Details Part 3
+2025-11-13 14:42:46,718 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 14:42:46,719 - rag_class_faiss - INFO -   - Score: 1.5095313787460327
+2025-11-13 14:42:46,720 - rag_class_faiss - INFO -   - Content preview: stions
+ 
+and
+ 
+retention
+ 
+offers),
+ 
+and
+ 
+service
+ 
+upgrades
+ 
+(analyzing
+ 
+current
+ 
+bookings
+ 
+and
+ 
+suggesting
+ 
+enhanced
+ 
+services).
+ 
+The
+ 
+mo...
+2025-11-13 14:42:46,724 - rag_class_faiss - INFO - [QUERY_RAG] Context length: 7530 characters
+2025-11-13 14:42:46,725 - rag_class_faiss - INFO - [QUERY_RAG] Using 5 documents
+2025-11-13 14:42:46,726 - rag_class_faiss - INFO - [OPENAI] Sending request to OpenAI API...
+2025-11-13 14:42:46,727 - rag_class_faiss - INFO - [OPENAI] System prompt length: 2112 characters
+2025-11-13 14:42:46,728 - rag_class_faiss - INFO - [OPENAI] User prompt length: 7888 characters
+2025-11-13 14:42:48,917 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-13 14:42:48,945 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:42:48,974 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:42:48,975 - rag_class_faiss - INFO - [OPENAI] Model used: gpt-4o-mini-2024-07-18
+2025-11-13 14:42:48,976 - rag_class_faiss - INFO - [OPENAI] Finish reason: stop
+2025-11-13 14:42:48,977 - rag_class_faiss - INFO - [OPENAI] Token usage:
+2025-11-13 14:42:48,978 - rag_class_faiss - INFO -   - Prompt tokens: 2296
+2025-11-13 14:42:48,978 - rag_class_faiss - INFO -   - Completion tokens: 50
+2025-11-13 14:42:48,979 - rag_class_faiss - INFO -   - Total tokens: 2346
+2025-11-13 14:42:48,979 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:42:48,980 - rag_class_faiss - INFO - [OPENAI] FULL COMPLETION CONTENT:
+2025-11-13 14:42:48,981 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:42:48,982 - rag_class_faiss - INFO - Hello! Welcome to Visionerds. If you have any questions about our company, projects like our cutting-edge AI-powered solution for the beauty and wellness industry, or our technologies and capabilities, feel free to ask! How can I assist you today?
+2025-11-13 14:42:48,983 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:42:49,013 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:42:49,014 - fastapi_app - INFO - FAISS Index Results: Retrieved 5 sources
+2025-11-13 14:42:49,014 - fastapi_app - INFO -   Source 1: Unknown | Score: 1.468724250793457
+2025-11-13 14:42:49,015 - fastapi_app - INFO -     Content preview: Complete Project Details: Beauty
+
+PROJECT:
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+Project
+ 
+Overview
+ 
+Be...
+2025-11-13 14:42:49,017 - fastapi_app - INFO -   Source 2: Unknown | Score: 1.4755690097808838
+2025-11-13 14:42:49,018 - fastapi_app - INFO -     Content preview: Frameworks
+:
+ 
+LangChain
+ 
+for
+ 
+language
+ 
+model
+ 
+integration,
+ 
+LangGraph
+ 
+for
+ 
+workflow
+ 
+mana...
+2025-11-13 14:42:49,022 - fastapi_app - INFO -   Source 3: Unknown | Score: 1.491527795791626
+2025-11-13 14:42:49,023 - fastapi_app - INFO -     Content preview: elevant
+ 
+beauty
+ 
+products.
+ 
+The
+ 
+beauty
+ 
+trend
+ 
+suggestion
+ 
+system
+ 
+incorporates
+ 
+current
+ ...
+2025-11-13 14:42:49,027 - fastapi_app - INFO -   Source 4: Unknown | Score: 1.5061006546020508
+2025-11-13 14:42:49,028 - fastapi_app - INFO -     Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Comp...
+2025-11-13 14:42:49,030 - fastapi_app - INFO -   Source 5: Unknown | Score: 1.5095313787460327
+2025-11-13 14:42:49,031 - fastapi_app - INFO -     Content preview: stions
+ 
+and
+ 
+retention
+ 
+offers),
+ 
+and
+ 
+service
+ 
+upgrades
+ 
+(analyzing
+ 
+current
+ 
+bookings
+ 
+a...
+2025-11-13 14:42:49,034 - fastapi_app - INFO - OpenAI Response Length: 247 characters
+2025-11-13 14:42:49,034 - fastapi_app - INFO - OpenAI Answer: Hello! Welcome to Visionerds. If you have any questions about our company, projects like our cutting-edge AI-powered solution for the beauty and wellness industry, or our technologies and capabilities, feel free to ask! How can I assist you today?
+2025-11-13 14:42:49,035 - fastapi_app - INFO - Added interaction to session 333... | Messages in session: 1
+2025-11-13 14:42:49,036 - fastapi_app - INFO - Request completed successfully
+2025-11-13 14:42:49,037 - fastapi_app - INFO - ============================================================
+2025-11-13 14:48:04,465 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-13 14:48:04,510 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-13 14:48:04,589 - fastapi_app - INFO - ============================================================
+2025-11-13 14:48:04,590 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-13 14:48:04,590 - fastapi_app - INFO - Loading FAISS index...
+2025-11-13 14:48:04,591 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-13 14:48:04,640 - fastapi_app - INFO - ============================================================
+2025-11-13 14:48:10,825 - fastapi_app - INFO - ============================================================
+2025-11-13 14:48:10,826 - fastapi_app - INFO - NEW CHAT REQUEST | Session: 333...
+2025-11-13 14:48:10,826 - fastapi_app - INFO - User Query: Hello
+2025-11-13 14:48:10,827 - fastapi_app - INFO - History Length: 0 messages
+2025-11-13 14:48:10,827 - fastapi_app - INFO - Querying RAG system...
+2025-11-13 14:48:10,828 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:48:10,829 - rag_class_faiss - INFO - [QUERY_RAG] Starting RAG query pipeline
+2025-11-13 14:48:10,829 - rag_class_faiss - INFO - [QUERY_RAG] Original query: 'Hello'
+2025-11-13 14:48:10,830 - rag_class_faiss - INFO - [QUERY_RAG] Model: gpt-4o-mini
+2025-11-13 14:48:10,830 - rag_class_faiss - INFO - [QUERY_RAG] Temperature: 0.1
+2025-11-13 14:48:10,831 - rag_class_faiss - INFO - [FAISS] Searching for query: 'Hello' (top_k=5)
+2025-11-13 14:48:11,937 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-11-13 14:48:11,971 - rag_class_faiss - INFO - [FAISS] Document 1:
+2025-11-13 14:48:11,971 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:48:11,972 - rag_class_faiss - INFO -   - Section: Full Details Part 1
+2025-11-13 14:48:11,973 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 14:48:11,973 - rag_class_faiss - INFO -   - Score: 1.468724250793457
+2025-11-13 14:48:11,974 - rag_class_faiss - INFO -   - Content preview: Complete Project Details: Beauty
+
+PROJECT:
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+Project
+ 
+Overview
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+represents
+ 
+a
+ 
+cut...
+2025-11-13 14:48:11,978 - rag_class_faiss - INFO - [FAISS] Document 2:
+2025-11-13 14:48:11,978 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:48:11,979 - rag_class_faiss - INFO -   - Section: Full Details Part 6
+2025-11-13 14:48:11,980 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 14:48:11,980 - rag_class_faiss - INFO -   - Score: 1.4755690097808838
+2025-11-13 14:48:12,010 - rag_class_faiss - INFO - [FAISS] Document 3:
+2025-11-13 14:48:12,010 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:48:12,011 - rag_class_faiss - INFO -   - Section: Full Details Part 4
+2025-11-13 14:48:12,011 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 14:48:12,012 - rag_class_faiss - INFO -   - Score: 1.491527795791626
+2025-11-13 14:48:12,013 - rag_class_faiss - INFO -   - Content preview: elevant
+ 
+beauty
+ 
+products.
+ 
+The
+ 
+beauty
+ 
+trend
+ 
+suggestion
+ 
+system
+ 
+incorporates
+ 
+current
+ 
+industry
+ 
+trends,
+ 
+seasonal
+ 
+preferences,
+ 
+an...
+2025-11-13 14:48:12,016 - rag_class_faiss - INFO - [FAISS] Document 4:
+2025-11-13 14:48:12,017 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:48:12,017 - rag_class_faiss - INFO -   - Section: Full Details Part 5
+2025-11-13 14:48:12,018 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 14:48:12,019 - rag_class_faiss - INFO -   - Score: 1.5061006546020508
+2025-11-13 14:48:12,019 - rag_class_faiss - INFO -   - Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Compliance
+ 
+Implementation
+ 
+The
+ 
+system
+ 
+implement...
+2025-11-13 14:48:12,022 - rag_class_faiss - INFO - [FAISS] Document 5:
+2025-11-13 14:48:12,023 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:48:12,023 - rag_class_faiss - INFO -   - Section: Full Details Part 3
+2025-11-13 14:48:12,024 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 14:48:12,025 - rag_class_faiss - INFO -   - Score: 1.5095313787460327
+2025-11-13 14:48:12,026 - rag_class_faiss - INFO -   - Content preview: stions
+ 
+and
+ 
+retention
+ 
+offers),
+ 
+and
+ 
+service
+ 
+upgrades
+ 
+(analyzing
+ 
+current
+ 
+bookings
+ 
+and
+ 
+suggesting
+ 
+enhanced
+ 
+services).
+ 
+The
+ 
+mo...
+2025-11-13 14:48:12,029 - rag_class_faiss - INFO - [QUERY_RAG] Context length: 7530 characters
+2025-11-13 14:48:12,030 - rag_class_faiss - INFO - [QUERY_RAG] Using 5 documents
+2025-11-13 14:48:12,030 - rag_class_faiss - INFO - [OPENAI] Sending request to OpenAI API...
+2025-11-13 14:48:12,031 - rag_class_faiss - INFO - [OPENAI] System prompt length: 2227 characters
+2025-11-13 14:48:12,032 - rag_class_faiss - INFO - [OPENAI] User prompt length: 7888 characters
+2025-11-13 14:48:17,589 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-13 14:48:17,612 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:48:17,643 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:48:17,643 - rag_class_faiss - INFO - [OPENAI] Model used: gpt-4o-mini-2024-07-18
+2025-11-13 14:48:17,644 - rag_class_faiss - INFO - [OPENAI] Finish reason: stop
+2025-11-13 14:48:17,645 - rag_class_faiss - INFO - [OPENAI] Token usage:
+2025-11-13 14:48:17,645 - rag_class_faiss - INFO -   - Prompt tokens: 2325
+2025-11-13 14:48:17,646 - rag_class_faiss - INFO -   - Completion tokens: 13
+2025-11-13 14:48:17,648 - rag_class_faiss - INFO -   - Total tokens: 2338
+2025-11-13 14:48:17,649 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:48:17,650 - rag_class_faiss - INFO - [OPENAI] FULL COMPLETION CONTENT:
+2025-11-13 14:48:17,650 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:48:17,651 - rag_class_faiss - INFO - Hello! How can I help you learn about Visionerds?
+2025-11-13 14:48:17,652 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:48:17,683 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:48:17,684 - fastapi_app - INFO - FAISS Index Results: Retrieved 5 sources
+2025-11-13 14:48:17,685 - fastapi_app - INFO -   Source 1: Unknown | Score: 1.468724250793457
+2025-11-13 14:48:17,686 - fastapi_app - INFO -     Content preview: Complete Project Details: Beauty
+
+PROJECT:
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+Project
+ 
+Overview
+ 
+Be...
+2025-11-13 14:48:17,688 - fastapi_app - INFO -   Source 2: Unknown | Score: 1.4755690097808838
+2025-11-13 14:48:17,689 - fastapi_app - INFO -     Content preview: Frameworks
+:
+ 
+LangChain
+ 
+for
+ 
+language
+ 
+model
+ 
+integration,
+ 
+LangGraph
+ 
+for
+ 
+workflow
+ 
+mana...
+2025-11-13 14:48:17,693 - fastapi_app - INFO -   Source 3: Unknown | Score: 1.491527795791626
+2025-11-13 14:48:17,693 - fastapi_app - INFO -     Content preview: elevant
+ 
+beauty
+ 
+products.
+ 
+The
+ 
+beauty
+ 
+trend
+ 
+suggestion
+ 
+system
+ 
+incorporates
+ 
+current
+ ...
+2025-11-13 14:48:17,696 - fastapi_app - INFO -   Source 4: Unknown | Score: 1.5061006546020508
+2025-11-13 14:48:17,696 - fastapi_app - INFO -     Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Comp...
+2025-11-13 14:48:17,700 - fastapi_app - INFO -   Source 5: Unknown | Score: 1.5095313787460327
+2025-11-13 14:48:17,700 - fastapi_app - INFO -     Content preview: stions
+ 
+and
+ 
+retention
+ 
+offers),
+ 
+and
+ 
+service
+ 
+upgrades
+ 
+(analyzing
+ 
+current
+ 
+bookings
+ 
+a...
+2025-11-13 14:48:17,703 - fastapi_app - INFO - OpenAI Response Length: 49 characters
+2025-11-13 14:48:17,704 - fastapi_app - INFO - OpenAI Answer: Hello! How can I help you learn about Visionerds?
+2025-11-13 14:48:17,705 - fastapi_app - INFO - Added interaction to session 333... | Messages in session: 1
+2025-11-13 14:48:17,706 - fastapi_app - INFO - Request completed successfully
+2025-11-13 14:48:17,706 - fastapi_app - INFO - ============================================================
+2025-11-13 14:48:30,684 - fastapi_app - INFO - ============================================================
+2025-11-13 14:48:30,685 - fastapi_app - INFO - NEW CHAT REQUEST | Session: 333...
+2025-11-13 14:48:30,685 - fastapi_app - INFO - User Query: Hi
+2025-11-13 14:48:30,686 - fastapi_app - INFO - History Length: 1 messages
+2025-11-13 14:48:30,687 - fastapi_app - INFO - Querying RAG system...
+2025-11-13 14:48:30,688 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:48:30,688 - rag_class_faiss - INFO - [QUERY_RAG] Starting RAG query pipeline
+2025-11-13 14:48:30,689 - rag_class_faiss - INFO - [QUERY_RAG] Original query: 'Hi'
+2025-11-13 14:48:30,690 - rag_class_faiss - INFO - [QUERY_RAG] Model: gpt-4o-mini
+2025-11-13 14:48:30,690 - rag_class_faiss - INFO - [QUERY_RAG] Temperature: 0.1
+2025-11-13 14:48:30,691 - rag_class_faiss - INFO - [REPHRASE] Original query: 'Hi'
+2025-11-13 14:48:30,692 - rag_class_faiss - INFO - [REPHRASE] Calling OpenAI to rephrase query...
+2025-11-13 14:48:32,850 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-13 14:48:32,883 - rag_class_faiss - INFO - [REPHRASE] Tokens used: 234 (prompt: 223, completion: 11)
+2025-11-13 14:48:32,884 - rag_class_faiss - INFO - [FAISS] Searching for query: 'Hi, can you provide information about Visionerds?' (top_k=5)
+2025-11-13 14:48:34,522 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-11-13 14:48:34,561 - rag_class_faiss - INFO - [FAISS] Document 1:
+2025-11-13 14:48:34,562 - rag_class_faiss - INFO -   - Content Type: company_overview
+2025-11-13 14:48:34,562 - rag_class_faiss - INFO -   - Section: Company Overview
+2025-11-13 14:48:34,563 - rag_class_faiss - INFO -   - Project: N/A
+2025-11-13 14:48:34,564 - rag_class_faiss - INFO -   - Score: 0.35197892785072327
+2025-11-13 14:48:34,564 - rag_class_faiss - INFO -   - Content preview: Company Overview - Visionerds:
+1. Company Overview  
+Visionerds is a technology consulting and software development firm that combines 
+strategy, desi...
+2025-11-13 14:48:34,565 - rag_class_faiss - INFO - [FAISS] Document 2:
+2025-11-13 14:48:34,566 - rag_class_faiss - INFO -   - Content Type: services
+2025-11-13 14:48:34,567 - rag_class_faiss - INFO -   - Section: Core Services
+2025-11-13 14:48:34,568 - rag_class_faiss - INFO -   - Project: N/A
+2025-11-13 14:48:34,569 - rag_class_faiss - INFO -   - Score: 0.5380259156227112
+2025-11-13 14:48:34,604 - rag_class_faiss - INFO - [FAISS] Document 3:
+2025-11-13 14:48:34,604 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:48:34,605 - rag_class_faiss - INFO -   - Section: Full Details Part 1
+2025-11-13 14:48:34,606 - rag_class_faiss - INFO -   - Project: Zebra
+2025-11-13 14:48:34,606 - rag_class_faiss - INFO -   - Score: 1.390813946723938
+2025-11-13 14:48:34,607 - rag_class_faiss - INFO -   - Content preview: Complete Project Details: Zebra
+
+PROJECT:
+ 
+Zebra
+ 
+MedNex
+ 
+Project
+ 
+Overview
+ 
+Zebra
+ 
+MedNex
+ 
+represents
+ 
+a
+ 
+comprehensive
+ 
+healthcare
+ 
+manag...
+2025-11-13 14:48:34,610 - rag_class_faiss - INFO - [FAISS] Document 4:
+2025-11-13 14:48:34,611 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:48:34,612 - rag_class_faiss - INFO -   - Section: Full Details Part 4
+2025-11-13 14:48:34,613 - rag_class_faiss - INFO -   - Project: Zebra
+2025-11-13 14:48:34,613 - rag_class_faiss - INFO -   - Score: 1.3909821510314941
+2025-11-13 14:48:34,613 - rag_class_faiss - INFO -   - Content preview: testing
+ 
+and
+ 
+deployment
+
+Keywords: zebra, full project details, complete information...
+2025-11-13 14:48:34,615 - rag_class_faiss - INFO - [FAISS] Document 5:
+2025-11-13 14:48:34,616 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:48:34,616 - rag_class_faiss - INFO -   - Section: Full Details Part 5
+2025-11-13 14:48:34,617 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 14:48:34,618 - rag_class_faiss - INFO -   - Score: 1.4400804042816162
+2025-11-13 14:48:34,619 - rag_class_faiss - INFO -   - Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Compliance
+ 
+Implementation
+ 
+The
+ 
+system
+ 
+implement...
+2025-11-13 14:48:34,623 - rag_class_faiss - INFO - [QUERY_RAG] Context length: 5086 characters
+2025-11-13 14:48:34,624 - rag_class_faiss - INFO - [QUERY_RAG] Using 5 documents
+2025-11-13 14:48:34,625 - rag_class_faiss - INFO - [OPENAI] Sending request to OpenAI API...
+2025-11-13 14:48:34,626 - rag_class_faiss - INFO - [OPENAI] System prompt length: 2227 characters
+2025-11-13 14:48:34,627 - rag_class_faiss - INFO - [OPENAI] User prompt length: 5539 characters
+2025-11-13 14:48:38,985 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-13 14:48:39,000 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:48:39,031 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:48:39,032 - rag_class_faiss - INFO - [OPENAI] Model used: gpt-4o-mini-2024-07-18
+2025-11-13 14:48:39,033 - rag_class_faiss - INFO - [OPENAI] Finish reason: stop
+2025-11-13 14:48:39,033 - rag_class_faiss - INFO - [OPENAI] Token usage:
+2025-11-13 14:48:39,034 - rag_class_faiss - INFO -   - Prompt tokens: 1693
+2025-11-13 14:48:39,035 - rag_class_faiss - INFO -   - Completion tokens: 13
+2025-11-13 14:48:39,035 - rag_class_faiss - INFO -   - Total tokens: 1706
+2025-11-13 14:48:39,036 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:48:39,037 - rag_class_faiss - INFO - [OPENAI] FULL COMPLETION CONTENT:
+2025-11-13 14:48:39,037 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:48:39,038 - rag_class_faiss - INFO - Hello! How can I help you learn about Visionerds?
+2025-11-13 14:48:39,039 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:48:39,071 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:48:39,072 - fastapi_app - INFO - FAISS Index Results: Retrieved 5 sources
+2025-11-13 14:48:39,073 - fastapi_app - INFO -   Source 1: Unknown | Score: 0.35197892785072327
+2025-11-13 14:48:39,074 - fastapi_app - INFO -     Content preview: Company Overview - Visionerds:
+1. Company Overview  
+Visionerds is a technology consulting and softw...
+2025-11-13 14:48:39,075 - fastapi_app - INFO -   Source 2: Unknown | Score: 0.5380259156227112
+2025-11-13 14:48:39,107 - fastapi_app - INFO -   Source 3: Unknown | Score: 1.390813946723938
+2025-11-13 14:48:39,108 - fastapi_app - INFO -     Content preview: Complete Project Details: Zebra
+
+PROJECT:
+ 
+Zebra
+ 
+MedNex
+ 
+Project
+ 
+Overview
+ 
+Zebra
+ 
+MedNex
+ 
+r...
+2025-11-13 14:48:39,111 - fastapi_app - INFO -   Source 4: Unknown | Score: 1.3909821510314941
+2025-11-13 14:48:39,112 - fastapi_app - INFO -     Content preview: testing
+ 
+and
+ 
+deployment
+
+Keywords: zebra, full project details, complete information...
+2025-11-13 14:48:39,113 - fastapi_app - INFO -   Source 5: Unknown | Score: 1.4400804042816162
+2025-11-13 14:48:39,114 - fastapi_app - INFO -     Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Comp...
+2025-11-13 14:48:39,116 - fastapi_app - INFO - OpenAI Response Length: 49 characters
+2025-11-13 14:48:39,118 - fastapi_app - INFO - OpenAI Answer: Hello! How can I help you learn about Visionerds?
+2025-11-13 14:48:39,119 - fastapi_app - INFO - Added interaction to session 333... | Messages in session: 2
+2025-11-13 14:48:39,119 - fastapi_app - INFO - Request completed successfully
+2025-11-13 14:48:39,120 - fastapi_app - INFO - ============================================================
+2025-11-13 14:49:32,232 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-11-13 14:49:32,267 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-11-13 14:49:32,344 - fastapi_app - INFO - ============================================================
+2025-11-13 14:49:32,344 - fastapi_app - INFO - Starting RAG Chatbot API v2.0.0
+2025-11-13 14:49:32,345 - fastapi_app - INFO - Loading FAISS index...
+2025-11-13 14:49:32,345 - rag_class_faiss - INFO - [RELOAD] Attempting to reload FAISS index...
+2025-11-13 14:49:32,396 - fastapi_app - INFO - ============================================================
+2025-11-13 14:49:37,157 - fastapi_app - INFO - ============================================================
+2025-11-13 14:49:37,158 - fastapi_app - INFO - NEW CHAT REQUEST | Session: 333...
+2025-11-13 14:49:37,158 - fastapi_app - INFO - User Query: Hi
+2025-11-13 14:49:37,159 - fastapi_app - INFO - History Length: 0 messages
+2025-11-13 14:49:37,160 - fastapi_app - INFO - Querying RAG system...
+2025-11-13 14:49:37,160 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:49:37,161 - rag_class_faiss - INFO - [QUERY_RAG] Starting RAG query pipeline
+2025-11-13 14:49:37,162 - rag_class_faiss - INFO - [QUERY_RAG] Original query: 'Hi'
+2025-11-13 14:49:37,162 - rag_class_faiss - INFO - [QUERY_RAG] Model: gpt-4o-mini
+2025-11-13 14:49:37,163 - rag_class_faiss - INFO - [QUERY_RAG] Temperature: 0.1
+2025-11-13 14:49:37,164 - rag_class_faiss - INFO - [FAISS] Searching for query: 'Hi' (top_k=5)
+2025-11-13 14:49:38,642 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-11-13 14:49:38,676 - rag_class_faiss - INFO - [FAISS] Document 1:
+2025-11-13 14:49:38,677 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:49:38,677 - rag_class_faiss - INFO -   - Section: Full Details Part 6
+2025-11-13 14:49:38,678 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 14:49:38,679 - rag_class_faiss - INFO -   - Score: 1.4559962749481201
+2025-11-13 14:49:38,706 - rag_class_faiss - INFO - [FAISS] Document 2:
+2025-11-13 14:49:38,707 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:49:38,707 - rag_class_faiss - INFO -   - Section: Full Details Part 3
+2025-11-13 14:49:38,708 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 14:49:38,708 - rag_class_faiss - INFO -   - Score: 1.487444519996643
+2025-11-13 14:49:38,709 - rag_class_faiss - INFO -   - Content preview: stions
+ 
+and
+ 
+retention
+ 
+offers),
+ 
+and
+ 
+service
+ 
+upgrades
+ 
+(analyzing
+ 
+current
+ 
+bookings
+ 
+and
+ 
+suggesting
+ 
+enhanced
+ 
+services).
+ 
+The
+ 
+mo...
+2025-11-13 14:49:38,711 - rag_class_faiss - INFO - [FAISS] Document 3:
+2025-11-13 14:49:38,712 - rag_class_faiss - INFO -   - Content Type: technology
+2025-11-13 14:49:38,713 - rag_class_faiss - INFO -   - Section: Tech Stack
+2025-11-13 14:49:38,713 - rag_class_faiss - INFO -   - Project: N/A
+2025-11-13 14:49:38,714 - rag_class_faiss - INFO -   - Score: 1.505075454711914
+2025-11-13 14:49:38,738 - rag_class_faiss - INFO - [FAISS] Document 4:
+2025-11-13 14:49:38,739 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:49:38,739 - rag_class_faiss - INFO -   - Section: Full Details Part 5
+2025-11-13 14:49:38,740 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 14:49:38,740 - rag_class_faiss - INFO -   - Score: 1.5078129768371582
+2025-11-13 14:49:38,741 - rag_class_faiss - INFO -   - Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Compliance
+ 
+Implementation
+ 
+The
+ 
+system
+ 
+implement...
+2025-11-13 14:49:38,743 - rag_class_faiss - INFO - [FAISS] Document 5:
+2025-11-13 14:49:38,743 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:49:38,744 - rag_class_faiss - INFO -   - Section: Full Details Part 1
+2025-11-13 14:49:38,745 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 14:49:38,745 - rag_class_faiss - INFO -   - Score: 1.5101808309555054
+2025-11-13 14:49:38,746 - rag_class_faiss - INFO -   - Content preview: Complete Project Details: Beauty
+
+PROJECT:
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+Project
+ 
+Overview
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+represents
+ 
+a
+ 
+cut...
+2025-11-13 14:49:38,748 - rag_class_faiss - INFO - [QUERY_RAG] Context length: 6173 characters
+2025-11-13 14:49:38,749 - rag_class_faiss - INFO - [QUERY_RAG] Using 5 documents
+2025-11-13 14:49:38,749 - rag_class_faiss - INFO - [OPENAI] Sending request to OpenAI API...
+2025-11-13 14:49:38,750 - rag_class_faiss - INFO - [OPENAI] System prompt length: 2168 characters
+2025-11-13 14:49:38,750 - rag_class_faiss - INFO - [OPENAI] User prompt length: 6528 characters
+2025-11-13 14:49:39,684 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-13 14:49:39,700 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:49:39,725 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:49:39,726 - rag_class_faiss - INFO - [OPENAI] Model used: gpt-4o-mini-2024-07-18
+2025-11-13 14:49:39,727 - rag_class_faiss - INFO - [OPENAI] Finish reason: stop
+2025-11-13 14:49:39,727 - rag_class_faiss - INFO - [OPENAI] Token usage:
+2025-11-13 14:49:39,728 - rag_class_faiss - INFO -   - Prompt tokens: 2006
+2025-11-13 14:49:39,728 - rag_class_faiss - INFO -   - Completion tokens: 25
+2025-11-13 14:49:39,729 - rag_class_faiss - INFO -   - Total tokens: 2031
+2025-11-13 14:49:39,730 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:49:39,730 - rag_class_faiss - INFO - [OPENAI] FULL COMPLETION CONTENT:
+2025-11-13 14:49:39,731 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:49:39,732 - rag_class_faiss - INFO - Hello! Welcome to Visionerds. How can I assist you today with information about our company, projects, or services?
+2025-11-13 14:49:39,732 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:49:39,759 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:49:39,759 - fastapi_app - INFO - FAISS Index Results: Retrieved 5 sources
+2025-11-13 14:49:39,761 - fastapi_app - INFO -   Source 1: Unknown | Score: 1.4559962749481201
+2025-11-13 14:49:39,761 - fastapi_app - INFO -     Content preview: Frameworks
+:
+ 
+LangChain
+ 
+for
+ 
+language
+ 
+model
+ 
+integration,
+ 
+LangGraph
+ 
+for
+ 
+workflow
+ 
+mana...
+2025-11-13 14:49:39,763 - fastapi_app - INFO -   Source 2: Unknown | Score: 1.487444519996643
+2025-11-13 14:49:39,764 - fastapi_app - INFO -     Content preview: stions
+ 
+and
+ 
+retention
+ 
+offers),
+ 
+and
+ 
+service
+ 
+upgrades
+ 
+(analyzing
+ 
+current
+ 
+bookings
+ 
+a...
+2025-11-13 14:49:39,765 - fastapi_app - INFO -   Source 3: Unknown | Score: 1.505075454711914
+2025-11-13 14:49:39,790 - fastapi_app - INFO -   Source 4: Unknown | Score: 1.5078129768371582
+2025-11-13 14:49:39,790 - fastapi_app - INFO -     Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Comp...
+2025-11-13 14:49:39,793 - fastapi_app - INFO -   Source 5: Unknown | Score: 1.5101808309555054
+2025-11-13 14:49:39,793 - fastapi_app - INFO -     Content preview: Complete Project Details: Beauty
+
+PROJECT:
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+Project
+ 
+Overview
+ 
+Be...
+2025-11-13 14:49:39,796 - fastapi_app - INFO - OpenAI Response Length: 115 characters
+2025-11-13 14:49:39,797 - fastapi_app - INFO - OpenAI Answer: Hello! Welcome to Visionerds. How can I assist you today with information about our company, projects, or services?
+2025-11-13 14:49:39,798 - fastapi_app - INFO - Added interaction to session 333... | Messages in session: 1
+2025-11-13 14:49:39,799 - fastapi_app - INFO - Request completed successfully
+2025-11-13 14:49:39,799 - fastapi_app - INFO - ============================================================
+2025-11-13 14:49:55,117 - fastapi_app - INFO - ============================================================
+2025-11-13 14:49:55,118 - fastapi_app - INFO - NEW CHAT REQUEST | Session: 333...
+2025-11-13 14:49:55,118 - fastapi_app - INFO - User Query: Hello
+2025-11-13 14:49:55,119 - fastapi_app - INFO - History Length: 1 messages
+2025-11-13 14:49:55,120 - fastapi_app - INFO - Querying RAG system...
+2025-11-13 14:49:55,120 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:49:55,121 - rag_class_faiss - INFO - [QUERY_RAG] Starting RAG query pipeline
+2025-11-13 14:49:55,121 - rag_class_faiss - INFO - [QUERY_RAG] Original query: 'Hello'
+2025-11-13 14:49:55,122 - rag_class_faiss - INFO - [QUERY_RAG] Model: gpt-4o-mini
+2025-11-13 14:49:55,122 - rag_class_faiss - INFO - [QUERY_RAG] Temperature: 0.1
+2025-11-13 14:49:55,123 - rag_class_faiss - INFO - [REPHRASE] Original query: 'Hello'
+2025-11-13 14:49:55,124 - rag_class_faiss - INFO - [REPHRASE] Calling OpenAI to rephrase query...
+2025-11-13 14:49:56,335 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-13 14:49:56,365 - rag_class_faiss - INFO - [REPHRASE] Tokens used: 247 (prompt: 235, completion: 12)
+2025-11-13 14:49:56,366 - rag_class_faiss - INFO - [FAISS] Searching for query: 'Hello, what information can you provide about Visionerds?' (top_k=5)
+2025-11-13 14:49:57,234 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-11-13 14:49:57,270 - rag_class_faiss - INFO - [FAISS] Document 1:
+2025-11-13 14:49:57,271 - rag_class_faiss - INFO -   - Content Type: company_overview
+2025-11-13 14:49:57,272 - rag_class_faiss - INFO -   - Section: Company Overview
+2025-11-13 14:49:57,273 - rag_class_faiss - INFO -   - Project: N/A
+2025-11-13 14:49:57,273 - rag_class_faiss - INFO -   - Score: 0.32719719409942627
+2025-11-13 14:49:57,274 - rag_class_faiss - INFO -   - Content preview: Company Overview - Visionerds:
+1. Company Overview  
+Visionerds is a technology consulting and software development firm that combines 
+strategy, desi...
+2025-11-13 14:49:57,275 - rag_class_faiss - INFO - [FAISS] Document 2:
+2025-11-13 14:49:57,275 - rag_class_faiss - INFO -   - Content Type: services
+2025-11-13 14:49:57,276 - rag_class_faiss - INFO -   - Section: Core Services
+2025-11-13 14:49:57,277 - rag_class_faiss - INFO -   - Project: N/A
+2025-11-13 14:49:57,277 - rag_class_faiss - INFO -   - Score: 0.5168043375015259
+2025-11-13 14:49:57,310 - rag_class_faiss - INFO - [FAISS] Document 3:
+2025-11-13 14:49:57,311 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:49:57,311 - rag_class_faiss - INFO -   - Section: Full Details Part 1
+2025-11-13 14:49:57,312 - rag_class_faiss - INFO -   - Project: Zebra
+2025-11-13 14:49:57,312 - rag_class_faiss - INFO -   - Score: 1.3690972328186035
+2025-11-13 14:49:57,313 - rag_class_faiss - INFO -   - Content preview: Complete Project Details: Zebra
+
+PROJECT:
+ 
+Zebra
+ 
+MedNex
+ 
+Project
+ 
+Overview
+ 
+Zebra
+ 
+MedNex
+ 
+represents
+ 
+a
+ 
+comprehensive
+ 
+healthcare
+ 
+manag...
+2025-11-13 14:49:57,317 - rag_class_faiss - INFO - [FAISS] Document 4:
+2025-11-13 14:49:57,318 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:49:57,319 - rag_class_faiss - INFO -   - Section: Full Details Part 4
+2025-11-13 14:49:57,320 - rag_class_faiss - INFO -   - Project: Zebra
+2025-11-13 14:49:57,320 - rag_class_faiss - INFO -   - Score: 1.375918984413147
+2025-11-13 14:49:57,321 - rag_class_faiss - INFO -   - Content preview: testing
+ 
+and
+ 
+deployment
+
+Keywords: zebra, full project details, complete information...
+2025-11-13 14:49:57,322 - rag_class_faiss - INFO - [FAISS] Document 5:
+2025-11-13 14:49:57,323 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 14:49:57,323 - rag_class_faiss - INFO -   - Section: Full Details Part 5
+2025-11-13 14:49:57,324 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 14:49:57,324 - rag_class_faiss - INFO -   - Score: 1.408957839012146
+2025-11-13 14:49:57,325 - rag_class_faiss - INFO -   - Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Compliance
+ 
+Implementation
+ 
+The
+ 
+system
+ 
+implement...
+2025-11-13 14:49:57,328 - rag_class_faiss - INFO - [QUERY_RAG] Context length: 5086 characters
+2025-11-13 14:49:57,329 - rag_class_faiss - INFO - [QUERY_RAG] Using 5 documents
+2025-11-13 14:49:57,329 - rag_class_faiss - INFO - [OPENAI] Sending request to OpenAI API...
+2025-11-13 14:49:57,330 - rag_class_faiss - INFO - [OPENAI] System prompt length: 2168 characters
+2025-11-13 14:49:57,332 - rag_class_faiss - INFO - [OPENAI] User prompt length: 5605 characters
+2025-11-13 14:49:58,059 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-13 14:49:58,063 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:49:58,090 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:49:58,091 - rag_class_faiss - INFO - [OPENAI] Model used: gpt-4o-mini-2024-07-18
+2025-11-13 14:49:58,091 - rag_class_faiss - INFO - [OPENAI] Finish reason: stop
+2025-11-13 14:49:58,092 - rag_class_faiss - INFO - [OPENAI] Token usage:
+2025-11-13 14:49:58,092 - rag_class_faiss - INFO -   - Prompt tokens: 1688
+2025-11-13 14:49:58,093 - rag_class_faiss - INFO -   - Completion tokens: 25
+2025-11-13 14:49:58,094 - rag_class_faiss - INFO -   - Total tokens: 1713
+2025-11-13 14:49:58,094 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:49:58,095 - rag_class_faiss - INFO - [OPENAI] FULL COMPLETION CONTENT:
+2025-11-13 14:49:58,096 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:49:58,096 - rag_class_faiss - INFO - Hello! Welcome to Visionerds. How can I assist you today with information about our company, projects, or services?
+2025-11-13 14:49:58,097 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:49:58,124 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 14:49:58,124 - fastapi_app - INFO - FAISS Index Results: Retrieved 5 sources
+2025-11-13 14:49:58,125 - fastapi_app - INFO -   Source 1: Unknown | Score: 0.32719719409942627
+2025-11-13 14:49:58,125 - fastapi_app - INFO -     Content preview: Company Overview - Visionerds:
+1. Company Overview  
+Visionerds is a technology consulting and softw...
+2025-11-13 14:49:58,126 - fastapi_app - INFO -   Source 2: Unknown | Score: 0.5168043375015259
+2025-11-13 14:49:58,153 - fastapi_app - INFO -   Source 3: Unknown | Score: 1.3690972328186035
+2025-11-13 14:49:58,154 - fastapi_app - INFO -     Content preview: Complete Project Details: Zebra
+
+PROJECT:
+ 
+Zebra
+ 
+MedNex
+ 
+Project
+ 
+Overview
+ 
+Zebra
+ 
+MedNex
+ 
+r...
+2025-11-13 14:49:58,156 - fastapi_app - INFO -   Source 4: Unknown | Score: 1.375918984413147
+2025-11-13 14:49:58,157 - fastapi_app - INFO -     Content preview: testing
+ 
+and
+ 
+deployment
+
+Keywords: zebra, full project details, complete information...
+2025-11-13 14:49:58,158 - fastapi_app - INFO -   Source 5: Unknown | Score: 1.408957839012146
+2025-11-13 14:49:58,159 - fastapi_app - INFO -     Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Comp...
+2025-11-13 14:49:58,161 - fastapi_app - INFO - OpenAI Response Length: 115 characters
+2025-11-13 14:49:58,162 - fastapi_app - INFO - OpenAI Answer: Hello! Welcome to Visionerds. How can I assist you today with information about our company, projects, or services?
+2025-11-13 14:49:58,163 - fastapi_app - INFO - Added interaction to session 333... | Messages in session: 2
+2025-11-13 14:49:58,164 - fastapi_app - INFO - Request completed successfully
+2025-11-13 14:49:58,165 - fastapi_app - INFO - ============================================================
+2025-11-13 16:13:24,743 - fastapi_app - INFO - ============================================================
+2025-11-13 16:13:24,744 - fastapi_app - INFO - NEW CHAT REQUEST | Session: 333...
+2025-11-13 16:13:24,745 - fastapi_app - INFO - User Query: Tell me about the Ramped Project
+2025-11-13 16:13:24,745 - fastapi_app - INFO - History Length: 2 messages
+2025-11-13 16:13:24,746 - fastapi_app - INFO - Querying RAG system...
+2025-11-13 16:13:24,747 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 16:13:24,747 - rag_class_faiss - INFO - [QUERY_RAG] Starting RAG query pipeline
+2025-11-13 16:13:24,748 - rag_class_faiss - INFO - [QUERY_RAG] Original query: 'Tell me about the Ramped Project'
+2025-11-13 16:13:24,749 - rag_class_faiss - INFO - [QUERY_RAG] Model: gpt-4o-mini
+2025-11-13 16:13:24,749 - rag_class_faiss - INFO - [QUERY_RAG] Temperature: 0.1
+2025-11-13 16:13:24,750 - rag_class_faiss - INFO - [REPHRASE] Original query: 'Tell me about the Ramped Project'
+2025-11-13 16:13:24,751 - rag_class_faiss - INFO - [REPHRASE] Calling OpenAI to rephrase query...
+2025-11-13 16:13:26,178 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-13 16:13:26,208 - rag_class_faiss - INFO - [REPHRASE] Tokens used: 280 (prompt: 272, completion: 8)
+2025-11-13 16:13:26,209 - rag_class_faiss - INFO - [FAISS] Searching for query: 'Tell me about the Ramped Project.' (top_k=5)
+2025-11-13 16:13:28,266 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-11-13 16:13:28,298 - rag_class_faiss - INFO - [FAISS] Document 1:
+2025-11-13 16:13:28,299 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 16:13:28,299 - rag_class_faiss - INFO -   - Section: Full Details Part 1
+2025-11-13 16:13:28,300 - rag_class_faiss - INFO -   - Project: Ramped
+2025-11-13 16:13:28,300 - rag_class_faiss - INFO -   - Score: 0.8755714893341064
+2025-11-13 16:13:28,301 - rag_class_faiss - INFO -   - Content preview: Complete Project Details: Ramped
+
+PROJECT:
+ 
+Ramped
+ 
+Project
+ 
+Overview
+ 
+Ramped
+ 
+is
+ 
+a
+ 
+comprehensive
+ 
+job
+ 
+matching
+ 
+platform
+ 
+that
+ 
+levera...
+2025-11-13 16:13:28,305 - rag_class_faiss - INFO - [FAISS] Document 2:
+2025-11-13 16:13:28,306 - rag_class_faiss - INFO -   - Content Type: project_list
+2025-11-13 16:13:28,306 - rag_class_faiss - INFO -   - Section: Project List
+2025-11-13 16:13:28,307 - rag_class_faiss - INFO -   - Project: N/A
+2025-11-13 16:13:28,307 - rag_class_faiss - INFO -   - Score: 0.998786211013794
+2025-11-13 16:13:28,308 - rag_class_faiss - INFO -   - Content preview: Our Projects - Complete List:
+
+1. Ramped
+2. Zebra
+3. HubSpot
+4. ProdKit
+5. Massive-Alliance
+6. Beauty
+7. Structural
+
+
+We have completed 7 major projec...
+2025-11-13 16:13:28,310 - rag_class_faiss - INFO - [FAISS] Document 3:
+2025-11-13 16:13:28,311 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 16:13:28,311 - rag_class_faiss - INFO -   - Section: Full Details Part 4
+2025-11-13 16:13:28,312 - rag_class_faiss - INFO -   - Project: Ramped
+2025-11-13 16:13:28,313 - rag_class_faiss - INFO -   - Score: 1.0732173919677734
+2025-11-13 16:13:28,345 - rag_class_faiss - INFO - [FAISS] Document 4:
+2025-11-13 16:13:28,346 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 16:13:28,346 - rag_class_faiss - INFO -   - Section: Full Details Part 3
+2025-11-13 16:13:28,347 - rag_class_faiss - INFO -   - Project: Ramped
+2025-11-13 16:13:28,347 - rag_class_faiss - INFO -   - Score: 1.2049821615219116
+2025-11-13 16:13:28,347 - rag_class_faiss - INFO -   - Content preview: advanced
+ 
+AI
+ 
+features
+ 
+designed
+ 
+to
+ 
+enhance
+ 
+the
+ 
+user
+ 
+experience
+ 
+for
+ 
+job
+ 
+seekers.
+ 
+The
+ 
+resume
+ 
+summary
+ 
+writer
+ 
+utilizes
+ 
+nat...
+2025-11-13 16:13:28,352 - rag_class_faiss - INFO - [FAISS] Document 5:
+2025-11-13 16:13:28,352 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 16:13:28,353 - rag_class_faiss - INFO -   - Section: Full Details Part 1
+2025-11-13 16:13:28,353 - rag_class_faiss - INFO -   - Project: Structural
+2025-11-13 16:13:28,353 - rag_class_faiss - INFO -   - Score: 1.2823768854141235
+2025-11-13 16:13:28,354 - rag_class_faiss - INFO -   - Content preview: Complete Project Details: Structural
+
+PROJECT:
+ 
+Structural
+ 
+Learning
+ 
+AI
+ 
+Backend
+ 
+Project
+ 
+Overview
+ 
+The
+ 
+Structural
+ 
+Learning
+ 
+AI
+ 
+Backen...
+2025-11-13 16:13:28,356 - rag_class_faiss - INFO - [QUERY_RAG] Context length: 5960 characters
+2025-11-13 16:13:28,357 - rag_class_faiss - INFO - [QUERY_RAG] Using 5 documents
+2025-11-13 16:13:28,357 - rag_class_faiss - INFO - [OPENAI] Sending request to OpenAI API...
+2025-11-13 16:13:28,358 - rag_class_faiss - INFO - [OPENAI] System prompt length: 2168 characters
+2025-11-13 16:13:28,358 - rag_class_faiss - INFO - [OPENAI] User prompt length: 6645 characters
+2025-11-13 16:13:35,577 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-13 16:13:35,579 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 16:13:35,601 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 16:13:35,602 - rag_class_faiss - INFO - [OPENAI] Model used: gpt-4o-mini-2024-07-18
+2025-11-13 16:13:35,602 - rag_class_faiss - INFO - [OPENAI] Finish reason: stop
+2025-11-13 16:13:35,603 - rag_class_faiss - INFO - [OPENAI] Token usage:
+2025-11-13 16:13:35,603 - rag_class_faiss - INFO -   - Prompt tokens: 2009
+2025-11-13 16:13:35,604 - rag_class_faiss - INFO -   - Completion tokens: 248
+2025-11-13 16:13:35,604 - rag_class_faiss - INFO -   - Total tokens: 2257
+2025-11-13 16:13:35,605 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 16:13:35,606 - rag_class_faiss - INFO - [OPENAI] FULL COMPLETION CONTENT:
+2025-11-13 16:13:35,606 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 16:13:35,607 - rag_class_faiss - INFO - The Ramped project is a comprehensive job matching platform that utilizes artificial intelligence to connect job seekers with relevant opportunities. Acting as an intermediary between job listing sources and candidates, Ramped features intelligent matching algorithms and AI-powered career assistance tools.
+
+**Technical Architecture:**
+- **Backend:** Built using Python with FastAPI as the primary web framework.
+- **Database:** Utilizes MongoDB for storing job listings, user profiles, and CV data. Firebase is used for real-time capabilities and user authentication.
+
+**Key Implementations:**
+- **Data Integration:** Ramped has an automated import system that integrates job listings from SourceStack, ensuring an updated database across various industries and experience levels. This process involves real-time data synchronization, duplicate detection, and data validation.
+- **Matching Algorithm:** Optimized database queries effectively match job postings with user CVs. Advanced AI features enhance the user experience by offering tools such as a resume summary writer and a personalized cover letter generator.
+
+**Client Collaboration:** Throughout development, we maintained active communication with our client to align with business objectives, involving regular feedback and iterative cycles for continuous refinement based on user testing.
+
+Overall, Ramped showcases our expertise in AI integration, backend development, and creating intuitive platforms tailored to user needs.
+2025-11-13 16:13:35,610 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 16:13:35,632 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 16:13:35,633 - fastapi_app - INFO - FAISS Index Results: Retrieved 5 sources
+2025-11-13 16:13:35,633 - fastapi_app - INFO -   Source 1: Unknown | Score: 0.8755714893341064
+2025-11-13 16:13:35,634 - fastapi_app - INFO -     Content preview: Complete Project Details: Ramped
+
+PROJECT:
+ 
+Ramped
+ 
+Project
+ 
+Overview
+ 
+Ramped
+ 
+is
+ 
+a
+ 
+compreh...
+2025-11-13 16:13:35,635 - fastapi_app - INFO -   Source 2: Unknown | Score: 0.998786211013794
+2025-11-13 16:13:35,636 - fastapi_app - INFO -     Content preview: Our Projects - Complete List:
+
+1. Ramped
+2. Zebra
+3. HubSpot
+4. ProdKit
+5. Massive-Alliance
+6. Beaut...
+2025-11-13 16:13:35,636 - fastapi_app - INFO -   Source 3: Unknown | Score: 1.0732173919677734
+2025-11-13 16:13:35,657 - fastapi_app - INFO -   Source 4: Unknown | Score: 1.2049821615219116
+2025-11-13 16:13:35,658 - fastapi_app - INFO -     Content preview: advanced
+ 
+AI
+ 
+features
+ 
+designed
+ 
+to
+ 
+enhance
+ 
+the
+ 
+user
+ 
+experience
+ 
+for
+ 
+job
+ 
+seekers.
+...
+2025-11-13 16:13:35,660 - fastapi_app - INFO -   Source 5: Unknown | Score: 1.2823768854141235
+2025-11-13 16:13:35,661 - fastapi_app - INFO -     Content preview: Complete Project Details: Structural
+
+PROJECT:
+ 
+Structural
+ 
+Learning
+ 
+AI
+ 
+Backend
+ 
+Project
+ 
+Ov...
+2025-11-13 16:13:35,662 - fastapi_app - INFO - OpenAI Response Length: 1491 characters
+2025-11-13 16:13:35,663 - fastapi_app - INFO - OpenAI Answer: The Ramped project is a comprehensive job matching platform that utilizes artificial intelligence to connect job seekers with relevant opportunities. Acting as an intermediary between job listing sources and candidates, Ramped features intelligent matching algorithms and AI-powered career assistance tools.
+
+**Technical Architecture:**
+- **Backend:** Built using Python with FastAPI as the primary web framework.
+- **Database:** Utilizes MongoDB for storing job listings, user profiles, and CV data. Firebase is used for real-time capabilities and user authentication.
+
+**Key Implementations:**
+- **Data Integration:** Ramped has an automated import system that integrates job listings from SourceStack, ensuring an updated database across various industries and experience levels. This process involves real-time data synchronization, duplicate detection, and data validation.
+- **Matching Algorithm:** Optimized database queries effectively match job postings with user CVs. Advanced AI features enhance the user experience by offering tools such as a resume summary writer and a personalized cover letter generator.
+
+**Client Collaboration:** Throughout development, we maintained active communication with our client to align with business objectives, involving regular feedback and iterative cycles for continuous refinement based on user testing.
+
+Overall, Ramped showcases our expertise in AI integration, backend development, and creating intuitive platforms tailored to user needs.
+2025-11-13 16:13:35,666 - fastapi_app - INFO - Added interaction to session 333... | Messages in session: 3
+2025-11-13 16:13:35,666 - fastapi_app - INFO - Request completed successfully
+2025-11-13 16:13:35,667 - fastapi_app - INFO - ============================================================
+2025-11-13 16:14:43,394 - fastapi_app - INFO - ============================================================
+2025-11-13 16:14:43,395 - fastapi_app - INFO - NEW CHAT REQUEST | Session: 333...
+2025-11-13 16:14:43,395 - fastapi_app - INFO - User Query: What is Beauty Right Back and what does Bella do?
+2025-11-13 16:14:43,396 - fastapi_app - INFO - History Length: 3 messages
+2025-11-13 16:14:43,396 - fastapi_app - INFO - Querying RAG system...
+2025-11-13 16:14:43,397 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 16:14:43,398 - rag_class_faiss - INFO - [QUERY_RAG] Starting RAG query pipeline
+2025-11-13 16:14:43,398 - rag_class_faiss - INFO - [QUERY_RAG] Original query: 'What is Beauty Right Back and what does Bella do?'
+2025-11-13 16:14:43,408 - rag_class_faiss - INFO - [QUERY_RAG] Model: gpt-4o-mini
+2025-11-13 16:14:43,409 - rag_class_faiss - INFO - [QUERY_RAG] Temperature: 0.1
+2025-11-13 16:14:43,410 - rag_class_faiss - INFO - [REPHRASE] Original query: 'What is Beauty Right Back and what does Bella do?'
+2025-11-13 16:14:43,411 - rag_class_faiss - INFO - [REPHRASE] Calling OpenAI to rephrase query...
+2025-11-13 16:14:46,710 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-13 16:14:46,736 - rag_class_faiss - INFO - [REPHRASE] Tokens used: 551 (prompt: 535, completion: 16)
+2025-11-13 16:14:46,737 - rag_class_faiss - INFO - [FAISS] Searching for query: 'What is the Beauty Right Back project and what role does Bella play in it?' (top_k=5)
+2025-11-13 16:14:48,522 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-11-13 16:14:48,547 - rag_class_faiss - INFO - [FAISS] Document 1:
+2025-11-13 16:14:48,547 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 16:14:48,548 - rag_class_faiss - INFO -   - Section: Full Details Part 1
+2025-11-13 16:14:48,548 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 16:14:48,549 - rag_class_faiss - INFO -   - Score: 0.8448415398597717
+2025-11-13 16:14:48,549 - rag_class_faiss - INFO -   - Content preview: Complete Project Details: Beauty
+
+PROJECT:
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+Project
+ 
+Overview
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+represents
+ 
+a
+ 
+cut...
+2025-11-13 16:14:48,553 - rag_class_faiss - INFO - [FAISS] Document 2:
+2025-11-13 16:14:48,553 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 16:14:48,554 - rag_class_faiss - INFO -   - Section: Full Details Part 4
+2025-11-13 16:14:48,555 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 16:14:48,555 - rag_class_faiss - INFO -   - Score: 1.2062671184539795
+2025-11-13 16:14:48,556 - rag_class_faiss - INFO -   - Content preview: elevant
+ 
+beauty
+ 
+products.
+ 
+The
+ 
+beauty
+ 
+trend
+ 
+suggestion
+ 
+system
+ 
+incorporates
+ 
+current
+ 
+industry
+ 
+trends,
+ 
+seasonal
+ 
+preferences,
+ 
+an...
+2025-11-13 16:14:48,559 - rag_class_faiss - INFO - [FAISS] Document 3:
+2025-11-13 16:14:48,559 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 16:14:48,560 - rag_class_faiss - INFO -   - Section: Full Details Part 5
+2025-11-13 16:14:48,560 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 16:14:48,561 - rag_class_faiss - INFO -   - Score: 1.2925745248794556
+2025-11-13 16:14:48,561 - rag_class_faiss - INFO -   - Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Compliance
+ 
+Implementation
+ 
+The
+ 
+system
+ 
+implement...
+2025-11-13 16:14:48,564 - rag_class_faiss - INFO - [FAISS] Document 4:
+2025-11-13 16:14:48,564 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 16:14:48,565 - rag_class_faiss - INFO -   - Section: Full Details Part 3
+2025-11-13 16:14:48,565 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 16:14:48,566 - rag_class_faiss - INFO -   - Score: 1.3196165561676025
+2025-11-13 16:14:48,567 - rag_class_faiss - INFO -   - Content preview: stions
+ 
+and
+ 
+retention
+ 
+offers),
+ 
+and
+ 
+service
+ 
+upgrades
+ 
+(analyzing
+ 
+current
+ 
+bookings
+ 
+and
+ 
+suggesting
+ 
+enhanced
+ 
+services).
+ 
+The
+ 
+mo...
+2025-11-13 16:14:48,570 - rag_class_faiss - INFO - [FAISS] Document 5:
+2025-11-13 16:14:48,571 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 16:14:48,571 - rag_class_faiss - INFO -   - Section: Full Details Part 6
+2025-11-13 16:14:48,572 - rag_class_faiss - INFO -   - Project: Beauty
+2025-11-13 16:14:48,573 - rag_class_faiss - INFO -   - Score: 1.3570301532745361
+2025-11-13 16:14:48,597 - rag_class_faiss - INFO - [QUERY_RAG] Context length: 7530 characters
+2025-11-13 16:14:48,598 - rag_class_faiss - INFO - [QUERY_RAG] Using 5 documents
+2025-11-13 16:14:48,598 - rag_class_faiss - INFO - [OPENAI] Sending request to OpenAI API...
+2025-11-13 16:14:48,599 - rag_class_faiss - INFO - [OPENAI] System prompt length: 2168 characters
+2025-11-13 16:14:48,599 - rag_class_faiss - INFO - [OPENAI] User prompt length: 9774 characters
+2025-11-13 16:14:57,465 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-13 16:14:57,468 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 16:14:57,490 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 16:14:57,490 - rag_class_faiss - INFO - [OPENAI] Model used: gpt-4o-mini-2024-07-18
+2025-11-13 16:14:57,491 - rag_class_faiss - INFO - [OPENAI] Finish reason: stop
+2025-11-13 16:14:57,491 - rag_class_faiss - INFO - [OPENAI] Token usage:
+2025-11-13 16:14:57,492 - rag_class_faiss - INFO -   - Prompt tokens: 2642
+2025-11-13 16:14:57,492 - rag_class_faiss - INFO -   - Completion tokens: 249
+2025-11-13 16:14:57,493 - rag_class_faiss - INFO -   - Total tokens: 2891
+2025-11-13 16:14:57,494 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 16:14:57,494 - rag_class_faiss - INFO - [OPENAI] FULL COMPLETION CONTENT:
+2025-11-13 16:14:57,495 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 16:14:57,495 - rag_class_faiss - INFO - Beauty Right Back (BRB) is an innovative AI-powered customer service solution tailored for the beauty and wellness industry. Central to this project is "Bella," an intelligent conversational AI assistant designed to enhance interactions between beauty salons and spas and their customers.
+
+**Key Features of Bella:**
+- **Personalized Conversations:** Bella engages users in context-aware dialogues to provide tailored beauty advice and recommendations based on individual preferences and skin types.
+- **Service Management:** The AI can handle various customer service tasks, including appointment bookings, subscription management, and tracking user preferences.
+- **Proactive Communication:** Bella proactively sends appointment reminders, follow-ups, and suggestions based on user behavior, enhancing customer engagement.
+- **Multi-Platform Deployment:** Bella operates across multiple channels such as WhatsApp, web chat interfaces, and a dedicated mobile app, ensuring seamless communication and user experience.
+
+**Technology Stack:**
+- Utilizes **LangChain** for foundational language model integration and **LangGraph** for managing complex, multi-step conversations.
+- Built with **Python** for AI integration and backed by **MongoDB** for flexible user data management.
+
+Overall, Beauty Right Back exemplifies our expertise in developing cutting-edge AI solutions that improve customer interactions and operational efficiency within the beauty industry.
+2025-11-13 16:14:57,498 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 16:14:57,519 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 16:14:57,520 - fastapi_app - INFO - FAISS Index Results: Retrieved 5 sources
+2025-11-13 16:14:57,520 - fastapi_app - INFO -   Source 1: Unknown | Score: 0.8448415398597717
+2025-11-13 16:14:57,520 - fastapi_app - INFO -     Content preview: Complete Project Details: Beauty
+
+PROJECT:
+ 
+Beauty
+ 
+Right
+ 
+Back
+ 
+(BRB)
+ 
+Project
+ 
+Overview
+ 
+Be...
+2025-11-13 16:14:57,522 - fastapi_app - INFO -   Source 2: Unknown | Score: 1.2062671184539795
+2025-11-13 16:14:57,522 - fastapi_app - INFO -     Content preview: elevant
+ 
+beauty
+ 
+products.
+ 
+The
+ 
+beauty
+ 
+trend
+ 
+suggestion
+ 
+system
+ 
+incorporates
+ 
+current
+ ...
+2025-11-13 16:14:57,524 - fastapi_app - INFO -   Source 3: Unknown | Score: 1.2925745248794556
+2025-11-13 16:14:57,525 - fastapi_app - INFO -     Content preview: while
+ 
+optimizing
+ 
+for
+ 
+platform-specific
+ 
+user
+ 
+experience
+ 
+patterns.
+ 
+Security
+ 
+and
+ 
+Comp...
+2025-11-13 16:14:57,527 - fastapi_app - INFO -   Source 4: Unknown | Score: 1.3196165561676025
+2025-11-13 16:14:57,527 - fastapi_app - INFO -     Content preview: stions
+ 
+and
+ 
+retention
+ 
+offers),
+ 
+and
+ 
+service
+ 
+upgrades
+ 
+(analyzing
+ 
+current
+ 
+bookings
+ 
+a...
+2025-11-13 16:14:57,529 - fastapi_app - INFO -   Source 5: Unknown | Score: 1.3570301532745361
+2025-11-13 16:14:57,529 - fastapi_app - INFO -     Content preview: Frameworks
+:
+ 
+LangChain
+ 
+for
+ 
+language
+ 
+model
+ 
+integration,
+ 
+LangGraph
+ 
+for
+ 
+workflow
+ 
+mana...
+2025-11-13 16:14:57,531 - fastapi_app - INFO - OpenAI Response Length: 1463 characters
+2025-11-13 16:14:57,531 - fastapi_app - INFO - OpenAI Answer: Beauty Right Back (BRB) is an innovative AI-powered customer service solution tailored for the beauty and wellness industry. Central to this project is "Bella," an intelligent conversational AI assistant designed to enhance interactions between beauty salons and spas and their customers.
+
+**Key Features of Bella:**
+- **Personalized Conversations:** Bella engages users in context-aware dialogues to provide tailored beauty advice and recommendations based on individual preferences and skin types.
+- **Service Management:** The AI can handle various customer service tasks, including appointment bookings, subscription management, and tracking user preferences.
+- **Proactive Communication:** Bella proactively sends appointment reminders, follow-ups, and suggestions based on user behavior, enhancing customer engagement.
+- **Multi-Platform Deployment:** Bella operates across multiple channels such as WhatsApp, web chat interfaces, and a dedicated mobile app, ensuring seamless communication and user experience.
+
+**Technology Stack:**
+- Utilizes **LangChain** for foundational language model integration and **LangGraph** for managing complex, multi-step conversations.
+- Built with **Python** for AI integration and backed by **MongoDB** for flexible user data management.
+
+Overall, Beauty Right Back exemplifies our expertise in developing cutting-edge AI solutions that improve customer interactions and operational efficiency within the beauty industry.
+2025-11-13 16:14:57,534 - fastapi_app - INFO - Added interaction to session 333... | Messages in session: 4
+2025-11-13 16:14:57,535 - fastapi_app - INFO - Request completed successfully
+2025-11-13 16:14:57,535 - fastapi_app - INFO - ============================================================
+2025-11-13 16:17:21,637 - fastapi_app - INFO - ============================================================
+2025-11-13 16:17:21,637 - fastapi_app - INFO - NEW CHAT REQUEST | Session: 333...
+2025-11-13 16:17:21,638 - fastapi_app - INFO - User Query: How does the matching algorithm work in Ramped?
+2025-11-13 16:17:21,638 - fastapi_app - INFO - History Length: 4 messages
+2025-11-13 16:17:21,639 - fastapi_app - INFO - Querying RAG system...
+2025-11-13 16:17:21,639 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 16:17:21,640 - rag_class_faiss - INFO - [QUERY_RAG] Starting RAG query pipeline
+2025-11-13 16:17:21,641 - rag_class_faiss - INFO - [QUERY_RAG] Original query: 'How does the matching algorithm work in Ramped?'
+2025-11-13 16:17:21,641 - rag_class_faiss - INFO - [QUERY_RAG] Model: gpt-4o-mini
+2025-11-13 16:17:21,642 - rag_class_faiss - INFO - [QUERY_RAG] Temperature: 0.1
+2025-11-13 16:17:21,643 - rag_class_faiss - INFO - [REPHRASE] Original query: 'How does the matching algorithm work in Ramped?'
+2025-11-13 16:17:21,643 - rag_class_faiss - INFO - [REPHRASE] Calling OpenAI to rephrase query...
+2025-11-13 16:17:24,637 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-13 16:17:24,685 - rag_class_faiss - INFO - [REPHRASE] Tokens used: 779 (prompt: 767, completion: 12)
+2025-11-13 16:17:24,686 - rag_class_faiss - INFO - [FAISS] Searching for query: 'How does the matching algorithm in the Ramped project work?' (top_k=5)
+2025-11-13 16:17:25,783 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-11-13 16:17:25,809 - rag_class_faiss - INFO - [FAISS] Document 1:
+2025-11-13 16:17:25,809 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 16:17:25,810 - rag_class_faiss - INFO -   - Section: Full Details Part 1
+2025-11-13 16:17:25,810 - rag_class_faiss - INFO -   - Project: Ramped
+2025-11-13 16:17:25,811 - rag_class_faiss - INFO -   - Score: 0.8479738235473633
+2025-11-13 16:17:25,811 - rag_class_faiss - INFO -   - Content preview: Complete Project Details: Ramped
+
+PROJECT:
+ 
+Ramped
+ 
+Project
+ 
+Overview
+ 
+Ramped
+ 
+is
+ 
+a
+ 
+comprehensive
+ 
+job
+ 
+matching
+ 
+platform
+ 
+that
+ 
+levera...
+2025-11-13 16:17:25,814 - rag_class_faiss - INFO - [FAISS] Document 2:
+2025-11-13 16:17:25,814 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 16:17:25,815 - rag_class_faiss - INFO -   - Section: Full Details Part 2
+2025-11-13 16:17:25,816 - rag_class_faiss - INFO -   - Project: Ramped
+2025-11-13 16:17:25,816 - rag_class_faiss - INFO -   - Score: 1.2666021585464478
+2025-11-13 16:17:25,817 - rag_class_faiss - INFO -   - Content preview: ation,
+ 
+duplicate
+ 
+detection
+ 
+algorithms,
+ 
+and
+ 
+data
+ 
+validation
+ 
+procedures
+ 
+to
+ 
+maintain
+ 
+data
+ 
+quality
+ 
+and
+ 
+consistency.
+ 
+Database
+ ...
+2025-11-13 16:17:25,821 - rag_class_faiss - INFO - [FAISS] Document 3:
+2025-11-13 16:17:25,822 - rag_class_faiss - INFO -   - Content Type: project_list
+2025-11-13 16:17:25,822 - rag_class_faiss - INFO -   - Section: Project List
+2025-11-13 16:17:25,823 - rag_class_faiss - INFO -   - Project: N/A
+2025-11-13 16:17:25,823 - rag_class_faiss - INFO -   - Score: 1.3043301105499268
+2025-11-13 16:17:25,824 - rag_class_faiss - INFO -   - Content preview: Our Projects - Complete List:
+
+1. Ramped
+2. Zebra
+3. HubSpot
+4. ProdKit
+5. Massive-Alliance
+6. Beauty
+7. Structural
+
+
+We have completed 7 major projec...
+2025-11-13 16:17:25,825 - rag_class_faiss - INFO - [FAISS] Document 4:
+2025-11-13 16:17:25,826 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 16:17:25,826 - rag_class_faiss - INFO -   - Section: Full Details Part 3
+2025-11-13 16:17:25,827 - rag_class_faiss - INFO -   - Project: Ramped
+2025-11-13 16:17:25,827 - rag_class_faiss - INFO -   - Score: 1.321763038635254
+2025-11-13 16:17:25,828 - rag_class_faiss - INFO -   - Content preview: advanced
+ 
+AI
+ 
+features
+ 
+designed
+ 
+to
+ 
+enhance
+ 
+the
+ 
+user
+ 
+experience
+ 
+for
+ 
+job
+ 
+seekers.
+ 
+The
+ 
+resume
+ 
+summary
+ 
+writer
+ 
+utilizes
+ 
+nat...
+2025-11-13 16:17:25,831 - rag_class_faiss - INFO - [FAISS] Document 5:
+2025-11-13 16:17:25,831 - rag_class_faiss - INFO -   - Content Type: project_full
+2025-11-13 16:17:25,832 - rag_class_faiss - INFO -   - Section: Full Details Part 4
+2025-11-13 16:17:25,833 - rag_class_faiss - INFO -   - Project: Ramped
+2025-11-13 16:17:25,833 - rag_class_faiss - INFO -   - Score: 1.3325960636138916
+2025-11-13 16:17:25,858 - rag_class_faiss - INFO - [QUERY_RAG] Context length: 5417 characters
+2025-11-13 16:17:25,859 - rag_class_faiss - INFO - [QUERY_RAG] Using 5 documents
+2025-11-13 16:17:25,859 - rag_class_faiss - INFO - [OPENAI] Sending request to OpenAI API...
+2025-11-13 16:17:25,860 - rag_class_faiss - INFO - [OPENAI] System prompt length: 2168 characters
+2025-11-13 16:17:25,860 - rag_class_faiss - INFO - [OPENAI] User prompt length: 9190 characters
+2025-11-13 16:17:35,808 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-13 16:17:36,120 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 16:17:36,143 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 16:17:36,144 - rag_class_faiss - INFO - [OPENAI] Model used: gpt-4o-mini-2024-07-18
+2025-11-13 16:17:36,144 - rag_class_faiss - INFO - [OPENAI] Finish reason: stop
+2025-11-13 16:17:36,145 - rag_class_faiss - INFO - [OPENAI] Token usage:
+2025-11-13 16:17:36,146 - rag_class_faiss - INFO -   - Prompt tokens: 2418
+2025-11-13 16:17:36,146 - rag_class_faiss - INFO -   - Completion tokens: 152
+2025-11-13 16:17:36,147 - rag_class_faiss - INFO -   - Total tokens: 2570
+2025-11-13 16:17:36,148 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 16:17:36,148 - rag_class_faiss - INFO - [OPENAI] FULL COMPLETION CONTENT:
+2025-11-13 16:17:36,149 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 16:17:36,150 - rag_class_faiss - INFO - The matching algorithm in Ramped is designed to efficiently connect job postings with user CVs through several technical strategies. Here are the key components of how it works:
+
+1. **Database Optimization:** We implemented sophisticated indexing strategies and query optimization techniques to ensure rapid data retrieval from our MongoDB database.
+
+2. **Custom Matching Algorithm:** This algorithm analyzes multiple factors including skills, experience, location preferences, and career objectives, enabling precise matches between job listings and candidates.
+
+3. **Real-Time Processing:** The system processes large volumes of data efficiently, maintaining high accuracy in job recommendations by synchronizing real-time data and using advanced AI techniques.
+
+Overall, the matching algorithm is integral to Ramped's functionality, enhancing the user experience by providing tailored job suggestions based on individual profiles.
+2025-11-13 16:17:36,152 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 16:17:36,176 - rag_class_faiss - INFO - ================================================================================
+2025-11-13 16:17:36,177 - fastapi_app - INFO - FAISS Index Results: Retrieved 5 sources
+2025-11-13 16:17:36,177 - fastapi_app - INFO -   Source 1: Unknown | Score: 0.8479738235473633
+2025-11-13 16:17:36,178 - fastapi_app - INFO -     Content preview: Complete Project Details: Ramped
+
+PROJECT:
+ 
+Ramped
+ 
+Project
+ 
+Overview
+ 
+Ramped
+ 
+is
+ 
+a
+ 
+compreh...
+2025-11-13 16:17:36,181 - fastapi_app - INFO -   Source 2: Unknown | Score: 1.2666021585464478
+2025-11-13 16:17:36,181 - fastapi_app - INFO -     Content preview: ation,
+ 
+duplicate
+ 
+detection
+ 
+algorithms,
+ 
+and
+ 
+data
+ 
+validation
+ 
+procedures
+ 
+to
+ 
+maintain
+...
+2025-11-13 16:17:36,183 - fastapi_app - INFO -   Source 3: Unknown | Score: 1.3043301105499268
+2025-11-13 16:17:36,184 - fastapi_app - INFO -     Content preview: Our Projects - Complete List:
+
+1. Ramped
+2. Zebra
+3. HubSpot
+4. ProdKit
+5. Massive-Alliance
+6. Beaut...
+2025-11-13 16:17:36,186 - fastapi_app - INFO -   Source 4: Unknown | Score: 1.321763038635254
+2025-11-13 16:17:36,186 - fastapi_app - INFO -     Content preview: advanced
+ 
+AI
+ 
+features
+ 
+designed
+ 
+to
+ 
+enhance
+ 
+the
+ 
+user
+ 
+experience
+ 
+for
+ 
+job
+ 
+seekers.
+...
+2025-11-13 16:17:36,189 - fastapi_app - INFO -   Source 5: Unknown | Score: 1.3325960636138916
+2025-11-13 16:17:36,214 - fastapi_app - INFO - OpenAI Response Length: 933 characters
+2025-11-13 16:17:36,215 - fastapi_app - INFO - OpenAI Answer: The matching algorithm in Ramped is designed to efficiently connect job postings with user CVs through several technical strategies. Here are the key components of how it works:
+
+1. **Database Optimization:** We implemented sophisticated indexing strategies and query optimization techniques to ensure rapid data retrieval from our MongoDB database.
+
+2. **Custom Matching Algorithm:** This algorithm analyzes multiple factors including skills, experience, location preferences, and career objectives, enabling precise matches between job listings and candidates.
+
+3. **Real-Time Processing:** The system processes large volumes of data efficiently, maintaining high accuracy in job recommendations by synchronizing real-time data and using advanced AI techniques.
+
+Overall, the matching algorithm is integral to Ramped's functionality, enhancing the user experience by providing tailored job suggestions based on individual profiles.
+2025-11-13 16:17:36,216 - fastapi_app - INFO - Added interaction to session 333... | Messages in session: 5
+2025-11-13 16:17:36,217 - fastapi_app - INFO - Request completed successfully
+2025-11-13 16:17:36,217 - fastapi_app - INFO - ============================================================
